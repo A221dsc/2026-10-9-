@@ -1,0 +1,39 @@
+{
+  "schema": "S1.root.git_verification.v1",
+  "date": "2026-10-09",
+  "repository": "https://github.com/A221dsc/2026-10-9-",
+  "branch": "s1-entry-hardening",
+  "verification_version": "948802c",
+  "kernel_source_version": "8b867c7",
+  "kernel_command": "python.exe -B 投稿准备/后续研究_20261008/S1/tools/check_kernel.py --tag root_git_kernel_verify_01",
+  "kernel_evidence": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/kernel/root_git_kernel_verify_01/manifest.json",
+  "kernel_result": {
+    "process_exit": 0,
+    "status": "GREEN",
+    "pass": 99,
+    "fail": 0,
+    "skip": 0,
+    "modes": ["native", "debug", "owner", "diagnostic", "asan", "ubsan"],
+    "random_operations": 3000000,
+    "all_complete_gates": true
+  },
+  "git_frozen_diff_checked": {
+    "S0": "NO_CHANGE",
+    "R6_final_sources": "NO_CHANGE",
+    "FINAL_CONFIG_R6": "NO_CHANGE",
+    "R0_R11": "NO_CHANGE"
+  },
+  "new_entry_red_evidence": "artifacts/analysis/red_entry_mf123_02/manifest.json",
+  "new_entry_red": {"tests": 4, "processes": 3, "all_exit_1_assertion_failures": true},
+  "new_entry_red_test_commit": "948802c",
+  "entry_fix_review": "PENDING",
+  "engineering_frozen": false,
+  "dev_calibration_runs": 0,
+  "aa_timing_runs": 0,
+  "formal_performance_runs": 0,
+  "formal_mechanism_runs": 0,
+  "selected_theta": null,
+  "selected_h": null,
+  "DEV_READY": false,
+  "FINAL_READY": false
+}

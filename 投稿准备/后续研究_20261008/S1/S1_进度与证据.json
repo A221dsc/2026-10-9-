@@ -71,6 +71,8 @@
       "status": "GREEN_CANDIDATE_SPEC_NOT_APPROVED",
       "green_before_review_fix": "artifacts/analysis/green_complete_03/manifest.json",
       "root_verification_before_review_fix": "artifacts/analysis/root_verify_complete_01/manifest.json",
+      "review_red": "artifacts/analysis/red_entry_mf123_02/manifest.json",
+      "red_support_commit": "948802c",
       "spec_review_round1": "S1_统计与入口规格审查.md",
       "must_fix": [
         "MF1: production dev selection must reject fixtures and recompute verified scores",
