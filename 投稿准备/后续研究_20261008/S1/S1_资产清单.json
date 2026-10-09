@@ -1,0 +1,51 @@
+{
+  "schema": "S1.git_engineering_assets.v1",
+  "state": "CANDIDATE_PENDING_CHUNK3_REVIEW",
+  "repository": "https://github.com/A221dsc/2026-10-9-",
+  "branch": "s1-entry-hardening",
+  "source_git_commit": "37bfde7ccd58c45efdf249cdcd605fe2713965b0",
+  "freeze_tag": null,
+  "normative_git_tag": "s0-freezable-v1",
+  "normative_contract": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_同布局比较合约_v1.md",
+  "preregistration": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_preregistration.json",
+  "frozen_R6_parameters": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/adaptive_poolhbi/FINAL_CONFIG_R6.json",
+  "source_directories": [
+    "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/src",
+    "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/tests",
+    "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/tools"
+  ],
+  "green_record": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_GREEN_记录.json",
+  "coverage_record": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_覆盖执行记录.csv",
+  "binaries": [
+    {
+      "mode": "native",
+      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_native.exe",
+      "build_source_git_commit": "8b867c7",
+      "proof_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/manifest.json",
+      "in_git": false
+    },
+    {
+      "mode": "latency",
+      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_latency.exe",
+      "build_source_git_commit": "8b867c7",
+      "proof_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/manifest.json",
+      "in_git": false
+    },
+    {
+      "mode": "resource",
+      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_resource.exe",
+      "build_source_git_commit": "8b867c7",
+      "proof_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/manifest.json",
+      "in_git": false
+    }
+  ],
+  "source_freeze_complete": false,
+  "compatibility": "Existing protocol/data/binary/sidecar integrity fields remain validation inputs; no new manual source SHA256 version inventory.",
+  "archive_policy": "Full local execution archives, runtimes, binaries and datasets are Git-ignored. Failure records remain local and are referenced by committed stage records.",
+  "experiment_entry_state": {
+    "DEV_READY": false,
+    "FINAL_READY": false,
+    "selected_theta": null,
+    "selected_h": null
+  }
+}

@@ -37,7 +37,7 @@
     "all_exit_1_assertion_failures": true
   },
   "new_entry_red_test_commit": "948802c",
-  "entry_fix_review": "PENDING",
+  "entry_fix_review": "ROUND2_IN_PROGRESS; batch uniqueness/serial concerns being assessed",
   "engineering_frozen": false,
   "dev_calibration_runs": 0,
   "aa_timing_runs": 0,
@@ -56,5 +56,19 @@
     "all_stderr_read": true,
     "source_stable_in_attempt": true,
     "review_approved": false
+  },
+  "entry_source_git_commit": "37bfde7ccd58c45efdf249cdcd605fe2713965b0",
+  "entry_root_evidence": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_final_01/manifest.json",
+  "entry_root_result": {
+    "tests": 65,
+    "actual_child_processes": 32,
+    "actual_child_exits_zero": 32,
+    "all_stderr_OK": true,
+    "evidence_files_verified": 29258,
+    "evidence_mismatches": 0,
+    "current_sources_match_git_and_snapshot": true,
+    "parent_runner_exit": "UNOBSERVED_RETIRED_TOOL_SESSION",
+    "verification_reader_exit": 0,
+    "independent_review_approved": false
   }
 }
