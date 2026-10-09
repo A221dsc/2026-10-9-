@@ -13,7 +13,14 @@
     "pass": 99,
     "fail": 0,
     "skip": 0,
-    "modes": ["native", "debug", "owner", "diagnostic", "asan", "ubsan"],
+    "modes": [
+      "native",
+      "debug",
+      "owner",
+      "diagnostic",
+      "asan",
+      "ubsan"
+    ],
     "random_operations": 3000000,
     "all_complete_gates": true
   },
@@ -24,7 +31,11 @@
     "R0_R11": "NO_CHANGE"
   },
   "new_entry_red_evidence": "artifacts/analysis/red_entry_mf123_02/manifest.json",
-  "new_entry_red": {"tests": 4, "processes": 3, "all_exit_1_assertion_failures": true},
+  "new_entry_red": {
+    "tests": 4,
+    "processes": 3,
+    "all_exit_1_assertion_failures": true
+  },
   "new_entry_red_test_commit": "948802c",
   "entry_fix_review": "PENDING",
   "engineering_frozen": false,
@@ -35,5 +46,15 @@
   "selected_theta": null,
   "selected_h": null,
   "DEV_READY": false,
-  "FINAL_READY": false
+  "FINAL_READY": false,
+  "entry_candidate_version": "0233724",
+  "entry_candidate_evidence": "artifacts/analysis/green_complete_mf123_final_01/manifest.json",
+  "entry_candidate_result": {
+    "tests": 63,
+    "processes": 30,
+    "exit_zero": 30,
+    "all_stderr_read": true,
+    "source_stable_in_attempt": true,
+    "review_approved": false
+  }
 }

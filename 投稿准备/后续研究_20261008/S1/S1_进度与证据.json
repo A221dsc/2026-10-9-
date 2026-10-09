@@ -83,7 +83,16 @@
         "SX20",
         "SX21",
         "SX23"
-      ]
+      ],
+      "green_candidate": "artifacts/analysis/green_complete_mf123_final_01/manifest.json",
+      "green_candidate_version": "0233724",
+      "green_candidate_result": {
+        "tests": 63,
+        "processes": 30,
+        "exit_zero": 30,
+        "root_read_all_logs": true
+      },
+      "remaining": "Explicit same-selection identity cross-link, complete GREEN, independent specification and quality reviews"
     }
   ],
   "version_control": {
@@ -91,7 +100,8 @@
     "candidate_commit": "8b867c7",
     "branch": "s1-entry-hardening",
     "candidate_pushed": true,
-    "engineering_frozen": false
+    "engineering_frozen": false,
+    "latest_pushed_candidate": "0233724"
   },
   "calibration_runs": 0,
   "performance_runs": 0,
