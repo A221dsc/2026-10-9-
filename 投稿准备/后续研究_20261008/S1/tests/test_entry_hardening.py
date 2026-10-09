@@ -90,7 +90,7 @@ class HardeningSelection(unittest.TestCase):
             with self.subTest(field=field),self.assertRaises(ValueError):selection.verify_selection(bad,test_fixture=True)
     def test_saved_thresholds_are_recomputed(self):self.rejected_fields([('selected_theta',8),('selected_h',8192)])
     def test_saved_scores_are_recomputed(self):self.rejected_fields([('scores',dict.fromkeys(fx.METHODS,0.))])
-    def test_saved_bindings_are_recomputed(self):self.rejected_fields([('input_cache_sha',{}),('identity_bindings',{})])
+    def test_saved_bindings_are_recomputed(self):self.rejected_fields([('input_cache_sha',{}),('identity_bindings',{}),('matrix_interval',{'started_ns':0,'ended_ns':999})])
     def test_saved_rules_are_registered(self):self.rejected_fields([('objective','online'),('write_once',False)])
     def test_production_refuses_fixture_even_with_frozen_outer_bytes(self):
         root=scratch();p=root/'dev_selection.json';bad=copy.deepcopy(self.result);bad['test_fixture']=False;fx.write_json(p,bad)
@@ -245,6 +245,7 @@ class HardeningAA(unittest.TestCase):
                 self.assertEqual(out['gate_phase'],phase);self.assertEqual(out['gate_scope'],scope)
                 self.assertFalse(out['DEV_READY']);self.assertFalse(out['FINAL_READY'])
                 self.assertIsNone(out['selected_theta']);self.assertIsNone(out['selected_h'])
+                if scope=='final' and phase=='complete':self.assertIn('formal_matrix_inventory',out['missing_final_assets'])
         with self.assertRaises(ValueError):gate.readiness({}, {},phase='after-only')
         with self.assertRaises(ValueError):gate.readiness({}, {},scope='unknown')
 

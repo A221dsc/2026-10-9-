@@ -15,7 +15,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 import analysis_fixture as fx
 
 parser=argparse.ArgumentParser(); parser.add_argument('--red',choices=['gm','decision','selection','sidecar']);
-parser.add_argument('--case'); parser.add_argument('--fixture-output'); parser.add_argument('--scratch-output'); parser.add_argument('--prepare-batch',type=int); args,unittest_args=parser.parse_known_args()
+parser.add_argument('--case'); parser.add_argument('--fixture-output'); parser.add_argument('--fixture-source'); parser.add_argument('--scratch-output'); parser.add_argument('--prepare-batch',type=int); args,unittest_args=parser.parse_known_args()
 
 def scratch_temp():
     # Child processes inherit a restricted Windows temp ACL. Keep reversible
@@ -220,7 +220,7 @@ class Selection(unittest.TestCase):
                 for method in fx.METHODS:
                     total=300 if method.endswith('_8') else 200
                     online=1 if method.endswith('_8') else 100
-                    p=self.root/f'{case}-{seed}-{method}'/'pair_fixture.json'
+                    p=Path(args.fixture_source or self.root)/f'{case}-{seed}-{method}'/'pair_fixture.json'
                     if args.fixture_output:
                         self.assertTrue(p.exists(),f'missing preconstructed fixture {p}')
                         pairs.append(p)
@@ -246,13 +246,18 @@ class Selection(unittest.TestCase):
 class FixturePreparation(unittest.TestCase):
     def test_prepare_thirty_inputs(self):
         self.assertIn(args.prepare_batch,range(8));self.assertIsNotNone(args.fixture_output)
-        method=fx.METHODS[args.prepare_batch];root=Path(args.fixture_output)
+        method=fx.METHODS[args.prepare_batch];root=Path(args.fixture_source or args.fixture_output)
         created=[]
         for case in [f'D{i:02}' for i in range(1,11)]:
             for seed in [90001,90002,90003]:
                 total=300 if method.endswith('_8') else 200
                 online=1 if method.endswith('_8') else 100
-                p=fx.pair(root/f'{case}-{seed}-{method}',case,seed,method,total,online)
+                p=root/f'{case}-{seed}-{method}'/'pair_fixture.json'
+                if args.fixture_source:
+                    out=importlib.import_module('entry_gate').validate_pair(p,test_fixture=True)
+                    self.assertEqual((out['case_id'],out['seed'],out['candidate'],out['reference'],out['profile'],out['mode']),
+                                     (case,seed,method,'M_LIST','dev','native'))
+                else:p=fx.pair(p.parent,case,seed,method,total,online)
                 m=json.loads(p.read_text(encoding='utf-8'));self.assertEqual(len(m['children']),4)
                 self.assertTrue(m['test_fixture']);created.append((m['case_id'],m['seed']))
         self.assertEqual(set(created),{(f'D{i:02}',s) for i in range(1,11) for s in (90001,90002,90003)})

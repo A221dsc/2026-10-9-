@@ -182,7 +182,7 @@ def validate_pair(path,*,test_fixture=False,trust=None):
     require(meta['phase_q']==[p.get('q',meta['q']) for p in phases] and meta['phase_c']==[p.get('c',meta['c']) for p in phases],'phase q/c identity')
     require(sum(p['phase_query_count'] for p in phases)==meta['queries'] and sum(p['phase_returned'] for p in phases)==cache['returned'],'phase query sums')
     children=m['children'];require(len(children)==4 and len({c['path'] for c in children})==4,'whole pair requires four distinct children')
-    rows=[];previous_end=-1
+    rows=[];previous_end=-1;started_ns=None
     for i,(child,rotation) in enumerate(zip(children,schedule())):
         d=Path(child['path']);require(d.is_absolute() and not (d/'failure.json').exists(),'failure/invalid whole pair')
         required={'raw_native.csv','phase.csv','config.json','run_receipt.json','process.json','stdout.txt','stderr.txt'}
@@ -225,6 +225,7 @@ def validate_pair(path,*,test_fixture=False,trust=None):
         if not fixture:require(config_sha==trust['config_sha256'][method],'frozen config trust mismatch')
         process=load(d/'process.json');require(process['exit_code']==0 and process['order_index']==i,'process exit/order')
         require(previous_end<=process['started_ns']<process['ended_ns'],'serial process timing');previous_end=process['ended_ns']
+        if started_ns is None:started_ns=process['started_ns']
         expected_command=child_command(files['pin']['path'],files['binary']['path'],files['cache']['path'],files['cache']['sha256'],method,d,m['batch_id'],m['attempt_id'],m['pair_id'],rnd,role)
         require(process['command']==expected_command,'process command exact identity')
         require((d/'stdout.txt').read_text(encoding='utf-8')==f"verified {m['mode']} {method} valid\n" and not (d/'stderr.txt').read_bytes(),'success stdout/stderr evidence')
@@ -249,7 +250,8 @@ def validate_pair(path,*,test_fixture=False,trust=None):
     ratios={component:two_round_ratio([(rows[0][component+'_ns'],rows[1][component+'_ns']),
                                       (rows[3][component+'_ns'],rows[2][component+'_ns'])]) for component in ('build','online','total')}
     return {'rows':rows,'ratios':ratios,'manifest_sha256':sha(path),'case_id':m['case_id'],'seed':m['seed'],
-            'reference':m['reference'],'candidate':m['candidate'],'test_fixture':fixture,'profile':m['profile'],'mode':m['mode']}
+            'reference':m['reference'],'candidate':m['candidate'],'test_fixture':fixture,'profile':m['profile'],'mode':m['mode'],
+            'batch_id':m['batch_id'],'started_ns':started_ns,'ended_ns':previous_end}
 
 def can_resume(path,**kwargs):
     try:validate_pair(path,**kwargs);return True
@@ -314,6 +316,52 @@ def _native_config(entry,method,context,*,test_fixture):
                 and digest==selected['method_config_sha256'][method],'selected method binary/source/config identity')
     return config
 
+def _aa_pair_identity(pair,entry):
+    require(pair['profile']=='aa' and pair['mode']=='native' and pair['seed']==92001 and pair['case_id']==entry['case_id'],'AA pair input identity/native mode')
+    require(pair['reference']==pair['candidate']==entry['method'],'AA identical methods required')
+
+def _aa_order(aa,matrix):
+    interval=matrix['matrix_interval'];times=aa['timepoint_intervals']
+    require(aa['batch_id']==matrix['batch_id'],'AA/matrix batch identity')
+    require(times['before']['ended_ns']<=interval['started_ns']<interval['ended_ns']<=times['after']['started_ns'],'AA actual process order must enclose completed matrix')
+
+def _formal_matrix_shape(entries,selected):
+    pairs={'P01':('Original','M_LIST'),'P02':('M_LIST','M_OBSERVE_LIST'),'P03':('M_LIST','R6'),'P04':('M_OBSERVE_LIST','R6'),
+           'P05':('Original','R6'),'P06':(f"M_EVENT_{selected['selected_theta']}",'R6'),'P07':(f"M_FIXED_{selected['selected_h']}",'R6'),
+           'P08':('M_NO_IDLE','R6'),'DIA01':('M_EVENT_16','R6'),'DIA02':('M_FIXED_128','R6')}
+    expected={(f'F{i:02}',s,p) for i in range(1,8) for s in range(91001,91011) for p in pairs}
+    keys=[(e.get('case_id'),e.get('seed'),e.get('pair_id')) for e in entries]
+    paths=[str(Path(e['pair_path']).resolve()) for e in entries]
+    require(len(keys)==700 and set(keys)==expected and len(set(paths))==700,'complete unique formal 700-pair matrix required')
+    return pairs
+
+def verify_formal_matrix(path,*,test_fixture=False,trust=None):
+    """Read the full frozen 560 primary + 140 diagnostic completed pair set."""
+    if not test_fixture:require(trust is not None and trust.get('sha256')==sha(path),'external formal completion freeze required')
+    r=load(path)
+    require(r.get('schema')=='S1.entry.asset.v1' and r.get('asset')=='formal_matrix_inventory'
+            and r.get('test_fixture') is test_fixture and r.get('status')=='COMPLETE','formal completion schema/fixture boundary')
+    from select_dev import verify_selection
+    bound=_file_binding(r['selection']);selected=verify_selection(bound['path'],test_fixture=test_fixture,trust=(trust or {}).get('selection_trust'))
+    pairs=_formal_matrix_shape(r['entries'],selected);locks={};cells={};inputs={};starts=[];ends=[]
+    for e in r['entries']:
+        p=str(Path(e['pair_path']).resolve());binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(p)
+        out=validate_pair(p,test_fixture=test_fixture,trust=binding)
+        require((out['profile'],out['mode'],out['case_id'],out['seed'],out['reference'],out['candidate'])==
+                ('final','native',e['case_id'],e['seed'],*pairs[e['pair_id']]),'formal completed pair identity')
+        require(out['batch_id']==r['batch_id'],'formal same completed batch')
+        cache=out['rows'][0]['cache_sha'];key=(e['case_id'],e['seed'])
+        require(inputs.setdefault(key,cache)==cache,'formal pairs must share identical input bytes')
+        for row in out['rows']:
+            require(row['binary_sha']==selected['native_binary_sha256'] and row['source_bundle_sha']==selected['source_bundle_sha']
+                    and row['protocol_sha']==selected['protocol_sha256'],'formal/dev frozen binary/source/protocol identity')
+            if row['method'] in selected['method_config_sha256']:
+                require(row['config_sha']==selected['method_config_sha256'][row['method']],'formal selected/diagnostic config identity')
+        locks[p]=out['manifest_sha256'];cells[f"{e['case_id']}:{e['seed']}:{e['pair_id']}"]=p
+        starts.append(out['started_ns']);ends.append(out['ended_ns'])
+    return {'batch_id':r['batch_id'],'matrix_interval':{'started_ns':min(starts),'ended_ns':max(ends)},
+            'pair_manifest_sha':locks,'matrix_cells':cells,'manifest_sha256':sha(path)}
+
 def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=None,phase='start'):
     require(phase in ('start','complete'),'entry gate phase must be start or complete')
     require(receipt.get('schema')=='S1.entry.asset.v1' and receipt.get('asset')==name,'entry asset schema/identity')
@@ -345,14 +393,16 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
                 and len(receipt['environment_sha256'])==64,'AA batch/environment identity required')
         if context is not None:
             require(receipt['environment_sha256']==context.get('fresh_environment_receipt',{}).get('sha256'),'AA current environment identity')
-        pair_ids=set();rows=[]
+        pair_ids=set();rows=[];intervals={t:{'started_ns':None,'ended_ns':None} for t in timepoints}
         for e in entries:
             binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(str(Path(e['pair_path']).resolve()))
             pair=validate_pair(e['pair_path'],test_fixture=test_fixture,trust=binding)
-            require(pair['profile']=='aa' and pair['mode']=='native' and pair['seed']==92001 and pair['case_id']==e['case_id'],'AA pair input identity')
-            require(pair['reference']==pair['candidate']==e['method'],'AA identical methods required')
+            _aa_pair_identity(pair,e)
             require(e.get('batch_id')==receipt['batch_id'] and all(r['batch_id']==receipt['batch_id'] for r in pair['rows']),'AA same batch required')
             pid=pair['rows'][0]['pair_id'];require(pid not in pair_ids,'AA blocks need independent pair IDs');pair_ids.add(pid)
+            interval=intervals[e['timepoint']]
+            interval['started_ns']=pair['started_ns'] if interval['started_ns'] is None else min(interval['started_ns'],pair['started_ns'])
+            interval['ended_ns']=pair['ended_ns'] if interval['ended_ns'] is None else max(interval['ended_ns'],pair['ended_ns'])
             for r in pair['rows']:
                 rows.append({'timepoint':e['timepoint'],'method':e['method'],'case_id':e['case_id'],'seed':92001,
                              'block':e['block'],'round':int(r['round']),'role':r['role'],'status':'valid',
@@ -362,7 +412,11 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
             from analysis import aa_floor
             observed=aa_floor(rows,scope)
             require(receipt.get('observed_floor')==observed,'AA observed floor identity')
-        return {'phase':phase,'observed_floor':observed,'rows':rows,'batch_id':receipt['batch_id']}
+        out={'phase':phase,'observed_floor':observed,'rows':rows,'batch_id':receipt['batch_id'],'timepoint_intervals':intervals}
+        if scope=='final' and phase=='complete' and not test_fixture:
+            matrix=(context or {}).get('formal_matrix_inventory',{}).get('verified')
+            require(matrix is not None,'complete full formal matrix required before final AA interpretation');_aa_order(out,matrix)
+        return out
     elif name=='frozen_binaries':
         frozen=verify_driver(S1/'artifacts/driver/green_review_fixes_root_01/manifest.json')
         require(receipt.get('source_bundle_sha')==frozen['source_bundle_sha'],'entry frozen source bundle')
@@ -384,6 +438,9 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
         require(trust is not None and trust.get('path'),'externally frozen selection asset required')
         require(load(trust['path'])==receipt,'selection receipt/file identity')
         return verify_selection(trust['path'],trust=trust)
+    elif name=='formal_matrix_inventory':
+        require(trust is not None and trust.get('path'),'frozen full formal matrix file required')
+        return verify_formal_matrix(trust['path'],test_fixture=test_fixture,trust=trust)
     elif name=='selected_configs':
         ctx=_context_binding(receipt,context,('dev_selection','frozen_binaries','protocol_and_sources'),test_fixture=test_fixture)
         selected=_selected_identity(ctx,test_fixture=test_fixture)
@@ -475,19 +532,26 @@ def _dev_completion_identity(context,*,test_fixture=False):
     traces=context['dev_trace_inventory']['receipt']['entries']
     actual={f"{e['case_id']}:{e['seed']}":sha(e['cache_path']) for e in traces}
     require(selected['input_cache_sha']==actual,'selection/historical dev input identity')
+    if not test_fixture or context.get('enforce_timing'):
+        _aa_order(aa,{'batch_id':aa['batch_id'],'matrix_interval':selected['matrix_interval']})
     return {'batch_id':aa['batch_id'],'observed_floor':aa['observed_floor']}
 
 def verify_complete_aa(path,*,test_fixture=False,trust=None):
     """Production final interpretation consumes frozen full formal AA evidence."""
-    context=None
+    context=None;matrix=None
     if not test_fixture:
         require(trust is not None and trust.get('sha256')==sha(path),'external complete AA inventory freeze required')
         environment=_file_binding(trust.get('environment',{}));r=verify_environment(environment['path'],max_age_seconds=None)
-        context={'fresh_environment_receipt':{'sha256':environment['sha256'],'receipt':r}}
+        bound=_file_binding(trust.get('matrix',{}));matrix_trust=(trust or {}).get('matrix_trust')
+        require(matrix_trust is not None and matrix_trust.get('sha256')==bound['sha256'],'external full formal matrix trust required')
+        matrix=verify_formal_matrix(bound['path'],trust=matrix_trust)
+        context={'fresh_environment_receipt':{'sha256':environment['sha256'],'receipt':r},'formal_matrix_inventory':{'verified':matrix}}
+    elif trust and trust.get('test_matrix') is not None:matrix=trust['test_matrix']
     receipt=load(path)
     if not test_fixture:require(receipt.get('validated') is True and receipt.get('protocol_sha256')==sha(PROTOCOL),'validated registered AA inventory required')
     out=_inventory_identity('formal_aa_inventory',receipt,test_fixture=test_fixture,trust=trust,context=context,phase='complete')
-    return {**out,'manifest_sha256':sha(path)}
+    if matrix is not None:_aa_order(out,matrix)
+    return {**out,'manifest_sha256':sha(path),'matrix':matrix}
 
 def readiness(correctness,assets,*,asset_trust=None,phase='start',scope='dev'):
     require(phase in ('start','complete'),'entry gate phase must be start or complete')
@@ -495,6 +559,7 @@ def readiness(correctness,assets,*,asset_trust=None,phase='start',scope='dev'):
     complete=all(correctness.get(k) is True for k in ('kernel','driver','analysis'))
     dev_required=['fresh_environment_receipt','frozen_binaries','protocol_and_sources','dev_trace_inventory','dev_aa_inventory','start_manifest']
     final_required=['dev_environment_receipt','dev_selection','selected_configs','formal_trace_inventory','formal_aa_inventory','final_start_manifest']
+    if phase=='complete':final_required.insert(4,'formal_matrix_inventory')
     missing_dev=[x for x in dev_required if not assets.get(x)]
     missing_final=[x for x in final_required if not assets.get(x)]
     environment=False

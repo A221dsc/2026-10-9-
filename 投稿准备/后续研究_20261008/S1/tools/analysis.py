@@ -139,6 +139,10 @@ def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=F
         if out['case_id']!=case or out['profile']!='final' or out['mode']!='native' or (out['reference'],out['candidate'])!=methods[pair] or out['seed'] in by_seed:
             raise ValueError('final input/pair identity duplicate or mismatch')
         if aa is not None and any(row['batch_id']!=aa['batch_id'] for row in out['rows']):raise ValueError('final pair/AA batch mismatch')
+        if aa is not None and aa.get('matrix') is not None:
+            matrix=aa['matrix'];p=str(Path(path).resolve());key=f'{case}:{out["seed"]}:{pair}'
+            if matrix['matrix_cells'].get(key)!=p or matrix['pair_manifest_sha'].get(p)!=out['manifest_sha256']:
+                raise ValueError('final cell absent from frozen complete formal matrix')
         by_seed[out['seed']]=out['ratios'][component];locks[str(Path(path).resolve())]=out['manifest_sha256']
     if set(by_seed)!=set(range(91001,91011)):raise ValueError('all ten registered final seeds required')
     return {**summarize([by_seed[s] for s in sorted(by_seed)],pair,case,component,aa_log_floor),

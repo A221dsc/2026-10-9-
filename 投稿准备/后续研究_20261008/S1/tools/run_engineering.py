@@ -44,6 +44,23 @@ def run(args):
     require_python=sha(sys.executable)
     if require_python!=PYTHON_SHA:raise ValueError('frozen Python required')
     out=S1/'artifacts'/'analysis'/args.tag;out.mkdir(parents=True,exist_ok=False)
+    fixture_reuse=None
+    if args.fixture_source:
+        origin=Path(args.fixture_source).resolve();allowed=(S1/'artifacts/analysis').resolve()
+        if not origin.is_relative_to(allowed) or origin.name!='dev_fixture':raise ValueError('fixture source must be retained workspace dev_fixture')
+        original=load(origin.parent/'manifest.json')
+        if original.get('status')!='ENGINEERING_GREEN' or original.get('test_fixture') is not True:raise ValueError('complete engineering fixture provenance required')
+        for i in range(8):
+            process=load(origin.parent/f'Prepare{i}.process.json')
+            if process['exit_code']!=0:raise ValueError('eight successful fixture preparation processes required')
+        referenced=0
+        for name,digest in original['evidence_sha256'].items():
+            if Path(name).parts[0]=='dev_fixture':
+                if sha(origin.parent/name)!=digest:raise ValueError('retained fixture evidence byte mismatch')
+                referenced+=1
+        if not referenced:raise ValueError('retained fixture byte evidence required')
+        fixture_reuse={'path':str(origin),'manifest_sha256':sha(origin.parent/'manifest.json'),'test_fixture':True,'read_only':True,'referenced_files_verified':referenced}
+        (out/'dev_fixture').mkdir()
     source={}
     for name in NEW_FILES:
         p=S1/name;q=out/'source'/name;q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q);source[name]=sha(p)
@@ -63,6 +80,8 @@ def run(args):
         else:
             command+=['--red' if args.task=='red' else '--case',case]
             if case=='Selection' or ((case.startswith('HardeningSelection.') or case=='HardeningHistory') and args.task=='fixtures'):command+=['--fixture-output',str(out/'dev_fixture')]
+        if fixture_reuse and (case.startswith('Prepare') or case=='Selection' or case.startswith('HardeningSelection.') or case=='HardeningHistory'):
+            command+=['--fixture-source',fixture_reuse['path']]
         process={'command':command,'cwd':str(S1),'started_ns':time.time_ns(),'timeout_seconds':55,'test_fixture':True}
         try:
             result=subprocess.run(command,cwd=S1,capture_output=True,timeout=55,env={**os.environ,'PYTHONUTF8':'1','PYTHONDONTWRITEBYTECODE':'1'})
@@ -92,7 +111,7 @@ def run(args):
     manifest={'schema':'S1.analysis.engineering.v1','tag':args.tag,'task':args.task,
               'status':'EXPECTED_BEHAVIOR_RED' if good and args.task in ('red','red-entry') else 'ENGINEERING_GREEN' if good else 'ENGINEERING_FAILED',
               'test_fixture':True,'source_sha256':source,'s0_sha256':s0,'python_sha256':require_python,
-              'commands':commands,'test_count':tests,'evidence_sha256':evidence,
+              'commands':commands,'test_count':tests,'evidence_sha256':evidence,'fixture_reuse':fixture_reuse,
               'source_snapshot_unchanged':good,'experiment_runs':0,'dev_calibration_runs':0,'aa_timing_runs':0,
               'formal_timing_runs':0,'mechanism_runs':0,'latency_matrix_runs':0,'resource_matrix_runs':0,
               'DEV_READY':False,'FINAL_READY':False,'selected_theta':None,'selected_h':None}
