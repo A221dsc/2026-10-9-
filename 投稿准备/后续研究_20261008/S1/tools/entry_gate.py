@@ -262,7 +262,7 @@ def verify_environment(receipt,*,now_ns=None,max_age_seconds=300):
               'retry_seconds':2,'max_wait_seconds':300,'max_busy_fraction':.1,'status':'valid'}
     for key,value in required.items():require(r.get(key)==value,'fresh real environment receipt missing/invalid')
     now_ns=time.time_ns() if now_ns is None else now_ns
-    require(0<=now_ns-r['ended_ns']<=max_age_seconds*1e9,'environment receipt stale')
+    require(0<=now_ns-r['ended_ns'] and (max_age_seconds is None or now_ns-r['ended_ns']<=max_age_seconds*1e9),'environment receipt stale')
     require(r['started_ns']<r['ended_ns'] and r['samples'],'environment measurements missing')
     for sample in r['samples']:
         require(sample['seconds']>=.2 and 0<=sample['busy_fraction']<=1,'quiet sample invalid')
@@ -271,8 +271,54 @@ def verify_environment(receipt,*,now_ns=None,max_age_seconds=300):
         require(sha(r[name+'_path'])==r[name+'_sha256'],'environment tool byte mismatch')
     return r
 
-def _inventory_identity(name,receipt):
+def _file_binding(binding):
+    require(isinstance(binding,dict) and Path(binding.get('path','')).is_absolute(),'absolute bound file required')
+    require(sha(binding['path'])==binding.get('sha256'),'entry bound file bytes')
+    return binding
+
+def _context_binding(receipt,context,names,*,test_fixture):
+    context=context or {}
+    require(set(receipt.get('bindings',{}))==set(names),'complete cross-asset bindings required')
+    for name in names:
+        require(name in context,'validated dependency absent: '+name)
+        frozen=context[name];bound=_file_binding(receipt['bindings'][name])
+        require(Path(bound['path']).resolve()==Path(frozen['path']).resolve() and bound['sha256']==frozen['sha256'],'cross-asset frozen identity')
+        require(load(bound['path'])==frozen['receipt'],'cross-asset receipt bytes')
+        require(frozen['receipt'].get('test_fixture') is test_fixture,'cross-asset fixture boundary')
+    return context
+
+def _selected_identity(context,*,test_fixture):
+    frozen=(context or {}).get('dev_selection',{})
+    selected=frozen.get('verified')
+    if test_fixture and selected is None:selected=frozen.get('receipt')
+    require(isinstance(selected,dict) and selected.get('selected_theta') in (8,16,32,64)
+            and selected.get('selected_h') in (128,512,2048,8192),'validated dev selection dependency required')
+    return selected
+
+def _native_config(entry,method,context,*,test_fixture):
+    require(entry.get('mode')=='native' and entry.get('protocol_sha256')==sha(PROTOCOL),'native/protocol plan identity')
+    source=context['protocol_and_sources']['receipt'];binaries=context['frozen_binaries']['receipt']
+    require(entry.get('source_bundle_sha')==source['source_bundle_sha']==binaries['source_bundle_sha'],'plan source identity')
+    binary=_file_binding(entry['binary'])
+    native=[e for e in binaries['entries'] if e['name']=='s1_native.exe']
+    require(len(native)==1,'one frozen native binary required')
+    frozen=_file_binding(native[0])
+    require(Path(binary['path']).resolve()==Path(frozen['path']).resolve() and binary['sha256']==frozen['sha256'],'plan frozen native binary')
+    config=_file_binding(entry['config']);logical,digest=_config_logical(config['path']);obj=load(config['path'])
+    credit='event' if method.startswith('M_EVENT_') else 'none' if method.startswith('M_FIXED_') else 'NA' if method in ('Original','M_LIST') else 'ns'
+    require(obj=={'schema':'S1.method.v1','method':method,'mode':'native','credit_unit':credit,'frozen_R6':source['frozen_R6']},'plan full method/parameter config')
+    require(config.get('logical_sha256')==digest,'plan config logical SHA')
+    if not test_fixture and method.startswith(('M_EVENT_','M_FIXED_')) and 'dev_selection' in context:
+        selected=_selected_identity(context,test_fixture=False)
+        require(binary['sha256']==selected['native_binary_sha256'] and entry['source_bundle_sha']==selected['source_bundle_sha']
+                and digest==selected['method_config_sha256'][method],'selected method binary/source/config identity')
+    return config
+
+def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=None,phase='start'):
+    require(phase in ('start','complete'),'entry gate phase must be start or complete')
     require(receipt.get('schema')=='S1.entry.asset.v1' and receipt.get('asset')==name,'entry asset schema/identity')
+    require(receipt.get('test_fixture') is test_fixture,'entry fixture/production boundary')
+    if test_fixture:require(receipt.get('origin','').startswith('ENGINEERING_FIXTURE'),'entry fixture origin')
     entries=receipt.get('entries',[])
     if name in ('dev_trace_inventory','formal_trace_inventory'):
         cases=[f'D{i:02}' for i in range(1,11)] if name=='dev_trace_inventory' else [f'F{i:02}' for i in range(1,8)]
@@ -281,45 +327,108 @@ def _inventory_identity(name,receipt):
         keys=[(e['case_id'],e['seed']) for e in entries]
         require(len(keys)==len(expected) and set(keys)==expected,'trace inventory missing/duplicate/identity')
         for e in entries:
-            cache=cache_identity(e['cache_path'],e['expected_path']);meta=load(e['metadata_path'])
-            require(meta['case_id']==e['case_id'] and meta['seed']==e['seed'] and meta['engineering_only'] is False,'real trace identity')
+            cache=cache_identity(e['cache_path'],e['expected_path'],test_fixture);meta=load(e['metadata_path'])
+            require(meta['case_id']==e['case_id'] and meta['seed']==e['seed'] and meta['engineering_only'] is test_fixture,'trace fixture/input identity')
             for k in ('N','U','queries','API_calls','seed','domain','dataset_sha','protocol_sha'):
                 require(meta[k]==cache[k],'real trace cache/meta identity')
             require(meta['cache_sha']==sha(e['cache_path']) and meta['expected_sha']==sha(e['expected_path']),'real trace byte identity')
             require(meta['initial_sha']==_record_sha(cache['initial']) and meta['final_sha']==_record_sha(cache['final']),'real trace initial/final identity')
-            _registered_cache(meta,cache)
+            if not test_fixture:_registered_cache(meta,cache)
     elif name in ('dev_aa_inventory','formal_aa_inventory'):
         scope='dev' if name=='dev_aa_inventory' else 'final'
         methods,cases=(('M_LIST','M_EVENT_16'),('D02','D06')) if scope=='dev' else (('Original','M_LIST','R6'),('F01','F03','F06'))
-        expected={(t,m,c,b) for t in ('before','after') for m in methods for c in cases for b in range(1,6)}
+        timepoints=('before',) if phase=='start' else ('before','after')
+        expected={(t,m,c,b) for t in timepoints for m in methods for c in cases for b in range(1,6)}
         keys=[(e['timepoint'],e['method'],e['case_id'],e['block']) for e in entries]
         require(len(keys)==len(expected) and set(keys)==expected,'AA inventory missing/duplicate/identity')
+        require(bool(receipt.get('batch_id')) and isinstance(receipt.get('environment_sha256'),str)
+                and len(receipt['environment_sha256'])==64,'AA batch/environment identity required')
+        if context is not None:
+            require(receipt['environment_sha256']==context.get('fresh_environment_receipt',{}).get('sha256'),'AA current environment identity')
         pair_ids=set();rows=[]
         for e in entries:
-            pair=validate_pair(e['pair_path'],trust=e['trust'])
-            require(pair['profile']=='aa' and pair['seed']==92001 and pair['case_id']==e['case_id'],'AA pair input identity')
+            binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(str(Path(e['pair_path']).resolve()))
+            pair=validate_pair(e['pair_path'],test_fixture=test_fixture,trust=binding)
+            require(pair['profile']=='aa' and pair['mode']=='native' and pair['seed']==92001 and pair['case_id']==e['case_id'],'AA pair input identity')
             require(pair['reference']==pair['candidate']==e['method'],'AA identical methods required')
+            require(e.get('batch_id')==receipt['batch_id'] and all(r['batch_id']==receipt['batch_id'] for r in pair['rows']),'AA same batch required')
             pid=pair['rows'][0]['pair_id'];require(pid not in pair_ids,'AA blocks need independent pair IDs');pair_ids.add(pid)
             for r in pair['rows']:
                 rows.append({'timepoint':e['timepoint'],'method':e['method'],'case_id':e['case_id'],'seed':92001,
                              'block':e['block'],'round':int(r['round']),'role':r['role'],'status':'valid',
                              **{c:int(r[c+'_ns']) for c in ('build','online','total')}})
-        from analysis import aa_floor
-        require(receipt.get('observed_floor')==aa_floor(rows,scope),'AA observed floor identity')
+        observed=None
+        if phase=='complete':
+            from analysis import aa_floor
+            observed=aa_floor(rows,scope)
+            require(receipt.get('observed_floor')==observed,'AA observed floor identity')
+        return {'phase':phase,'observed_floor':observed,'rows':rows,'batch_id':receipt['batch_id']}
     elif name=='frozen_binaries':
         frozen=verify_driver(S1/'artifacts/driver/green_review_fixes_root_01/manifest.json')
         require(receipt.get('source_bundle_sha')==frozen['source_bundle_sha'],'entry frozen source bundle')
         actual={e['name']:sha(e['path']) for e in entries}
+        require(len(actual)==len(entries),'frozen binary identities must be unique')
         require(actual=={k:v for k,v in frozen['binary_sha'].items() if k.startswith('s1_')},'three frozen production binaries required')
     elif name=='protocol_and_sources':
         require(receipt.get('source_bundle_sha')==verify_driver(S1/'artifacts/driver/green_review_fixes_root_01/manifest.json')['source_bundle_sha'],'entry source bundle')
+        frozen=load(S1/'artifacts/driver/green_review_fixes_root_01/native_cli/R6/config.json')['frozen_R6']
+        require(receipt.get('frozen_R6')==frozen,'registered frozen parameters required')
     elif name=='dev_selection':
-        require(receipt.get('selected_theta') in (8,16,32,64) and receipt.get('selected_h') in (128,512,2048,8192),'dev selection thresholds')
-        require(receipt.get('inputs')==30 and receipt.get('children')==960 and len(receipt.get('pair_manifest_sha',{}))==240,'full dev selection evidence')
-        for path,digest in receipt['pair_manifest_sha'].items():require(sha(path)==digest,'dev selection pair bytes')
-    elif name in ('start_manifest','final_start_manifest','selected_configs'):
-        require(entries,'start/selected configuration identities required')
+        from select_dev import verify_selection
+        if 'selection' in receipt:
+            bound=_file_binding(receipt['selection'])
+            selection_trust={'sha256':(trust or {}).get('selection_sha256'),'pair_trust':(trust or {}).get('pair_trust')}
+            if not test_fixture:require(bound['sha256']==selection_trust['sha256'],'external write-once selection freeze required')
+            return verify_selection(bound['path'],test_fixture=test_fixture,trust=selection_trust)
+        if test_fixture:return verify_selection(receipt,test_fixture=True)
+        require(trust is not None and trust.get('path'),'externally frozen selection asset required')
+        require(load(trust['path'])==receipt,'selection receipt/file identity')
+        return verify_selection(trust['path'],trust=trust)
+    elif name=='selected_configs':
+        ctx=_context_binding(receipt,context,('dev_selection','frozen_binaries','protocol_and_sources'),test_fixture=test_fixture)
+        selected=_selected_identity(ctx,test_fixture=test_fixture)
+        theta,h=selected['selected_theta'],selected['selected_h'];methods={f'M_EVENT_{theta}',f'M_FIXED_{h}'}
+        require(len(entries)==2 and {e.get('method') for e in entries}==methods,'two selected method configs required')
+        for e in entries:
+            method=e['method'];require(e.get('schema')=='S1.selected.config.v1','selected entry schema')
+            require(e.get('selected_theta')==(theta if method.startswith('M_EVENT_') else None)
+                    and e.get('selected_h')==(h if method.startswith('M_FIXED_') else None),'selected threshold mismatch')
+            _native_config(e,method,ctx,test_fixture=test_fixture)
+    elif name in ('start_manifest','final_start_manifest'):
+        formal=name=='final_start_manifest';profile='final' if formal else 'dev'
+        trace_name='formal_trace_inventory' if formal else 'dev_trace_inventory';aa_name='formal_aa_inventory' if formal else 'dev_aa_inventory'
+        dependencies=('frozen_binaries','protocol_and_sources',trace_name,aa_name,'fresh_environment_receipt')+(('dev_selection','selected_configs') if formal else ())
+        ctx=_context_binding(receipt,context,dependencies,test_fixture=test_fixture)
+        require(receipt.get('status')=='NOT_RUN' and receipt.get('profile')==profile and bool(receipt.get('batch_id')),'unexecuted start batch/profile required')
+        aa=ctx[aa_name]['receipt']
+        require(aa['batch_id']==receipt['batch_id'] and aa['environment_sha256']==ctx['fresh_environment_receipt']['sha256'],'start AA batch/environment binding')
+        traces={(e['case_id'],e['seed']):e for e in ctx[trace_name]['receipt']['entries']}
+        inputs={(f'F{i:02}',s) for i in range(1,8) for s in range(91001,91011)} if formal else {(f'D{i:02}',s) for i in range(1,11) for s in range(90001,90004)}
+        require(len(ctx[trace_name]['receipt']['entries'])==len(inputs) and set(traces)==inputs,'start complete input inventory')
+        if formal:
+            selected=_selected_identity(ctx,test_fixture=test_fixture)
+            pairs={'P01':('Original','M_LIST'),'P02':('M_LIST','M_OBSERVE_LIST'),'P03':('M_LIST','R6'),'P04':('M_OBSERVE_LIST','R6'),
+                   'P05':('Original','R6'),'P06':(f"M_EVENT_{selected['selected_theta']}",'R6'),'P07':(f"M_FIXED_{selected['selected_h']}",'R6'),
+                   'P08':('M_NO_IDLE','R6'),'DIA01':('M_EVENT_16','R6'),'DIA02':('M_FIXED_128','R6')}
+        else:
+            from select_dev import CANDIDATES
+            pairs={m:('M_LIST',m) for m in CANDIDATES}
+        expected={(c,s,p) for c,s in inputs for p in pairs};keys=[(e.get('case_id'),e.get('seed'),e.get('pair_id')) for e in entries]
+        require(len(keys)==len(expected) and set(keys)==expected,'start complete unique pair plan required')
+        for e in entries:
+            require(e.get('schema')=='S1.start.pair.v1' and e.get('status')=='NOT_RUN' and e.get('children')==4
+                    and e.get('batch_id')==receipt['batch_id'] and e.get('profile')==profile,'start entry schema/batch/unexecuted status')
+            reference,candidate=pairs[e['pair_id']]
+            require((e.get('reference'),e.get('candidate'))==(reference,candidate),'start registered pair methods')
+            trace=traces[e['case_id'],e['seed']]
+            require(set(e.get('input',{}))=={'cache','expected','meta'},'start input files required')
+            for name,key in (('cache','cache_path'),('expected','expected_path'),('meta','metadata_path')):
+                binding=_file_binding(e['input'][name])
+                require(Path(binding['path']).resolve()==Path(trace[key]).resolve() and binding['sha256']==sha(trace[key]),'start trace identity')
+            require(set(e.get('configs',{}))=={reference,candidate},'start method configs required')
+            for method,binding in e['configs'].items():_native_config({**e,'config':binding},method,ctx,test_fixture=test_fixture)
     else:raise ValueError('unknown entry asset')
+    return receipt
 
 def _registered_cache(meta,cache):
     protocol=load(PROTOCOL);case=meta['case_id'];seed=meta['seed'];profile=meta['profile']
@@ -355,45 +464,104 @@ def _registered_cache(meta,cache):
     require(cache['domain']==({'stride':2964618,'span':2678400} if public else {'stride':1<<40,'span':4096}),'registered domain identity')
     if public:require(sha(protocol['dataset']['path'])==protocol['dataset']['sha256'],'frozen public dataset bytes')
 
-def readiness(correctness,assets,*,asset_trust=None):
+def _dev_completion_identity(context,*,test_fixture=False):
+    """Keep historical dev completion and its AA floor separate from final AA."""
+    selected=_selected_identity(context,test_fixture=test_fixture)
+    aa=context.get('dev_aa_inventory',{}).get('verified',{})
+    start=context.get('start_manifest',{}).get('receipt',{})
+    require(aa.get('phase')=='complete' and aa.get('observed_floor') is not None,'dev after AA required before formal entry')
+    require(start.get('batch_id')==aa.get('batch_id') and context['dev_aa_inventory']['receipt']['environment_sha256']==context['fresh_environment_receipt']['sha256'],'historical dev batch/environment identity')
+    require(all(v['batch_id']==aa['batch_id'] for v in selected['identity_bindings'].values()),'selection/historical dev batch identity')
+    traces=context['dev_trace_inventory']['receipt']['entries']
+    actual={f"{e['case_id']}:{e['seed']}":sha(e['cache_path']) for e in traces}
+    require(selected['input_cache_sha']==actual,'selection/historical dev input identity')
+    return {'batch_id':aa['batch_id'],'observed_floor':aa['observed_floor']}
+
+def verify_complete_aa(path,*,test_fixture=False,trust=None):
+    """Production final interpretation consumes frozen full formal AA evidence."""
+    context=None
+    if not test_fixture:
+        require(trust is not None and trust.get('sha256')==sha(path),'external complete AA inventory freeze required')
+        environment=_file_binding(trust.get('environment',{}));r=verify_environment(environment['path'],max_age_seconds=None)
+        context={'fresh_environment_receipt':{'sha256':environment['sha256'],'receipt':r}}
+    receipt=load(path)
+    if not test_fixture:require(receipt.get('validated') is True and receipt.get('protocol_sha256')==sha(PROTOCOL),'validated registered AA inventory required')
+    out=_inventory_identity('formal_aa_inventory',receipt,test_fixture=test_fixture,trust=trust,context=context,phase='complete')
+    return {**out,'manifest_sha256':sha(path)}
+
+def readiness(correctness,assets,*,asset_trust=None,phase='start',scope='dev'):
+    require(phase in ('start','complete'),'entry gate phase must be start or complete')
+    require(scope in ('dev','final'),'entry gate scope must be dev or final')
     complete=all(correctness.get(k) is True for k in ('kernel','driver','analysis'))
     dev_required=['fresh_environment_receipt','frozen_binaries','protocol_and_sources','dev_trace_inventory','dev_aa_inventory','start_manifest']
-    final_required=['dev_selection','selected_configs','formal_trace_inventory','formal_aa_inventory','final_start_manifest']
+    final_required=['dev_environment_receipt','dev_selection','selected_configs','formal_trace_inventory','formal_aa_inventory','final_start_manifest']
     missing_dev=[x for x in dev_required if not assets.get(x)]
     missing_final=[x for x in final_required if not assets.get(x)]
     environment=False
+    context={}
+    asset_trust=asset_trust or {}
+    def environment_asset(name,fresh):
+        path=assets.get(name);external=asset_trust.get(name)
+        digest=external.get('sha256') if isinstance(external,dict) else external
+        require(isinstance(path,(str,Path)) and sha(path)==digest,'environment external freeze required')
+        r=verify_environment(path,max_age_seconds=300 if fresh else None)
+        return {'path':str(path),'sha256':digest,'receipt':r}
     if assets.get('fresh_environment_receipt'):
         try:
-            require(isinstance(assets['fresh_environment_receipt'],(str,Path)) and sha(assets['fresh_environment_receipt'])==(asset_trust or {}).get('fresh_environment_receipt'),'environment external freeze required')
-            verify_environment(assets['fresh_environment_receipt']);environment=True
+            context['fresh_environment_receipt']=environment_asset('fresh_environment_receipt',phase=='start');environment=True
         except (ValueError,KeyError):
             if 'fresh_environment_receipt' not in missing_dev:missing_dev.append('fresh_environment_receipt')
     # A caller must independently freeze each validated inventory's bytes. Merely
     # passing {validated:true}, or a self-contained invented SHA, never opens a gate.
-    asset_trust=asset_trust or {}
-    for name in dev_required[1:]+final_required:
+    historical_context={}
+    if scope=='final' and assets.get('dev_environment_receipt'):
+        try:
+            historical_context['fresh_environment_receipt']=environment_asset('dev_environment_receipt',False)
+            if 'dev_environment_receipt' in missing_final:missing_final.remove('dev_environment_receipt')
+        except (ValueError,KeyError,TypeError):
+            if 'dev_environment_receipt' not in missing_final:missing_final.append('dev_environment_receipt')
+    inventories=dev_required[1:]+(final_required[1:] if scope=='final' else [])
+    for name in inventories:
         valid=False
         if isinstance(assets.get(name),dict):
             a=assets[name]
             if a.get('path') and asset_trust.get(name):
                 try:
-                    valid=sha(a['path'])==asset_trust[name]
+                    external=asset_trust[name]
+                    frozen={**external} if isinstance(external,dict) else {'sha256':external}
+                    frozen['path']=a['path']
+                    valid=sha(a['path'])==frozen.get('sha256')
                     receipt=load(a['path'])
                     valid=valid and receipt.get('validated') is True and receipt.get('test_fixture') is False
                     valid=valid and receipt.get('protocol_sha256')==sha(PROTOCOL)
                     for bound in receipt.get('files',[]):valid=valid and sha(bound['path'])==bound['sha256']
                     valid=valid and bool(receipt.get('files'))
-                    if valid:_inventory_identity(name,receipt)
+                    if valid:
+                        historical=scope=='final' and name in ('dev_trace_inventory','dev_aa_inventory','start_manifest')
+                        current_context={**context,**historical_context} if historical else context
+                        verified=_inventory_identity(name,receipt,trust=frozen,context=current_context,phase='complete' if historical else phase)
+                        context[name]={'path':str(a['path']),'sha256':frozen['sha256'],'receipt':receipt,'verified':verified}
+                        if historical:historical_context[name]=context[name]
                 except (ValueError,KeyError,TypeError):valid=False
         if name in assets and not valid:
             target=missing_dev if name in dev_required else missing_final
             if name not in target:target.append(name)
     dev=complete and environment and not missing_dev
-    selection=load(assets['dev_selection']['path']) if dev and not missing_final else {}
+    dev_floor=None
+    if scope=='final':
+        try:
+            dev_floor=_dev_completion_identity({**context,**historical_context})['observed_floor']
+        except (ValueError,KeyError,TypeError):
+            if 'dev_aa_inventory' not in missing_dev:missing_dev.append('dev_aa_inventory')
+            dev=False
+    selection=context.get('dev_selection',{}).get('verified',{}) if scope=='final' and dev and not missing_final else {}
     theta=selection.get('selected_theta') if isinstance(selection,dict) and not missing_final else None
     h=selection.get('selected_h') if isinstance(selection,dict) and not missing_final else None
-    return {'code_correctness_complete':complete,'DEV_READY':dev,'FINAL_READY':dev and not missing_final and theta in (8,16,32,64) and h in (128,512,2048,8192),
-            'selected_theta':theta,'selected_h':h,'missing_dev_assets':missing_dev,'missing_final_assets':missing_final}
+    final=scope=='final' and dev and not missing_final and theta in (8,16,32,64) and h in (128,512,2048,8192)
+    return {'code_correctness_complete':complete,'gate_phase':phase,'gate_scope':scope,'DEV_READY':dev,'FINAL_READY':final,
+            'selected_theta':theta,'selected_h':h,'dev_aa_log_floor':dev_floor,
+            'formal_aa_log_floor':context.get('formal_aa_inventory',{}).get('verified',{}).get('observed_floor'),
+            'missing_dev_assets':missing_dev,'missing_final_assets':missing_final}
 
 def driver_suites():
     native={'SX16','SX17','SX18','SX19','SX22','CACHE_NORMS',

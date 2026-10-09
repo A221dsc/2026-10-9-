@@ -19,12 +19,20 @@ S1=Path(__file__).resolve().parents[1]
 NEW_FILES=[*[f'tools/{x}.py' for x in ('analysis','entry_gate','pair_adapter','select_dev','run_engineering')],
            *[f'tests/{x}.py' for x in ('test_analysis','red_analysis','analysis_fixture','test_entry_hardening')]]
 PYTHON_SHA='10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1'
+HARDENING_CASES=[*[f'HardeningSelection.{name}' for name in (
+    'test_saved_selection_is_recomputed','test_saved_thresholds_are_recomputed','test_saved_scores_are_recomputed',
+    'test_saved_bindings_are_recomputed','test_saved_rules_are_registered','test_production_refuses_fixture_even_with_frozen_outer_bytes',
+    'test_matrix_missing_duplicate_and_nonshared_input_rejected','test_p06_p07_require_the_same_verified_selection',
+    'test_write_once_selection_to_entry_wrapper_is_closed')],'HardeningManifest','HardeningAA','HardeningHistory','HardeningFinalAnalysis',
+    'SelectionRed','ManifestRed','AABeforeRed']
 
 def arguments(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--tag',required=True);p.add_argument('--task',choices=['fixtures','red','red-entry','entry'],default='fixtures')
+    p.add_argument('--case',choices=HARDENING_CASES)
     args=p.parse_args(argv)
     if not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}',args.tag):raise ValueError('immutable tag must be a simple identifier')
+    if args.case and args.task!='entry':raise ValueError('single correctness case requires entry task')
     return args
 
 def _save(path,obj):
@@ -40,8 +48,11 @@ def run(args):
     s0={str(p.relative_to(S1.parent)):sha(p) for p in [S1.parent/'S0'/x for x in
          ('S0_同布局比较合约_v1.md','S0_实验预注册_v1.md','S0_preregistration.json','S0_测试与指标覆盖矩阵.csv')]}
     commands=[];tests=0;good=True
-    hardening=['HardeningSelection','HardeningManifest','HardeningAA']
-    cases=['SelectionRed','ManifestRed','AABeforeRed'] if args.task=='red-entry' else ['gm','decision','selection','sidecar'] if args.task=='red' else ['Statistics','Sidecar',*[f'Prepare{i}' for i in range(8)],'Selection','AdapterGate',*hardening] if args.task=='fixtures' else ['AdapterGate']
+    # Each independent selection regression revalidates the complete 240-lock
+    # matrix. Separate processes preserve the frozen 55-second process budget.
+    hardening=HARDENING_CASES
+    cases=['SelectionRed','ManifestRed','AABeforeRed'] if args.task=='red-entry' else ['gm','decision','selection','sidecar'] if args.task=='red' else ['Statistics','Sidecar',*[f'Prepare{i}' for i in range(8)],'Selection','AdapterGate',*hardening] if args.task=='fixtures' else ['AdapterGate',*hardening]
+    if args.case:cases=[args.case]
     for case in cases:
         entry_case=case in hardening or args.task=='red-entry'
         command=[sys.executable,'-B',str(S1/'tests'/('test_entry_hardening.py' if entry_case else 'test_analysis.py')),'--scratch-output',str(out/'scratch')]
@@ -49,7 +60,7 @@ def run(args):
             command+=['--prepare-batch',case[7:],'--fixture-output',str(out/'dev_fixture')]
         else:
             command+=['--red' if args.task=='red' else '--case',case]
-            if case=='Selection' or case=='HardeningSelection':command+=['--fixture-output',str(out/'dev_fixture')]
+            if case=='Selection' or ((case.startswith('HardeningSelection.') or case=='HardeningHistory') and args.task=='fixtures'):command+=['--fixture-output',str(out/'dev_fixture')]
         process={'command':command,'cwd':str(S1),'started_ns':time.time_ns(),'timeout_seconds':55,'test_fixture':True}
         try:
             result=subprocess.run(command,cwd=S1,capture_output=True,timeout=55,env={**os.environ,'PYTHONUTF8':'1','PYTHONDONTWRITEBYTECODE':'1'})

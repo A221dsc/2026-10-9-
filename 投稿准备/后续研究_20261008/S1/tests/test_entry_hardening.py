@@ -80,13 +80,17 @@ class HardeningSelection(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.paths=fixture_paths();cls.result=selection.select(cls.paths,test_fixture=True)
-    def test_saved_score_threshold_and_binding_are_recomputed(self):
+    def test_saved_selection_is_recomputed(self):
         verified=selection.verify_selection(self.result,test_fixture=True)
         self.assertEqual((verified['selected_theta'],verified['selected_h']),(16,128))
-        for field,value in [('selected_theta',8),('selected_h',8192),('scores',dict.fromkeys(fx.METHODS,0.)),
-                            ('input_cache_sha',{}),('identity_bindings',{}),('objective','online'),('write_once',False)]:
+    def rejected_fields(self,fields):
+        for field,value in fields:
             bad=copy.deepcopy(self.result);bad[field]=value
             with self.subTest(field=field),self.assertRaises(ValueError):selection.verify_selection(bad,test_fixture=True)
+    def test_saved_thresholds_are_recomputed(self):self.rejected_fields([('selected_theta',8),('selected_h',8192)])
+    def test_saved_scores_are_recomputed(self):self.rejected_fields([('scores',dict.fromkeys(fx.METHODS,0.))])
+    def test_saved_bindings_are_recomputed(self):self.rejected_fields([('input_cache_sha',{}),('identity_bindings',{})])
+    def test_saved_rules_are_registered(self):self.rejected_fields([('objective','online'),('write_once',False)])
     def test_production_refuses_fixture_even_with_frozen_outer_bytes(self):
         root=scratch();p=root/'dev_selection.json';bad=copy.deepcopy(self.result);bad['test_fixture']=False;fx.write_json(p,bad)
         trust={'sha256':fx.sha(p),'pair_trust':{str(q.resolve()):{'lock_sha256':fx.sha(q)} for q in self.paths}}
@@ -118,6 +122,16 @@ class HardeningSelection(unittest.TestCase):
             result=a.summarize_pairs(paths,pair,'F01','total',0,test_fixture=True,selection=self.result)
             self.assertEqual(result['n'],10)
             with self.assertRaises(ValueError):a.summarize_pairs(paths,pair,'F01','total',0,test_fixture=True,selection={'test_fixture':True,'selected_theta':16,'selected_h':128})
+    def test_write_once_selection_to_entry_wrapper_is_closed(self):
+        root=scratch();p=root/'selection_fixture.json';selection.write_selection(p,self.result)
+        bound={'path':str(p),'sha256':fx.sha(p)}
+        wrapper=receipt('dev_selection',selection=bound,files=[bound])
+        verified=gate._inventory_identity('dev_selection',wrapper,test_fixture=True)
+        self.assertEqual(verified,self.result)
+        self.assertEqual(gate.load(p)['schema'],'S1.dev_selection.v1')
+        with self.assertRaises(ValueError):selection.write_selection(p,self.result)
+        bad=copy.deepcopy(wrapper);bad['selection']['sha256']='0'*64
+        with self.assertRaises(ValueError):gate._inventory_identity('dev_selection',bad,test_fixture=True)
 
 def schema_context(root,formal=False):
     """Actual test-only files and cross-asset receipts; never production inputs."""
@@ -224,11 +238,56 @@ class HardeningAA(unittest.TestCase):
         with self.assertRaises(ValueError):gate._inventory_identity(name,r,test_fixture=True,phase='start',context=ctx)
         with self.assertRaises(ValueError):gate._inventory_identity(name,r,phase='start')
     def test_readiness_phase_is_explicit_and_remains_false_without_real_assets(self):
-        for phase in ('start','complete'):
-            out=gate.readiness({'kernel':True,'driver':True,'analysis':True},{},phase=phase)
-            self.assertEqual(out['gate_phase'],phase);self.assertFalse(out['DEV_READY']);self.assertFalse(out['FINAL_READY'])
-            self.assertIsNone(out['selected_theta']);self.assertIsNone(out['selected_h'])
+        for scope in ('dev','final'):
+            for phase in ('start','complete'):
+                out=gate.readiness({'kernel':True,'driver':True,'analysis':True},{},phase=phase,scope=scope)
+                self.assertEqual(out['gate_phase'],phase);self.assertEqual(out['gate_scope'],scope)
+                self.assertFalse(out['DEV_READY']);self.assertFalse(out['FINAL_READY'])
+                self.assertIsNone(out['selected_theta']);self.assertIsNone(out['selected_h'])
         with self.assertRaises(ValueError):gate.readiness({}, {},phase='after-only')
+        with self.assertRaises(ValueError):gate.readiness({}, {},scope='unknown')
+
+class HardeningHistory(unittest.TestCase):
+    def test_complete_selection_needs_dev_after_and_uses_historical_environment(self):
+        selected=selection.select(fixture_paths(),test_fixture=True);r=aa_receipt(scratch(),'dev',('before','after'))
+        rows=[]
+        for e in r['entries']:
+            for row in gate.validate_pair(e['pair_path'],test_fixture=True)['rows']:
+                rows.append({**{k:e[k] for k in ('timepoint','method','case_id','block')},'seed':92001,'round':int(row['round']),'role':row['role'],'status':'valid',**{c:int(row[c+'_ns']) for c in ('build','online','total')}})
+        r['observed_floor']=importlib.import_module('analysis').aa_floor(rows,'dev')
+        before=copy.deepcopy(r);before['entries']=[e for e in r['entries'] if e['timepoint']=='before']
+        traces=[]
+        for case,seed in sorted(selection.INPUTS):
+            p=next(p for p in fixture_paths() if gate.load(p)['case_id']==case and gate.load(p)['seed']==seed)
+            traces.append({'case_id':case,'seed':seed,'cache_path':gate.load(p)['files']['cache']['path']})
+        historical={'fresh_environment_receipt':{'sha256':'a'*64},'start_manifest':{'receipt':{'batch_id':'ENGINEERING_FIXTURE'}},
+                    'dev_selection':{'verified':selected},'dev_trace_inventory':{'receipt':{'entries':traces}},
+                    'dev_aa_inventory':{'receipt':before,'verified':gate._inventory_identity(before['asset'],before,test_fixture=True,phase='start')}}
+        with self.assertRaisesRegex(ValueError,'dev after AA required'):gate._dev_completion_identity(historical,test_fixture=True)
+        historical['dev_aa_inventory']={'receipt':r,'verified':gate._inventory_identity(r['asset'],r,test_fixture=True,phase='complete',context=historical)}
+        current={'fresh_environment_receipt':{'sha256':'b'*64}}
+        result=gate._dev_completion_identity({**current,**historical},test_fixture=True)
+        self.assertEqual(result['observed_floor'],r['observed_floor'])
+        self.assertNotEqual(current['fresh_environment_receipt']['sha256'],historical['fresh_environment_receipt']['sha256'])
+
+class HardeningFinalAnalysis(unittest.TestCase):
+    def test_complete_pairs_require_after_aa_and_recomputed_floor(self):
+        root=scratch();paths=[fx.pair(root/f'final-{s}',case='F01',seed=s,candidate='R6',profile='final') for s in range(91001,91011)]
+        r=aa_receipt(root/'aa','final',('before','after'));p=root/'formal_aa_fixture.json';a=importlib.import_module('analysis')
+        before=copy.deepcopy(r);before['entries']=[e for e in r['entries'] if e['timepoint']=='before'];fx.write_json(p,before)
+        try:
+            with self.assertRaisesRegex(ValueError,'AA inventory missing'):
+                a.summarize_pairs(paths,'P03','F01','total',0,test_fixture=True,aa_inventory=p)
+        except TypeError as error:self.fail(f'final summary lacks complete A/A acceptance: {error}')
+        rows=[]
+        for e in r['entries']:
+            for row in gate.validate_pair(e['pair_path'],test_fixture=True)['rows']:
+                rows.append({**{k:e[k] for k in ('timepoint','method','case_id','block')},'seed':92001,'round':int(row['round']),'role':row['role'],'status':'valid',**{c:int(row[c+'_ns']) for c in ('build','online','total')}})
+        r['observed_floor']=a.aa_floor(rows,'final');fx.write_json(p,r)
+        out=a.summarize_pairs(paths,'P03','F01','total',None,test_fixture=True,aa_inventory=p)
+        self.assertEqual(out['aa_log_floor'],r['observed_floor']['total']);self.assertEqual(out['aa_inventory_sha256'],fx.sha(p))
+        with self.assertRaisesRegex(ValueError,'AA floor mismatch'):a.summarize_pairs(paths,'P03','F01','total',.5,test_fixture=True,aa_inventory=p)
+        with self.assertRaisesRegex(ValueError,'production final summary requires complete AA'):a.summarize_pairs(paths,'P03','F01','total',0)
 
 if __name__=='__main__':
     suite=unittest.defaultTestLoader.loadTestsFromName(args.case,sys.modules[__name__])

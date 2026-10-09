@@ -110,20 +110,27 @@ def aa_floor(rows,scope):
     out['interpretation']='finite_observed_envelope_not_confidence_bound'
     return out
 
-def summarize_pairs(paths,pair,case,component,aa_log_floor,*,test_fixture=False,trust=None,selection=None):
+def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=False,trust=None,selection=None,selection_trust=None,aa_inventory=None,aa_trust=None):
     """Aggregate exactly ten independently identified, validated final inputs."""
     from pathlib import Path
-    from entry_gate import validate_pair
+    from entry_gate import validate_pair, verify_complete_aa
+    if not test_fixture and aa_inventory is None:raise ValueError('production final summary requires complete AA inventory')
+    aa=None
+    if aa_inventory is not None:
+        aa=verify_complete_aa(aa_inventory,test_fixture=test_fixture,trust=aa_trust)
+        if component not in COMPONENTS:raise ValueError('registered component required')
+        floor=aa['observed_floor'][component]
+        if aa_log_floor is not None and aa_log_floor!=floor:raise ValueError('AA floor mismatch')
+        aa_log_floor=floor
     paths=list(paths)
     if len(paths)!=10 or len({str(Path(p).resolve()) for p in paths})!=10:raise ValueError('ten distinct pair locks required')
     methods={'P01':('Original','M_LIST'),'P02':('M_LIST','M_OBSERVE_LIST'),'P03':('M_LIST','R6'),
              'P04':('M_OBSERVE_LIST','R6'),'P05':('Original','R6'),'P08':('M_NO_IDLE','R6'),
              'DIA01':('M_EVENT_16','R6'),'DIA02':('M_FIXED_128','R6')}
     if pair in ('P06','P07'):
-        if selection is None or selection.get('test_fixture')!=test_fixture:raise ValueError('frozen dev selection required')
-        threshold=selection['selected_theta' if pair=='P06' else 'selected_h']
-        allowed=(8,16,32,64) if pair=='P06' else (128,512,2048,8192)
-        if threshold not in allowed:raise ValueError('selected threshold not registered')
+        from select_dev import verify_selection
+        selected=verify_selection(selection,test_fixture=test_fixture,trust=selection_trust)
+        threshold=selected['selected_theta' if pair=='P06' else 'selected_h']
         methods[pair]=(f'M_EVENT_{threshold}' if pair=='P06' else f'M_FIXED_{threshold}','R6')
     if pair not in methods or case not in {f'F{i:02}' for i in range(1,8)}:raise ValueError('unregistered final cell')
     by_seed={};locks={}
@@ -131,7 +138,9 @@ def summarize_pairs(paths,pair,case,component,aa_log_floor,*,test_fixture=False,
         out=validate_pair(path,test_fixture=test_fixture,trust=None if test_fixture else (trust or {}).get(str(Path(path).resolve())))
         if out['case_id']!=case or out['profile']!='final' or out['mode']!='native' or (out['reference'],out['candidate'])!=methods[pair] or out['seed'] in by_seed:
             raise ValueError('final input/pair identity duplicate or mismatch')
+        if aa is not None and any(row['batch_id']!=aa['batch_id'] for row in out['rows']):raise ValueError('final pair/AA batch mismatch')
         by_seed[out['seed']]=out['ratios'][component];locks[str(Path(path).resolve())]=out['manifest_sha256']
     if set(by_seed)!=set(range(91001,91011)):raise ValueError('all ten registered final seeds required')
     return {**summarize([by_seed[s] for s in sorted(by_seed)],pair,case,component,aa_log_floor),
-            'pair_manifest_sha':locks,'test_fixture':test_fixture}
+            'pair_manifest_sha':locks,'test_fixture':test_fixture,
+            'aa_inventory_sha256':aa['manifest_sha256'] if aa else None}
