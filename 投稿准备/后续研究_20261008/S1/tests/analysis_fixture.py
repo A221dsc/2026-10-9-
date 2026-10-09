@@ -23,7 +23,7 @@ def write_csv(path, rows):
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 
 def pair(root, case='D01', seed=90001, candidate='M_EVENT_8', total=200, online=100,
-         pair_id=None, profile='dev'):
+         pair_id=None, profile='dev', reference='M_LIST'):
     root = Path(root); root.mkdir(parents=True)
     identity = pair_id or f'{case}:{seed}:{candidate}'
     assets = root / 'assets'; assets.mkdir()
@@ -64,7 +64,7 @@ def pair(root, case='D01', seed=90001, candidate='M_EVENT_8', total=200, online=
               ('pin','pin.exe'),('topology','topology.exe')]}
     children=[]
     for rnd,role in [(1,'A'),(1,'B'),(2,'B'),(2,'A')]:
-        method='M_LIST' if role=='A' else candidate
+        method=reference if role=='A' else candidate
         credit='event' if method.startswith('M_EVENT_') else 'none' if method.startswith('M_FIXED_') else 'NA' if method in ('M_LIST','Original') else 'ns'
         d=root/f'r{rnd}{role}'; d.mkdir()
         config_text=json.dumps({'schema':'S1.method.v1','method':method,'mode':'native',
@@ -109,7 +109,7 @@ def pair(root, case='D01', seed=90001, candidate='M_EVENT_8', total=200, online=
                          ['raw_native.csv','phase.csv','config.json','run_receipt.json','process.json','stdout.txt','stderr.txt']}})
     manifest={'schema':'S1.pair.lock.v1','test_fixture':True,'origin':ORIGIN,'profile':profile,
               'batch_id':'ENGINEERING_FIXTURE','attempt_id':'fixture-1','pair_id':identity,
-              'case_id':case,'seed':seed,'reference':'M_LIST','candidate':candidate,'mode':'native',
+              'case_id':case,'seed':seed,'reference':reference,'candidate':candidate,'mode':'native',
               'files':files,'source_files':source_files,'source_bundle_sha':bundle,'children':children,
               'config_logical':{c['path']:json.loads((Path(c['path'])/'config.json').read_text()) for c in children}}
     write_json(root/'pair_fixture.json',manifest)

@@ -28,6 +28,7 @@
       ],
       "red": "artifacts/kernel/red_behavior/manifest.json",
       "green": "artifacts/kernel/green_coverage_fix_01/manifest.json",
+      "root_verification": "artifacts/kernel/root_git_kernel_verify_01/manifest.json",
       "spec_review": "S1_内核规格审查.md",
       "quality_review": "S1_内核质量审查.md",
       "must_fix": [],

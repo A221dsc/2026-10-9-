@@ -17,12 +17,12 @@ from entry_gate import sha, load, verify_driver, verify_kernel, readiness
 
 S1=Path(__file__).resolve().parents[1]
 NEW_FILES=[*[f'tools/{x}.py' for x in ('analysis','entry_gate','pair_adapter','select_dev','run_engineering')],
-           *[f'tests/{x}.py' for x in ('test_analysis','red_analysis','analysis_fixture')]]
+           *[f'tests/{x}.py' for x in ('test_analysis','red_analysis','analysis_fixture','test_entry_hardening')]]
 PYTHON_SHA='10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1'
 
 def arguments(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--tag',required=True);p.add_argument('--task',choices=['fixtures','red','entry'],default='fixtures')
+    p.add_argument('--tag',required=True);p.add_argument('--task',choices=['fixtures','red','red-entry','entry'],default='fixtures')
     args=p.parse_args(argv)
     if not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}',args.tag):raise ValueError('immutable tag must be a simple identifier')
     return args
@@ -40,14 +40,16 @@ def run(args):
     s0={str(p.relative_to(S1.parent)):sha(p) for p in [S1.parent/'S0'/x for x in
          ('S0_同布局比较合约_v1.md','S0_实验预注册_v1.md','S0_preregistration.json','S0_测试与指标覆盖矩阵.csv')]}
     commands=[];tests=0;good=True
-    cases=['gm','decision','selection','sidecar'] if args.task=='red' else ['Statistics','Sidecar',*[f'Prepare{i}' for i in range(8)],'Selection','AdapterGate'] if args.task=='fixtures' else ['AdapterGate']
+    hardening=['HardeningSelection','HardeningManifest','HardeningAA']
+    cases=['SelectionRed','ManifestRed','AABeforeRed'] if args.task=='red-entry' else ['gm','decision','selection','sidecar'] if args.task=='red' else ['Statistics','Sidecar',*[f'Prepare{i}' for i in range(8)],'Selection','AdapterGate',*hardening] if args.task=='fixtures' else ['AdapterGate']
     for case in cases:
-        command=[sys.executable,'-B',str(S1/'tests'/'test_analysis.py'),'--scratch-output',str(out/'scratch')]
+        entry_case=case in hardening or args.task=='red-entry'
+        command=[sys.executable,'-B',str(S1/'tests'/('test_entry_hardening.py' if entry_case else 'test_analysis.py')),'--scratch-output',str(out/'scratch')]
         if case.startswith('Prepare'):
             command+=['--prepare-batch',case[7:],'--fixture-output',str(out/'dev_fixture')]
         else:
             command+=['--red' if args.task=='red' else '--case',case]
-            if case=='Selection':command+=['--fixture-output',str(out/'dev_fixture')]
+            if case=='Selection' or case=='HardeningSelection':command+=['--fixture-output',str(out/'dev_fixture')]
         process={'command':command,'cwd':str(S1),'started_ns':time.time_ns(),'timeout_seconds':55,'test_fixture':True}
         try:
             result=subprocess.run(command,cwd=S1,capture_output=True,timeout=55,env={**os.environ,'PYTHONUTF8':'1','PYTHONDONTWRITEBYTECODE':'1'})
@@ -57,11 +59,11 @@ def run(args):
         process['ended_ns']=time.time_ns();(out/(case+'.stdout.txt')).write_bytes(stdout);(out/(case+'.stderr.txt')).write_bytes(stderr)
         _save(out/(case+'.process.json'),process);commands.append(process)
         text=stderr.decode('utf-8',errors='replace');count=re.search(r'Ran (\d+) test',text);tests+=int(count.group(1)) if count else 0
-        if args.task=='red':passed=process['exit_code']==1 and 'AssertionError' in text and 'FAIL:' in text and 'ImportError' not in text
+        if args.task in ('red','red-entry'):passed=process['exit_code']==1 and 'AssertionError' in text and 'FAIL:' in text and 'ImportError' not in text and 'ERROR:' not in text
         else:passed=process['exit_code']==0 and re.search(r'\nOK\s*$',text) is not None
         good=good and passed;print(f'{case}: exit={process["exit_code"]} expected_behavior={passed}',flush=True)
     actual_driver=actual_kernel=None
-    if good and args.task!='red':
+    if good and args.task not in ('red','red-entry'):
         actual_driver=verify_driver(S1/'artifacts/driver/green_review_fixes_root_01/manifest.json')
         actual_kernel=verify_kernel(S1/'artifacts/kernel/green_coverage_fix_01/manifest.json')
         candidate={'schema':'S1.entry.candidate.v1','test_fixture':True,'origin':'ENGINEERING_STATIC_VALIDATION_ONLY',
@@ -75,7 +77,7 @@ def run(args):
         if sha(S1.parent/name)!=digest:good=False
     evidence={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file() and 'source' not in p.relative_to(out).parts}
     manifest={'schema':'S1.analysis.engineering.v1','tag':args.tag,'task':args.task,
-              'status':'EXPECTED_BEHAVIOR_RED' if good and args.task=='red' else 'ENGINEERING_GREEN' if good else 'ENGINEERING_FAILED',
+              'status':'EXPECTED_BEHAVIOR_RED' if good and args.task in ('red','red-entry') else 'ENGINEERING_GREEN' if good else 'ENGINEERING_FAILED',
               'test_fixture':True,'source_sha256':source,'s0_sha256':s0,'python_sha256':require_python,
               'commands':commands,'test_count':tests,'evidence_sha256':evidence,
               'source_snapshot_unchanged':good,'experiment_runs':0,'dev_calibration_runs':0,'aa_timing_runs':0,

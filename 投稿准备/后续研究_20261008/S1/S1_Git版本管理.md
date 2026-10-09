@@ -4,6 +4,7 @@
 
 - 远程仓库：[A221dsc/2026-10-9-](https://github.com/A221dsc/2026-10-9-)。
 - 首个候选提交：`8b867c7`，已推送至 `origin/main`。
+- S0 合约标签：`s0-freezable-v1`，指向该提交，已推送；标签仅标明 S0 合约已 freezable，不宣告 S1 冻结。
 - 当前入口修复分支：`s1-entry-hardening`。
 - 候选提交不是工程冻结版本。当前统计与入口规格审查为 NOT APPROVED，三项 Important 修复后需重新审查；全部审查通过后才创建工程冻结标签。
 
