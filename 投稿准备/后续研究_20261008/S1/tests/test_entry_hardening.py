@@ -19,6 +19,7 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--case',required=True)
 parser.add_argument('--scratch-output',required=True)
 parser.add_argument('--fixture-output')
+parser.add_argument('--fixture-source')
 args=parser.parse_args()
 
 def scratch():
@@ -27,7 +28,7 @@ def scratch():
     p=root/uuid.uuid4().hex;p.mkdir(parents=True);return p
 
 def fixture_paths():
-    root=Path(args.fixture_output) if args.fixture_output else S1/'artifacts/analysis/green_complete_03/dev_fixture'
+    root=Path(args.fixture_source or args.fixture_output) if args.fixture_source or args.fixture_output else S1/'artifacts/analysis/green_complete_03/dev_fixture'
     return sorted(root.glob('D*-*/pair_fixture.json'))
 
 def receipt(name,**kw):
@@ -288,6 +289,37 @@ class HardeningFinalAnalysis(unittest.TestCase):
         self.assertEqual(out['aa_log_floor'],r['observed_floor']['total']);self.assertEqual(out['aa_inventory_sha256'],fx.sha(p))
         with self.assertRaisesRegex(ValueError,'AA floor mismatch'):a.summarize_pairs(paths,'P03','F01','total',.5,test_fixture=True,aa_inventory=p)
         with self.assertRaisesRegex(ValueError,'production final summary requires complete AA'):a.summarize_pairs(paths,'P03','F01','total',0)
+
+class HardeningTiming(unittest.TestCase):
+    def test_rehashed_after_before_matrix_is_rejected(self):
+        r=aa_receipt(scratch(),'final',('before','after'));r['observed_floor']={'build':0.,'online':0.,'total':0.,'interpretation':'finite_observed_envelope_not_confidence_bound'}
+        p=scratch()/'bounded_aa_fixture.json';fx.write_json(p,r)
+        trust={'test_matrix':{'batch_id':'ENGINEERING_FIXTURE','matrix_interval':{'started_ns':100,'ended_ns':200},'matrix_cells':{},'pair_manifest_sha':{}}}
+        with self.assertRaisesRegex(ValueError,'AA actual process order'):
+            gate.verify_complete_aa(p,test_fixture=True,trust=trust)
+        for e in r['entries']:
+            if e['timepoint']=='after':fx.shift_pair_times(e['pair_path'],300)
+        out=gate.verify_complete_aa(p,test_fixture=True,trust=trust)
+        self.assertEqual(out['observed_floor']['total'],0.)
+        target=next(e for e in r['entries'] if e['timepoint']=='after');fx.shift_pair_times(target['pair_path'],-250)
+        gate.validate_pair(target['pair_path'],test_fixture=True)
+        with self.assertRaisesRegex(ValueError,'AA actual process order'):gate.verify_complete_aa(p,test_fixture=True,trust=trust)
+    def test_formal_complete_shape_requires_all_700_pairs(self):
+        labels=['P01','P02','P03','P04','P05','P06','P07','P08','DIA01','DIA02']
+        rows=[{'case_id':f'F{i:02}','seed':s,'pair_id':label,'pair_path':str(S1/'artifacts/analysis'/f'fixture-{i}-{s}-{label}.json')}
+              for i in range(1,8) for s in range(91001,91011) for label in labels]
+        try:pairs=gate._formal_matrix_shape(rows,{'selected_theta':16,'selected_h':128})
+        except AttributeError as error:self.fail(f'complete formal matrix acceptance missing: {error}')
+        self.assertEqual(len(pairs),10);self.assertEqual(len(rows),700)
+        for bad in (rows[:10],rows[:-1],rows[:-1]+[rows[0]]):
+            with self.assertRaises(ValueError):gate._formal_matrix_shape(bad,{'selected_theta':16,'selected_h':128})
+    def test_aa_identity_rejects_diagnostic_mode(self):
+        p=fx.pair(scratch()/'native',case='D02',seed=92001,candidate='M_LIST',reference='M_LIST',profile='aa')
+        out=gate.validate_pair(p,test_fixture=True);entry={'case_id':'D02','method':'M_LIST'}
+        try:gate._aa_pair_identity(out,entry)
+        except AttributeError as error:self.fail(f'native AA identity acceptance missing: {error}')
+        for mode in ('latency','resource'):
+            with self.assertRaises(ValueError):gate._aa_pair_identity({**out,'mode':mode},entry)
 
 if __name__=='__main__':
     suite=unittest.defaultTestLoader.loadTestsFromName(args.case,sys.modules[__name__])

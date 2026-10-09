@@ -24,15 +24,17 @@ HARDENING_CASES=[*[f'HardeningSelection.{name}' for name in (
     'test_saved_bindings_are_recomputed','test_saved_rules_are_registered','test_production_refuses_fixture_even_with_frozen_outer_bytes',
     'test_matrix_missing_duplicate_and_nonshared_input_rejected','test_p06_p07_require_the_same_verified_selection',
     'test_write_once_selection_to_entry_wrapper_is_closed')],'HardeningManifest','HardeningAA','HardeningHistory','HardeningFinalAnalysis',
-    'SelectionRed','ManifestRed','AABeforeRed']
+    'SelectionRed','ManifestRed','AABeforeRed','HardeningTiming']
 
 def arguments(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--tag',required=True);p.add_argument('--task',choices=['fixtures','red','red-entry','entry'],default='fixtures')
     p.add_argument('--case',choices=HARDENING_CASES)
+    p.add_argument('--fixture-source')
     args=p.parse_args(argv)
     if not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}',args.tag):raise ValueError('immutable tag must be a simple identifier')
     if args.case and args.task!='entry':raise ValueError('single correctness case requires entry task')
+    if args.fixture_source and args.task!='fixtures':raise ValueError('fixture reuse requires full correctness task')
     return args
 
 def _save(path,obj):

@@ -121,3 +121,11 @@ def rebind_child(manifest, index, filename):
 
 def rebind_asset(manifest, name):
     m=json.loads(Path(manifest).read_text()); m['files'][name]['sha256']=sha(m['files'][name]['path']); write_json(manifest,m)
+
+def shift_pair_times(manifest,offset):
+    """Rehash a predetermined fixture's process clock, never actual evidence."""
+    m=json.loads(Path(manifest).read_text())
+    if m.get('test_fixture') is not True:raise ValueError('fixture clocks only')
+    for i,c in enumerate(m['children']):
+        p=Path(c['path'])/'process.json';r=json.loads(p.read_text())
+        r['started_ns']+=offset;r['ended_ns']+=offset;write_json(p,r);rebind_child(manifest,i,'process.json')
