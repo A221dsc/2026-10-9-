@@ -446,7 +446,13 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
             before=_file_binding(receipt.get('before_inventory',{}));old=load(before['path'])
             require(old.get('schema')=='S1.entry.asset.v1' and old.get('asset')==name and old.get('test_fixture') is test_fixture,'original before AA inventory identity')
             require(old.get('batch_id')==receipt['batch_id'] and old.get('environment_sha256')==receipt['environment_sha256'],'original before AA batch/environment')
-            require(old.get('entries')==[e for e in entries if e['timepoint']=='before'],'completed AA must preserve exact original before entries')
+            original=old.get('entries',[]);current=[e for e in entries if e['timepoint']=='before']
+            cell=lambda e:(e['timepoint'],e['method'],e['case_id'],e['block'])
+            original_keys=[cell(e) for e in original];current_keys={cell(e) for e in current}
+            require(len(original_keys)==len(current) and set(original_keys)==current_keys,'original before AA unique complete registered cells required')
+            # Inventory arrays are unordered; preserve every field of each
+            # frozen original entry, not merely its registered cell label.
+            require(sorted(original,key=cell)==sorted(current,key=cell),'completed AA must preserve exact original before entry content')
         pair_ids=set();rows=[];records=[];intervals={t:{'started_ns':None,'ended_ns':None} for t in timepoints}
         for e in entries:
             binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(str(Path(e['pair_path']).resolve()))
