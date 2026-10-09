@@ -283,7 +283,13 @@ def _context_binding(receipt,context,names,*,test_fixture):
     require(set(receipt.get('bindings',{}))==set(names),'complete cross-asset bindings required')
     for name in names:
         require(name in context,'validated dependency absent: '+name)
-        frozen=context[name];bound=_file_binding(receipt['bindings'][name])
+        frozen=context[name]
+        # A completed AA receipt preserves the original immutable before file.
+        # The start plan continues binding those bytes after completion.
+        if name in ('dev_aa_inventory','formal_aa_inventory') and frozen['receipt'].get('before_inventory'):
+            before=_file_binding(frozen['receipt']['before_inventory'])
+            frozen={**before,'receipt':load(before['path'])}
+        bound=_file_binding(receipt['bindings'][name])
         require(Path(bound['path']).resolve()==Path(frozen['path']).resolve() and bound['sha256']==frozen['sha256'],'cross-asset frozen identity')
         require(load(bound['path'])==frozen['receipt'],'cross-asset receipt bytes')
         require(frozen['receipt'].get('test_fixture') is test_fixture,'cross-asset fixture boundary')
@@ -393,6 +399,11 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
                 and len(receipt['environment_sha256'])==64,'AA batch/environment identity required')
         if context is not None:
             require(receipt['environment_sha256']==context.get('fresh_environment_receipt',{}).get('sha256'),'AA current environment identity')
+        if phase=='complete' and (not test_fixture or receipt.get('before_inventory')):
+            before=_file_binding(receipt.get('before_inventory',{}));old=load(before['path'])
+            require(old.get('schema')=='S1.entry.asset.v1' and old.get('asset')==name and old.get('test_fixture') is test_fixture,'original before AA inventory identity')
+            require(old.get('batch_id')==receipt['batch_id'] and old.get('environment_sha256')==receipt['environment_sha256'],'original before AA batch/environment')
+            require(old.get('entries')==[e for e in entries if e['timepoint']=='before'],'completed AA must preserve exact original before entries')
         pair_ids=set();rows=[];intervals={t:{'started_ns':None,'ended_ns':None} for t in timepoints}
         for e in entries:
             binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(str(Path(e['pair_path']).resolve()))
@@ -558,6 +569,7 @@ def readiness(correctness,assets,*,asset_trust=None,phase='start',scope='dev'):
     require(scope in ('dev','final'),'entry gate scope must be dev or final')
     complete=all(correctness.get(k) is True for k in ('kernel','driver','analysis'))
     dev_required=['fresh_environment_receipt','frozen_binaries','protocol_and_sources','dev_trace_inventory','dev_aa_inventory','start_manifest']
+    if scope=='dev' and phase=='complete':dev_required.append('dev_selection')
     final_required=['dev_environment_receipt','dev_selection','selected_configs','formal_trace_inventory','formal_aa_inventory','final_start_manifest']
     if phase=='complete':final_required.insert(4,'formal_matrix_inventory')
     missing_dev=[x for x in dev_required if not assets.get(x)]
@@ -613,7 +625,7 @@ def readiness(correctness,assets,*,asset_trust=None,phase='start',scope='dev'):
             if name not in target:target.append(name)
     dev=complete and environment and not missing_dev
     dev_floor=None
-    if scope=='final':
+    if scope=='final' or phase=='complete':
         try:
             dev_floor=_dev_completion_identity({**context,**historical_context})['observed_floor']
         except (ValueError,KeyError,TypeError):
