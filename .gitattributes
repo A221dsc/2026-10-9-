@@ -1,0 +1,3 @@
+# Preserve the byte contents of previously frozen protocol/code artifacts.
+* -text
+

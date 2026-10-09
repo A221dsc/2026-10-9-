@@ -1,0 +1,137 @@
+{
+  "schema": "adaptive_v4_FINAL_CONFIG_R6_v1",
+  "status": "FROZEN_UNTUNED",
+  "specification": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\阶段3_设计修订与冻结规格_v4_收口版.md",
+    "sha256": "23f9ec384834d0a2a6bc39423efbd3de33d5e5ddcb3f773ec2d3c57a957813a9"
+  },
+  "fingerprint": {
+    "schema": "adaptive_poolhbi.v4.config.v1",
+    "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+    "build_mode": "ablation",
+    "arm": "R6",
+    "parent": "R5",
+    "parameters": {
+      "epoch_size": 512,
+      "min_tree_size": 128,
+      "down_idle_epochs": 4,
+      "cooldown_epochs": 8,
+      "max_convert_records": 0,
+      "scan_ns_per_work": 1.1427456845204484,
+      "conversion_base_ns": 0,
+      "conversion_ns_per_record": 31.412726323575615,
+      "tree_cost_expression": "30+5*log2(128*2^class+1)",
+      "tree_cost_provisional": true,
+      "signal": "actual_work",
+      "payback": 2,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 1,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "tree_cost_ns": [
+      [
+        65.05613627711627,
+        65.05613627711627,
+        65.05613627711627
+      ],
+      [
+        70.0281227459694,
+        70.0281227459694,
+        70.0281227459694
+      ],
+      [
+        75.01407507803526,
+        75.01407507803526,
+        75.01407507803526
+      ],
+      [
+        80.00704097196405,
+        80.00704097196405,
+        80.00704097196405
+      ],
+      [
+        85.00352134505623,
+        85.00352134505623,
+        85.00352134505623
+      ],
+      [
+        90.0017608874015,
+        90.0017608874015,
+        90.0017608874015
+      ],
+      [
+        95.0008804974322,
+        95.0008804974322,
+        95.0008804974322
+      ],
+      [
+        100.00044026215062,
+        100.00044026215062,
+        100.00044026215062
+      ],
+      [
+        105.00022013443414,
+        105.00022013443414,
+        105.00022013443414
+      ],
+      [
+        110.0001100680568,
+        110.0001100680568,
+        110.0001100680568
+      ]
+    ],
+    "tree_cost_operations": [
+      "insert",
+      "erase",
+      "range"
+    ],
+    "tree_cost_unit": "ns/observation",
+    "conversion_unit": "ns",
+    "credit_unit": "ns",
+    "work_unit": "avoidable_pointer_steps",
+    "actual_work_counter_shared": true,
+    "event_threshold": null,
+    "payback_used": true,
+    "promotion_enabled": true,
+    "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+    "decay_execution": "identity_no_decay_scan",
+    "cleanup": {
+      "immediate": true,
+      "quota_exempt": true,
+      "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+    },
+    "layout": {
+      "record_bytes": 16,
+      "node_bytes": 32,
+      "adaptive_tail_bytes": 32,
+      "bucket_bytes": 64,
+      "root_count": 64,
+      "buckets_per_root": 64,
+      "bucket_count": 4096,
+      "pointer_bytes": 8,
+      "eager_buckets": true
+    }
+  },
+  "source_sha256": {
+    "adaptive_poolhbi_final.hpp": "8e7a351e8ee14a1a5511a99502f7d938296cc57c3757a74d7b45fc2071a63e0c",
+    "adaptive_types.hpp": "5bf2baa9fab583e3342fd45485d3770ac4e2a71d0abd5a88e63e15d34e78cabe",
+    "shared_allocator.hpp": "66ad9ec278c27a07fcc8c63d00c303f46a48fe7ac4e26bdf801d7fca024c462f",
+    "frozen_config.hpp": "5efb54ce732ede2b9b25f7ea39240fccb95bdc08462733f89d3363c0473f6074",
+    "final_index_cli.cpp": "f8c6b62c9310a3a8c3f254a97d20e57d5ac03d160d4093d0a42c585c1d2478ac"
+  },
+  "binaries": {
+    "production_R6": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\config_runs\\green_final\\adaptive_final_production.exe",
+      "sha256": "44b47e01b2c3acfeb269593c0a694d1859ddbf4aea3666dbbbc48ebdc6d6fcb8"
+    },
+    "ablation_R0_R11": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\config_runs\\green_final\\adaptive_final_ablation.exe",
+      "sha256": "8d34b4f598bc51cd088026d755c84cc5ae251f40fbed077c29ceab6a768536e8"
+    }
+  },
+  "provisional_costs": true,
+  "parameter_experiment_runs": 0
+}

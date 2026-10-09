@@ -1,0 +1,85 @@
+{
+  "schema": "S1.engineering_progress.v1",
+  "client_date": "2026-10-09",
+  "scope": "S0冻结合约的工程实施",
+  "stage": "CHUNK3_IMPLEMENTING_RED_FIRST",
+  "plan": "S1_工程实施计划.md",
+  "steps": [
+    {
+      "chunk": 1,
+      "name": "匹配内核",
+      "status": "GREEN_SPEC_AND_QUALITY_APPROVED",
+      "required_ids": [
+        "SX01",
+        "SX02",
+        "SX03",
+        "SX04",
+        "SX05",
+        "SX06",
+        "SX07",
+        "SX08",
+        "SX09",
+        "SX10",
+        "SX11",
+        "SX12",
+        "SX13",
+        "SX14",
+        "SX15"
+      ],
+      "red": "artifacts/kernel/red_behavior/manifest.json",
+      "green": "artifacts/kernel/green_coverage_fix_01/manifest.json",
+      "spec_review": "S1_内核规格审查.md",
+      "quality_review": "S1_内核质量审查.md",
+      "must_fix": [],
+      "additional_red": "artifacts/kernel/red_coverage_fix/manifest.json",
+      "spec_review_round1": "S1_内核规格审查.md",
+      "spec_review_round2": "S1_内核规格审查_round2.md"
+    },
+    {
+      "chunk": 2,
+      "name": "生成器与驱动",
+      "status": "GREEN_SPEC_AND_QUALITY_APPROVED",
+      "required_ids": [
+        "SX16",
+        "SX17",
+        "SX18",
+        "SX19",
+        "SX22",
+        "SX24"
+      ],
+      "red": "artifacts/driver/red_assertions_01/manifest.json",
+      "additional_red": "artifacts/driver/red_cache_norm_01/manifest.json",
+      "green": "artifacts/driver/green_review_fixes_root_01/manifest.json",
+      "root_verification": "artifacts/driver/root_verify_before_review_01/manifest.json",
+      "must_fix": [],
+      "spec_review_round1": "S1_驱动规格审查.md",
+      "review_red": "artifacts/driver/review_red_capture_root_01/manifest.json",
+      "green_before_review_fix": "artifacts/driver/green_complete_03/manifest.json",
+      "review_regressions": "artifacts/driver/review_green_regressions_root_01/manifest.json",
+      "new_source_bundle_sha": "18667439ba0f6dafdefed29a5b8fff4671821b89dc9760773e1a5e4e592c7024",
+      "must_fix_status": "MF1-MF3 Closed by independent round2; quality pending",
+      "spec_review_round2": "S1_驱动规格审查_round2.md",
+      "quality_review": "S1_驱动质量审查.md",
+      "quality_minor": [
+        "Local/build-only ENGINEERING_GREEN is not coverage proof; entry must validate complete suites"
+      ]
+    },
+    {
+      "chunk": 3,
+      "name": "统计与入口",
+      "status": "IN_PROGRESS_RED_FIRST",
+      "required_ids": [
+        "SX20",
+        "SX21",
+        "SX23"
+      ]
+    }
+  ],
+  "calibration_runs": 0,
+  "performance_runs": 0,
+  "formal_mechanism_runs": 0,
+  "selected_theta": null,
+  "selected_h": null,
+  "S1_DEV_READY": false,
+  "S1_FINAL_READY": false
+}

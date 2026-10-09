@@ -1,0 +1,14 @@
+{
+  "schema": "S1.engineering_admission.v1",
+  "checked_at": "2026-10-09T00:23:40.5596069+08:00",
+  "status": "PASS",
+  "S0_seal_path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_冻结凭证.json",
+  "S0_seal_sha256": "6733092103531288c54f4935d2102406be1dc16d15d5df2646affd4a5c79df2a",
+  "verified_bound_files": 59,
+  "implementation_authorized": true,
+  "calibration_authorized": false,
+  "performance_experiment_authorized": false,
+  "source_files_modified": 0,
+  "test_processes_run": 0,
+  "benchmarks_run": 0
+}

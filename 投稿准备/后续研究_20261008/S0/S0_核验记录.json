@@ -1,0 +1,651 @@
+{
+  "schema": "adaptive_poolhbi.S0.static_verification.v1",
+  "checked_at": "2026-10-09T00:04:49.5759855+08:00",
+  "status": "PASS",
+  "scope": "hash/schema/matrix/seed/review checks only, not algorithm tests",
+  "manifest_path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_资产清单.json",
+  "manifest_sha256": "2629d15bc32d418b3fd8e6e761bf7953c511ea0e043b1918343d194d899e8569",
+  "checks": [
+    {
+      "name": "hash:freezable_contract",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\阶段3_设计修订与冻结规格_v4_收口版.md"
+    },
+    {
+      "name": "hash:R6_source",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\adaptive_poolhbi_final.hpp"
+    },
+    {
+      "name": "hash:R0_R11_config",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\R0-R11_冻结配置.json"
+    },
+    {
+      "name": "hash:R6_final_parameters",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\FINAL_CONFIG_R6.json"
+    },
+    {
+      "name": "hash:original_final_manifest",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\experiment_manifest.json"
+    },
+    {
+      "name": "hash:historical_GREEN",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\GREEN_测试记录.json"
+    },
+    {
+      "name": "hash:complete_chinese_source",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\论文初稿_20261007\\论文正文.md"
+    },
+    {
+      "name": "hash:complete_English_source",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\论文初稿_20261007\\论文正文_English.md"
+    },
+    {
+      "name": "hash:old_ablation_definitions",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\R0-R11_冻结配置表.md"
+    },
+    {
+      "name": "hash:historical_test_design",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\正式测试设计.md"
+    },
+    {
+      "name": "hash:content_review",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\论文初稿_20261007\\paper_review_round2.md"
+    },
+    {
+      "name": "hash:supplement_findings",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\补实验结论与论文定位.md"
+    },
+    {
+      "name": "hash:prior_roadmap",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\后续研究执行方案_v1.md"
+    },
+    {
+      "name": "hash:frozen_source:adaptive_poolhbi_final.hpp",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\adaptive_poolhbi_final.hpp"
+    },
+    {
+      "name": "hash:frozen_source:adaptive_types.hpp",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\adaptive_types.hpp"
+    },
+    {
+      "name": "hash:frozen_source:shared_allocator.hpp",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\shared_allocator.hpp"
+    },
+    {
+      "name": "hash:frozen_source:frozen_config.hpp",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\frozen_config.hpp"
+    },
+    {
+      "name": "hash:frozen_source:final_index_cli.cpp",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\final_index_cli.cpp"
+    },
+    {
+      "name": "hash:historical_unified_binary",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\unified_driver.exe"
+    },
+    {
+      "name": "hash:legacy_pool",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\legacy\\pool_index.hpp"
+    },
+    {
+      "name": "hash:legacy_generators",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\legacy\\generators.hpp"
+    },
+    {
+      "name": "hash:driver_core_current_frozen_horizon",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\driver_core.hpp"
+    },
+    {
+      "name": "driver_core_has_horizon_anchor",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\driver_core.hpp"
+    },
+    {
+      "name": "hash:driver_core_historical_snapshot",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\driver_pre_review_green\\driver_core.hpp"
+    },
+    {
+      "name": "hash:wall_driver",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\wall_driver.hpp"
+    },
+    {
+      "name": "hash:trace_cache_current_frozen_horizon",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\trace_cache.hpp"
+    },
+    {
+      "name": "trace_cache_has_horizon_anchor",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\trace_cache.hpp"
+    },
+    {
+      "name": "hash:dataset_January",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\data\\tlc_2024_01_uint64.bin"
+    },
+    {
+      "name": "hash:compiler:executable",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_tools\\llvm-mingw-20260922-ucrt-x86_64\\bin\\clang++.exe"
+    },
+    {
+      "name": "hash:compiler:frontend",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_tools\\llvm-mingw-20260922-ucrt-x86_64\\bin\\clang-23.exe"
+    },
+    {
+      "name": "hash:tool:core_topology:source",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\core_topology.cpp"
+    },
+    {
+      "name": "hash:tool:core_topology:binary",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\core_topology.exe"
+    },
+    {
+      "name": "hash:tool:pin_launch:source",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\pin_launch.cpp"
+    },
+    {
+      "name": "hash:tool:pin_launch:binary",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\pin_launch.exe"
+    },
+    {
+      "name": "hash:tool:bench_pinned_pair:source",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\bench_pinned_pair.py"
+    },
+    {
+      "name": "hash:S0_runtime_current:bench_pinned_pair",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe"
+    },
+    {
+      "name": "seed_sets_pairwise_disjoint",
+      "pass": true,
+      "detail": {
+        "dev": [
+          90001,
+          90002,
+          90003
+        ],
+        "final": [
+          91001,
+          91002,
+          91003,
+          91004,
+          91005,
+          91006,
+          91007,
+          91008,
+          91009,
+          91010
+        ],
+        "aa": [
+          92001
+        ],
+        "mechanism": [
+          93001,
+          93002,
+          93003
+        ],
+        "random_test": [
+          94001,
+          94002
+        ]
+      }
+    },
+    {
+      "name": "seed_sets_historical_scope_disjoint",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "schema_and_stage",
+      "pass": true,
+      "detail": "PRE_REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "name": "methods_cases_pairs",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "matrix:dev_inputs",
+      "pass": true,
+      "detail": 30
+    },
+    {
+      "name": "matrix:dev_timing_children",
+      "pass": true,
+      "detail": 960
+    },
+    {
+      "name": "matrix:dev_aa_children",
+      "pass": true,
+      "detail": 160
+    },
+    {
+      "name": "matrix:primary_pairs",
+      "pass": true,
+      "detail": 560
+    },
+    {
+      "name": "matrix:primary_timing_children",
+      "pass": true,
+      "detail": 2240
+    },
+    {
+      "name": "matrix:diagnostic_timing_children",
+      "pass": true,
+      "detail": 560
+    },
+    {
+      "name": "matrix:final_aa_children",
+      "pass": true,
+      "detail": 360
+    },
+    {
+      "name": "matrix:mechanism_runs",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "matrix:latency_runs",
+      "pass": true,
+      "detail": 490
+    },
+    {
+      "name": "matrix:resource_runs",
+      "pass": true,
+      "detail": 490
+    },
+    {
+      "name": "matrix:cpu_profile_attempts",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "matrix:total_timing_children",
+      "pass": true,
+      "detail": 4280
+    },
+    {
+      "name": "API:F01",
+      "pass": true,
+      "detail": 525312
+    },
+    {
+      "name": "queries:F01",
+      "pass": true,
+      "detail": 1024.0
+    },
+    {
+      "name": "API:F02",
+      "pass": true,
+      "detail": 525312
+    },
+    {
+      "name": "queries:F02",
+      "pass": true,
+      "detail": 1024.0
+    },
+    {
+      "name": "API:F03",
+      "pass": true,
+      "detail": 786432
+    },
+    {
+      "name": "queries:F03",
+      "pass": true,
+      "detail": 262144.0
+    },
+    {
+      "name": "API:F04",
+      "pass": true,
+      "detail": 535892
+    },
+    {
+      "name": "API:F05",
+      "pass": true,
+      "detail": 8192
+    },
+    {
+      "name": "queries:F05",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "API:F06",
+      "pass": true,
+      "detail": 8192
+    },
+    {
+      "name": "queries:F06",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "API:F07",
+      "pass": true,
+      "detail": 12288
+    },
+    {
+      "name": "queries:F07",
+      "pass": true,
+      "detail": 4096.0
+    },
+    {
+      "name": "F04_phase_units",
+      "pass": true,
+      "detail": [
+        87381,
+        87381,
+        87382
+      ]
+    },
+    {
+      "name": "F04_phase_queries",
+      "pass": true,
+      "detail": 11604.0
+    },
+    {
+      "name": "confirmatory_family_42",
+      "pass": true,
+      "detail": 42
+    },
+    {
+      "name": "selected_thresholds_absent",
+      "pass": true,
+      "detail": "NOT_RUN"
+    },
+    {
+      "name": "no_execution:new_implementation_files",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:new_test_executions",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:trace_generations",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:calibration_runs",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:timing_children",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:mechanism_runs",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:latency_runs",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:resource_runs",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "no_execution:cpu_profiles",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "S1_gates_false",
+      "pass": true,
+      "detail": {
+        "S0_SPEC_FREEZABLE": "SEE_INDEPENDENT_REVIEW",
+        "S1_DEV_READY": false,
+        "S1_FINAL_READY": false
+      }
+    },
+    {
+      "name": "R6_param:epoch_size",
+      "pass": true,
+      "detail": 512
+    },
+    {
+      "name": "R6_param:min_tree_size",
+      "pass": true,
+      "detail": 128
+    },
+    {
+      "name": "R6_param:tree_budget",
+      "pass": true,
+      "detail": 32
+    },
+    {
+      "name": "R6_param:down_idle_epochs",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "R6_param:cooldown_epochs",
+      "pass": true,
+      "detail": 8
+    },
+    {
+      "name": "R6_param:payback",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "R6_param:max_convert_records",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "R6_param:scan_ns_per_work",
+      "pass": true,
+      "detail": 1.1427456845204484
+    },
+    {
+      "name": "R6_param:conversion_base_ns",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "R6_param:conversion_ns_per_record",
+      "pass": true,
+      "detail": 31.412726323575615
+    },
+    {
+      "name": "coverage_24_unique",
+      "pass": true,
+      "detail": [
+        "SX01",
+        "SX02",
+        "SX03",
+        "SX04",
+        "SX05",
+        "SX06",
+        "SX07",
+        "SX08",
+        "SX09",
+        "SX10",
+        "SX11",
+        "SX12",
+        "SX13",
+        "SX14",
+        "SX15",
+        "SX16",
+        "SX17",
+        "SX18",
+        "SX19",
+        "SX20",
+        "SX21",
+        "SX22",
+        "SX23",
+        "SX24"
+      ]
+    },
+    {
+      "name": "coverage_NOT_RUN",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "native_account_macros_off",
+      "pass": true,
+      "detail": {
+        "enabled": [],
+        "forbidden": [
+          "INDEX_MEMORY",
+          "INDEX_FAILURE_TEST",
+          "ADAPTIVE_ABLATION",
+          "ADAPTIVE_ALLOC_TRACK",
+          "S0_EVENT_TRACE",
+          "ALLOCATION_FAILURE_INJECTION",
+          "GLOBAL_ALLOCATION_TRACKING"
+        ],
+        "account_values": "NA"
+      }
+    },
+    {
+      "name": "latency_account_macros_off",
+      "pass": true,
+      "detail": {
+        "enabled": [
+          "S0_EVENT_TRACE"
+        ],
+        "forbidden": [
+          "INDEX_MEMORY",
+          "INDEX_FAILURE_TEST",
+          "ADAPTIVE_ALLOC_TRACK",
+          "ADAPTIVE_ABLATION"
+        ],
+        "account_values": "NA",
+        "observer_copy": true
+      }
+    },
+    {
+      "name": "resource_account_macros_on",
+      "pass": true,
+      "detail": {
+        "enabled": [
+          "INDEX_MEMORY",
+          "ADAPTIVE_ALLOC_TRACK",
+          "S0_EVENT_TRACE"
+        ],
+        "forbidden": [
+          "INDEX_FAILURE_TEST",
+          "ADAPTIVE_ABLATION"
+        ],
+        "account_values": "enabled_matched_accounts_Original_unmapped_NA",
+        "observer_copy": true
+      }
+    },
+    {
+      "name": "statistics_explicit_log_endpoint_fast",
+      "pass": true,
+      "detail": "all_10_log_ratios_and_log_ci_upper < -max(component_AA_log_floor,-log(0.95))"
+    },
+    {
+      "name": "statistics_explicit_log_endpoint_slow",
+      "pass": true,
+      "detail": "all_10_log_ratios_and_log_ci_lower > max(component_AA_log_floor,log(1.05))"
+    },
+    {
+      "name": "statistics_explicit_ratio_endpoint_reporting",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "independent_review_status",
+      "pass": true,
+      "detail": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_独立审查_round2.md"
+    },
+    {
+      "name": "review_current_hash:S0_同布局比较合约_v1.md",
+      "pass": true,
+      "detail": "S0_同布局比较合约_v1.md"
+    },
+    {
+      "name": "review_current_hash:S0_实验预注册_v1.md",
+      "pass": true,
+      "detail": "S0_实验预注册_v1.md"
+    },
+    {
+      "name": "review_current_hash:S0_preregistration.json",
+      "pass": true,
+      "detail": "S0_preregistration.json"
+    },
+    {
+      "name": "review_current_hash:S0_测试与指标覆盖矩阵.csv",
+      "pass": true,
+      "detail": "S0_测试与指标覆盖矩阵.csv"
+    },
+    {
+      "name": "review_current_hash:S0_审计与范围裁决.md",
+      "pass": true,
+      "detail": "S0_审计与范围裁决.md"
+    },
+    {
+      "name": "independent_review_required",
+      "pass": true,
+      "detail": true
+    }
+  ],
+  "failed_checks": [],
+  "failed_count": 0,
+  "check_count": 104,
+  "planned_counts": {
+    "dev_inputs": 30,
+    "dev_timing_children": 960,
+    "dev_aa_children": 160,
+    "primary_pairs": 560,
+    "primary_timing_children": 2240,
+    "diagnostic_timing_children": 560,
+    "final_aa_children": 360,
+    "mechanism_runs": 18,
+    "latency_runs": 490,
+    "resource_runs": 490,
+    "cpu_profile_attempts": 4,
+    "total_timing_children": 4280
+  },
+  "independent_review_passed": true,
+  "S0_SPEC_FREEZABLE": true,
+  "S1_DEV_READY": false,
+  "S1_FINAL_READY": false,
+  "experiment_or_algorithm_test_processes_launched": 0
+}

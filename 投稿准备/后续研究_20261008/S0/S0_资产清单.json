@@ -1,0 +1,659 @@
+{
+  "schema": "adaptive_poolhbi.S0.assets.v1",
+  "registration_date": "2026-10-08",
+  "checked_at": "2026-10-09T00:04:49.5491293+08:00",
+  "scope": "S0 design and preregistration only",
+  "status": "S0_SPEC_FREEZABLE",
+  "bindings": [
+    {
+      "role": "freezable_contract",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\阶段3_设计修订与冻结规格_v4_收口版.md",
+      "bytes": 14415,
+      "sha256": "23f9ec384834d0a2a6bc39423efbd3de33d5e5ddcb3f773ec2d3c57a957813a9",
+      "expected_sha256": "23f9ec384834d0a2a6bc39423efbd3de33d5e5ddcb3f773ec2d3c57a957813a9",
+      "matches_expected": true
+    },
+    {
+      "role": "R6_source",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\adaptive_poolhbi_final.hpp",
+      "bytes": 21284,
+      "sha256": "8e7a351e8ee14a1a5511a99502f7d938296cc57c3757a74d7b45fc2071a63e0c",
+      "expected_sha256": "8e7a351e8ee14a1a5511a99502f7d938296cc57c3757a74d7b45fc2071a63e0c",
+      "matches_expected": true
+    },
+    {
+      "role": "R0_R11_config",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\R0-R11_冻结配置.json",
+      "bytes": 43743,
+      "sha256": "d749a8b395b43dff66b325a2593e26f1e7a15f02c22f490fa0d8758239272aa6",
+      "expected_sha256": "d749a8b395b43dff66b325a2593e26f1e7a15f02c22f490fa0d8758239272aa6",
+      "matches_expected": true
+    },
+    {
+      "role": "R6_final_parameters",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\FINAL_CONFIG_R6.json",
+      "bytes": 4299,
+      "sha256": "3f6fa6e8e67e2cd02022cf54b7debef9875d7cfdb013fddc01ba4561e5b4f49b",
+      "expected_sha256": "3f6fa6e8e67e2cd02022cf54b7debef9875d7cfdb013fddc01ba4561e5b4f49b",
+      "matches_expected": true
+    },
+    {
+      "role": "original_final_manifest",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\experiment_manifest.json",
+      "bytes": 133703,
+      "sha256": "b6c57be9a6de26bcb756493764c1ab0854036b301055c8390e3e41107e092442",
+      "expected_sha256": "b6c57be9a6de26bcb756493764c1ab0854036b301055c8390e3e41107e092442",
+      "matches_expected": true
+    },
+    {
+      "role": "historical_GREEN",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\GREEN_测试记录.json",
+      "bytes": 12425,
+      "sha256": "6c61d867b8baf792f76d6a3eabdab63e9550ea25f3bbed93aca44de2abd13559",
+      "expected_sha256": "6c61d867b8baf792f76d6a3eabdab63e9550ea25f3bbed93aca44de2abd13559",
+      "matches_expected": true
+    },
+    {
+      "role": "complete_chinese_source",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\论文初稿_20261007\\论文正文.md",
+      "bytes": 45950,
+      "sha256": "7e03652d8a09fc9e2be677283a74267de9f8d9cc5b00694e460e5b4f3713d11b",
+      "expected_sha256": "7e03652d8a09fc9e2be677283a74267de9f8d9cc5b00694e460e5b4f3713d11b",
+      "matches_expected": true
+    },
+    {
+      "role": "complete_English_source",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\论文初稿_20261007\\论文正文_English.md",
+      "bytes": 56415,
+      "sha256": "506e32281b951c478b4aede602c02906132a926e3f2f6a98e0167a13476e4f8b",
+      "expected_sha256": "506e32281b951c478b4aede602c02906132a926e3f2f6a98e0167a13476e4f8b",
+      "matches_expected": true
+    },
+    {
+      "role": "old_ablation_definitions",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\R0-R11_冻结配置表.md",
+      "bytes": 1932,
+      "sha256": "3bfe4b28ce5ed8eb92280bd7e2a5e61fb3628633eb1fe7c8f53360b8c8e83ab9",
+      "expected_sha256": "3bfe4b28ce5ed8eb92280bd7e2a5e61fb3628633eb1fe7c8f53360b8c8e83ab9",
+      "matches_expected": true
+    },
+    {
+      "role": "historical_test_design",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\正式测试设计.md",
+      "bytes": 7906,
+      "sha256": "315ef329135db968c1f405416a9340ca58d29acc28b1a37c31dde8da79669599",
+      "expected_sha256": "315ef329135db968c1f405416a9340ca58d29acc28b1a37c31dde8da79669599",
+      "matches_expected": true
+    },
+    {
+      "role": "content_review",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\论文初稿_20261007\\paper_review_round2.md",
+      "bytes": 9976,
+      "sha256": "873bb0e98a9ba928b50159b7459c7c96babdcb9c467f832c576e2aa06828e83c",
+      "expected_sha256": "873bb0e98a9ba928b50159b7459c7c96babdcb9c467f832c576e2aa06828e83c",
+      "matches_expected": true
+    },
+    {
+      "role": "supplement_findings",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\补实验结论与论文定位.md",
+      "bytes": 3953,
+      "sha256": "75d832c473bfdbfae1f4993de4b13b7a2e3e65bcbf9f474735c09ae7390a6763",
+      "expected_sha256": "75d832c473bfdbfae1f4993de4b13b7a2e3e65bcbf9f474735c09ae7390a6763",
+      "matches_expected": true
+    },
+    {
+      "role": "prior_roadmap",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\后续研究执行方案_v1.md",
+      "bytes": 22331,
+      "sha256": "87b3f939f2752270c05419568d377f4c00dbc784182792158ee0aa7ea603f11e",
+      "expected_sha256": "87b3f939f2752270c05419568d377f4c00dbc784182792158ee0aa7ea603f11e",
+      "matches_expected": true
+    },
+    {
+      "role": "frozen_source:adaptive_poolhbi_final.hpp",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\adaptive_poolhbi_final.hpp",
+      "bytes": 21284,
+      "sha256": "8e7a351e8ee14a1a5511a99502f7d938296cc57c3757a74d7b45fc2071a63e0c",
+      "expected_sha256": "8e7a351e8ee14a1a5511a99502f7d938296cc57c3757a74d7b45fc2071a63e0c",
+      "matches_expected": true
+    },
+    {
+      "role": "frozen_source:adaptive_types.hpp",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\adaptive_types.hpp",
+      "bytes": 1282,
+      "sha256": "5bf2baa9fab583e3342fd45485d3770ac4e2a71d0abd5a88e63e15d34e78cabe",
+      "expected_sha256": "5bf2baa9fab583e3342fd45485d3770ac4e2a71d0abd5a88e63e15d34e78cabe",
+      "matches_expected": true
+    },
+    {
+      "role": "frozen_source:shared_allocator.hpp",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\shared_allocator.hpp",
+      "bytes": 2259,
+      "sha256": "66ad9ec278c27a07fcc8c63d00c303f46a48fe7ac4e26bdf801d7fca024c462f",
+      "expected_sha256": "66ad9ec278c27a07fcc8c63d00c303f46a48fe7ac4e26bdf801d7fca024c462f",
+      "matches_expected": true
+    },
+    {
+      "role": "frozen_source:frozen_config.hpp",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\frozen_config.hpp",
+      "bytes": 5799,
+      "sha256": "5efb54ce732ede2b9b25f7ea39240fccb95bdc08462733f89d3363c0473f6074",
+      "expected_sha256": "5efb54ce732ede2b9b25f7ea39240fccb95bdc08462733f89d3363c0473f6074",
+      "matches_expected": true
+    },
+    {
+      "role": "frozen_source:final_index_cli.cpp",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\final_index_cli.cpp",
+      "bytes": 7123,
+      "sha256": "f8c6b62c9310a3a8c3f254a97d20e57d5ac03d160d4093d0a42c585c1d2478ac",
+      "expected_sha256": "f8c6b62c9310a3a8c3f254a97d20e57d5ac03d160d4093d0a42c585c1d2478ac",
+      "matches_expected": true
+    },
+    {
+      "role": "historical_unified_binary",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\unified_driver.exe",
+      "bytes": 521216,
+      "sha256": "cc494d3253fa3513f24d173bcb66230b582916c8db43d88c33369f19e596d1a6",
+      "expected_sha256": "cc494d3253fa3513f24d173bcb66230b582916c8db43d88c33369f19e596d1a6",
+      "matches_expected": true
+    },
+    {
+      "role": "legacy_pool",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\legacy\\pool_index.hpp",
+      "bytes": 5186,
+      "sha256": "710202ee8396ac899d11cf3e3945ab5d630d8d86d3651cd7cec0da93bba45774",
+      "expected_sha256": "710202ee8396ac899d11cf3e3945ab5d630d8d86d3651cd7cec0da93bba45774",
+      "matches_expected": true
+    },
+    {
+      "role": "legacy_generators",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\legacy\\generators.hpp",
+      "bytes": 18915,
+      "sha256": "954cc8e923911926f1a689ba3eac2afd30c71351b87220713a62659d9730d6a6",
+      "expected_sha256": "954cc8e923911926f1a689ba3eac2afd30c71351b87220713a62659d9730d6a6",
+      "matches_expected": true
+    },
+    {
+      "role": "driver_core_current_frozen_horizon",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\driver_core.hpp",
+      "bytes": 3725,
+      "sha256": "91c332cb32a66b7195a0c28968eed7a9d703f5270e1ba72e8fa42868ae351c43",
+      "expected_sha256": "91c332cb32a66b7195a0c28968eed7a9d703f5270e1ba72e8fa42868ae351c43",
+      "matches_expected": true
+    },
+    {
+      "role": "driver_core_historical_snapshot",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\driver_pre_review_green\\driver_core.hpp",
+      "bytes": 3092,
+      "sha256": "e6cf584bdea6100dcfebd1cef68dbce41f85fc7ead36d137741d379eed140bc0",
+      "expected_sha256": "e6cf584bdea6100dcfebd1cef68dbce41f85fc7ead36d137741d379eed140bc0",
+      "matches_expected": true
+    },
+    {
+      "role": "wall_driver",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\wall_driver.hpp",
+      "bytes": 7790,
+      "sha256": "ca2bc88e7e891605d352531c0054c8f00d76b2e1ddef9940143bad275546aa03",
+      "expected_sha256": "ca2bc88e7e891605d352531c0054c8f00d76b2e1ddef9940143bad275546aa03",
+      "matches_expected": true
+    },
+    {
+      "role": "trace_cache_current_frozen_horizon",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\trace_cache.hpp",
+      "bytes": 6639,
+      "sha256": "95ab6a9a695081085f64e2944fff32de2d72efb8a4ebe2e6eb93c5ea15f609a7",
+      "expected_sha256": "95ab6a9a695081085f64e2944fff32de2d72efb8a4ebe2e6eb93c5ea15f609a7",
+      "matches_expected": true
+    },
+    {
+      "role": "horizon_frozen_source_manifest",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\horizon\\manifest_start.json",
+      "bytes": 135460,
+      "sha256": "092ce10b832129e9c405727be01a2a398b2740667b6ae68b5e4335c34ea0a6f8",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "dataset_January",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\data\\tlc_2024_01_uint64.bin",
+      "bytes": 23716944,
+      "sha256": "070d1574bf455dce54daad47a64ecda9176bc6cd1af771d84d8b0c3de1b0da7d",
+      "expected_sha256": "070d1574bf455dce54daad47a64ecda9176bc6cd1af771d84d8b0c3de1b0da7d",
+      "matches_expected": true
+    },
+    {
+      "role": "compiler:executable",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_tools\\llvm-mingw-20260922-ucrt-x86_64\\bin\\clang++.exe",
+      "bytes": 14336,
+      "sha256": "20ba1856942744291a6aaaf9f2c94f6d0cd7cac5aa9557fce96471dc7ef25d6f",
+      "expected_sha256": "20ba1856942744291a6aaaf9f2c94f6d0cd7cac5aa9557fce96471dc7ef25d6f",
+      "matches_expected": true
+    },
+    {
+      "role": "compiler:frontend",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_tools\\llvm-mingw-20260922-ucrt-x86_64\\bin\\clang-23.exe",
+      "bytes": 96256,
+      "sha256": "44ad563a8a8cb6509abb1686cf9e630ecf9ba8ecc4e6d999656adca5cb9b6666",
+      "expected_sha256": "44ad563a8a8cb6509abb1686cf9e630ecf9ba8ecc4e6d999656adca5cb9b6666",
+      "matches_expected": true
+    },
+    {
+      "role": "tool:core_topology:source",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\core_topology.cpp",
+      "bytes": 6737,
+      "sha256": "ef098d32c5b21d99df7a34acfe73c639b9b240f6f3a537c6bf75a1affeee2978",
+      "expected_sha256": "ef098d32c5b21d99df7a34acfe73c639b9b240f6f3a537c6bf75a1affeee2978",
+      "matches_expected": true
+    },
+    {
+      "role": "tool:core_topology:binary",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\core_topology.exe",
+      "bytes": 653532,
+      "sha256": "38e9d2f3c856ffaea07a5d7746d45a7cbb66df354bd79f86d6a4cdeebb6ae729",
+      "expected_sha256": "38e9d2f3c856ffaea07a5d7746d45a7cbb66df354bd79f86d6a4cdeebb6ae729",
+      "matches_expected": true
+    },
+    {
+      "role": "tool:pin_launch:source",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\pin_launch.cpp",
+      "bytes": 2468,
+      "sha256": "708c99663847daf55cc89b80f252c3d79a8c47979e0579b710f6ba443ebaeeea",
+      "expected_sha256": "708c99663847daf55cc89b80f252c3d79a8c47979e0579b710f6ba443ebaeeea",
+      "matches_expected": true
+    },
+    {
+      "role": "tool:pin_launch:binary",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\pin_launch.exe",
+      "bytes": 643365,
+      "sha256": "09f207976d88646b4024d8920f0b0fe4c23c8afb1925f5f265aa87214aa0bc5f",
+      "expected_sha256": "09f207976d88646b4024d8920f0b0fe4c23c8afb1925f5f265aa87214aa0bc5f",
+      "matches_expected": true
+    },
+    {
+      "role": "tool:bench_pinned_pair:source",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\公开数据实验\\bench_pinned_pair.py",
+      "bytes": 16530,
+      "sha256": "bd38435b1e5b51d71bafbe0b92a6280f8b9b6af27e4dbb87832b5fa51ca9dea7",
+      "expected_sha256": "bd38435b1e5b51d71bafbe0b92a6280f8b9b6af27e4dbb87832b5fa51ca9dea7",
+      "matches_expected": true
+    },
+    {
+      "role": "S0_runtime_current:bench_pinned_pair",
+      "path": "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "bytes": 106448,
+      "sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+      "expected_sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+      "matches_expected": true
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/final_experiments/protocol.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\protocol.json",
+      "bytes": 5714,
+      "sha256": "c42f39fd495b2dcbcf3924503492b3ac16a9689322397af890508fb8e60c3800",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/final_experiments/mechanism_protocol.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\mechanism_protocol.json",
+      "bytes": 6563,
+      "sha256": "a8469481beb9cf72fc7f7cc3330c2b3fcbd1535fdcd822af59bf02daff1159af",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/final_experiments/observer_protocol.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\observer_protocol.json",
+      "bytes": 7157,
+      "sha256": "49edbb2c7b2785737272dfef8083a85f6bd969dfc88091fd5738b75e867c8e86",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/final_experiments/C_phase_observation_registration_v3.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\C_phase_observation_registration_v3.json",
+      "bytes": 31785,
+      "sha256": "aab983eb75a0c5c79a5255802d94e0db17d7d7ea83ff56e2f813430becaa6ced",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/supplementary_20261007/horizon/protocol.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\horizon\\protocol.json",
+      "bytes": 8407,
+      "sha256": "f51d20a3e793e930752fa4c994f763da7ba95f506f212d7d22959a2ca9e52271",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/supplementary_20261007/bucket/protocol_candidate.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\bucket\\protocol_candidate.json",
+      "bytes": 3963,
+      "sha256": "f68fa525c0dca30422da64aa2b748c8faf01c85697b99250ae6060f1c93f4558",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "seed_scope:投稿准备/adaptive_poolhbi/supplementary_20261007/bucket/aa_protocol_candidate.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\bucket\\aa_protocol_candidate.json",
+      "bytes": 731,
+      "sha256": "a07d9e79567030b9c24e65a26b8d3ae746d3fd059d0980a671559dfdf8e8cbf6",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_同布局比较合约_v1.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_同布局比较合约_v1.md",
+      "bytes": 13482,
+      "sha256": "c0a9a6bb805ff03c38c61c220b10526c5b7a5d0e9796ea82e2ed0d7c7ef0027c",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_实验预注册_v1.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_实验预注册_v1.md",
+      "bytes": 18770,
+      "sha256": "860b923dba0db7933f2deacdff8539a2cc75b029058f5f06465a074854e09a08",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_preregistration.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_preregistration.json",
+      "bytes": 20742,
+      "sha256": "bdb24556642d4137ab485befac9758b0abb04d933ebe5a3493b03d981cd9118a",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_测试与指标覆盖矩阵.csv",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_测试与指标覆盖矩阵.csv",
+      "bytes": 7412,
+      "sha256": "92c7d6e72b7f0ba9726560418ae3fdda92b5602ca819e0906c2fbc4370c976fc",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_审计与范围裁决.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_审计与范围裁决.md",
+      "bytes": 6098,
+      "sha256": "d1a27b81abc1606726019d6a41fd484268987a782a1c479ab0ffd3930f5b1c4a",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_入口清单.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_入口清单.md",
+      "bytes": 4472,
+      "sha256": "d9f0586f3ee5892206d8dd61d07bdc9778f014377af1385e650de8909831d93d",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_静态核验.ps1",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_静态核验.ps1",
+      "bytes": 15506,
+      "sha256": "1df695ed1f211e09f41319e8d52cafeded623817341a575a6e585dfeef591c98",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "independent_review",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_独立审查_round1.md",
+      "bytes": 13655,
+      "sha256": "d931f06e31f5bc1c7488298c9f9f3436506a327524b12e86290e2113e890eed1",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "independent_review",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_独立审查_round2.md",
+      "bytes": 9792,
+      "sha256": "41659d141111a5106465ad1b0041f5e63ea573079dbf30d0347292b35def77d4",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "round1_review_input:S0_同布局比较合约_v1.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\round1_input\\S0_同布局比较合约_v1.md",
+      "bytes": 12731,
+      "sha256": "53e4201ed476892f47c802244b8f56d3775f10dffe1aa1dcde3491e833b0d588",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "round1_review_input:S0_实验预注册_v1.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\round1_input\\S0_实验预注册_v1.md",
+      "bytes": 17660,
+      "sha256": "8a064ed19ca6d22b12f94a486241c416fdfd0b20d1ee14d9ed19d9b569882842",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "round1_review_input:S0_preregistration.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\round1_input\\S0_preregistration.json",
+      "bytes": 18819,
+      "sha256": "bda9c4a0d3f4725ac5622f02a7251bed3f8b6d24743ea6a797e4f044103d2eb9",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "round1_review_input:S0_测试与指标覆盖矩阵.csv",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\round1_input\\S0_测试与指标覆盖矩阵.csv",
+      "bytes": 7270,
+      "sha256": "bffcbb7489832a3f442549dd3ac333258cb4bfbb7841f894dcf44b340ae29fa7",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "round1_review_input:S0_审计与范围裁决.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\round1_input\\S0_审计与范围裁决.md",
+      "bytes": 5158,
+      "sha256": "5b9db6aadff713cca76f8083976eb0069f5466398f7ab6ea59b267cc490e78fe",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "initial_static_failed_record",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\S0_核验记录_initial_FAILED.json",
+      "bytes": 14931,
+      "sha256": "0fb491ba4876491ad904ae78eb7f87f9cdadfbee6d6c4117e7f13bb2d54beedc",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "initial_static_failed_assets",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\S0_资产清单_initial_FAILED.json",
+      "bytes": 23646,
+      "sha256": "84db4cf6edc65cb9acc3de746ccfc75104b008a09c5a990e02972f60de3c23ee",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "pre_round2_old_review_rejection",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\audit\\S0_核验记录_pre_round2_FAIL_old_review.json",
+      "bytes": 19173,
+      "sha256": "0e4aa8590c3c96d512963b077147d231270f25d563a855e913f753137517ceed",
+      "expected_sha256": null,
+      "matches_expected": null
+    }
+  ],
+  "historical_seed_scope": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\protocol.json",
+      "sha256": "c42f39fd495b2dcbcf3924503492b3ac16a9689322397af890508fb8e60c3800",
+      "seeds": [
+        71001,
+        71002,
+        71003,
+        71004,
+        71005,
+        72001,
+        72002,
+        72003,
+        72004,
+        72005,
+        73001,
+        73002,
+        73003,
+        73004,
+        73005,
+        74001,
+        74002,
+        74003,
+        74004,
+        74005,
+        75001,
+        75002,
+        75003,
+        75004,
+        75005,
+        76001,
+        76002,
+        76003,
+        78001
+      ]
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\mechanism_protocol.json",
+      "sha256": "a8469481beb9cf72fc7f7cc3330c2b3fcbd1535fdcd822af59bf02daff1159af",
+      "seeds": []
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\observer_protocol.json",
+      "sha256": "49edbb2c7b2785737272dfef8083a85f6bd969dfc88091fd5738b75e867c8e86",
+      "seeds": []
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final_experiments\\C_phase_observation_registration_v3.json",
+      "sha256": "aab983eb75a0c5c79a5255802d94e0db17d7d7ea83ff56e2f813430becaa6ced",
+      "seeds": [
+        72001,
+        72002,
+        72003,
+        72004,
+        72005
+      ]
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\horizon\\protocol.json",
+      "sha256": "f51d20a3e793e930752fa4c994f763da7ba95f506f212d7d22959a2ca9e52271",
+      "seeds": [
+        81001,
+        81002,
+        81003,
+        81004,
+        81005,
+        81901
+      ]
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\bucket\\protocol_candidate.json",
+      "sha256": "f68fa525c0dca30422da64aa2b748c8faf01c85697b99250ae6060f1c93f4558",
+      "seeds": [
+        82001,
+        82002,
+        82003,
+        82004,
+        82005
+      ]
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\supplementary_20261007\\bucket\\aa_protocol_candidate.json",
+      "sha256": "a07d9e79567030b9c24e65a26b8d3ae746d3fd059d0980a671559dfdf8e8cbf6",
+      "seeds": [
+        82001,
+        82002,
+        82003,
+        82004,
+        82005
+      ]
+    }
+  ],
+  "historical_unique_seeds": [
+    71001,
+    71002,
+    71003,
+    71004,
+    71005,
+    72001,
+    72002,
+    72003,
+    72004,
+    72005,
+    73001,
+    73002,
+    73003,
+    73004,
+    73005,
+    74001,
+    74002,
+    74003,
+    74004,
+    74005,
+    75001,
+    75002,
+    75003,
+    75004,
+    75005,
+    76001,
+    76002,
+    76003,
+    78001,
+    81001,
+    81002,
+    81003,
+    81004,
+    81005,
+    81901,
+    82001,
+    82002,
+    82003,
+    82004,
+    82005
+  ],
+  "runtime_change": {
+    "old_path": "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "old_sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a",
+    "current_sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+    "old_hash_reused": false,
+    "current_interpreter_executed": false,
+    "live_S1_environment_verified": false
+  },
+  "new_seed_sets": {
+    "dev": [
+      90001,
+      90002,
+      90003
+    ],
+    "final": [
+      91001,
+      91002,
+      91003,
+      91004,
+      91005,
+      91006,
+      91007,
+      91008,
+      91009,
+      91010
+    ],
+    "aa": [
+      92001
+    ],
+    "mechanism": [
+      93001,
+      93002,
+      93003
+    ],
+    "random_test": [
+      94001,
+      94002
+    ]
+  },
+  "seed_intersection": [],
+  "new_algorithm_implementation_files": 0,
+  "benchmark_processes_launched": 0,
+  "S1_DEV_READY": false,
+  "S1_FINAL_READY": false
+}

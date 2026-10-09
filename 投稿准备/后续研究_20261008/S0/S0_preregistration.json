@@ -1,0 +1,833 @@
+{
+  "schema": "adaptive_poolhbi.S0.preregistration.v1",
+  "date": "2026-10-08",
+  "stage": "S0",
+  "status": "PRE_REGISTERED_NOT_EXECUTED",
+  "normative_contract": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_同布局比较合约_v1.md",
+  "explanatory_protocol": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_实验预注册_v1.md",
+  "coverage": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_测试与指标覆盖矩阵.csv",
+  "freeze": {
+    "no_R6_changes": true,
+    "no_cost_recalibration": true,
+    "no_formal_result_tuning": true,
+    "new_thresholds_dev_only": true,
+    "R6": {
+      "epoch_size": 512,
+      "min_tree_size": 128,
+      "tree_budget": 32,
+      "down_idle_epochs": 4,
+      "cooldown_epochs": 8,
+      "payback": 2,
+      "max_promotions_per_epoch": 1,
+      "max_scheduled_demotions_per_epoch": 1,
+      "cleanup_quota_exempt": true,
+      "cleanup_identity": "total_demotions=scheduled_demotions+cleanup_demotions",
+      "max_convert_records": 0,
+      "scan_ns_per_work": 1.1427456845204484,
+      "conversion_base_ns": 0,
+      "conversion_ns_per_record": 31.412726323575615,
+      "class_expression": "min(max(ceil_log2(n)-7,0),9)",
+      "tree_cost_expression": "30+5*log2(128*2^class+1)",
+      "tree_cost_source": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/adaptive_poolhbi/FINAL_CONFIG_R6.json",
+      "tree_cost_sha256": "3f6fa6e8e67e2cd02022cf54b7debef9875d7cfdb013fddc01ba4561e5b4f49b",
+      "cost_interpretation": "FINAL_VALUES_HISTORICAL_PROVISIONAL_FLAG_PRESERVED",
+      "decay_factor": 1,
+      "gain_clip": false
+    }
+  },
+  "layout": {
+    "record_bytes": 16,
+    "node_bytes": 32,
+    "adaptive_tail_bytes": 32,
+    "bucket_bytes": 64,
+    "roots": 64,
+    "buckets_per_root": 64,
+    "total_buckets": 4096,
+    "index_members_and_size": "equal_to_production",
+    "manager_reserve": {
+      "trees": 32,
+      "candidates": 4096,
+      "cooldown": 4096
+    },
+    "build_pool_grow": "initial.size",
+    "later_pool_grow": 1024,
+    "tree_type": "std::multiset<Record,std::less<Record>,Alloc<Record>>",
+    "native_dispatch": "static_template"
+  },
+  "methods": [
+    {
+      "id": "Original",
+      "matched": false,
+      "source": "original_pool",
+      "credit": "original",
+      "gate": "original",
+      "rank": "original"
+    },
+    {
+      "id": "M_LIST",
+      "matched": true,
+      "work": false,
+      "range_buffer": false,
+      "credit": "off",
+      "epoch": false,
+      "candidates": false,
+      "promotion": false,
+      "scheduled_demotion": false,
+      "cleanup": true
+    },
+    {
+      "id": "M_OBSERVE_LIST",
+      "matched": true,
+      "work": true,
+      "range_buffer": true,
+      "credit": "ns",
+      "epoch": "counter_only",
+      "candidates": false,
+      "promotion": false,
+      "scheduled_demotion": false,
+      "cleanup": true
+    },
+    {
+      "id": "M_FIXED_selected",
+      "matched": true,
+      "work": true,
+      "range_buffer": true,
+      "credit": "constant_zero",
+      "epoch": true,
+      "candidates": true,
+      "gate": "n>=max(128,h)",
+      "h_source": "dev_selection",
+      "rank": "n_desc_address_asc",
+      "scheduled_demotion": true,
+      "cleanup": true
+    },
+    {
+      "id": "M_EVENT_selected",
+      "matched": true,
+      "work": true,
+      "range_buffer": true,
+      "credit": "event",
+      "event": "one_if_completed_LIST_observation_W>0",
+      "epoch": true,
+      "candidates": true,
+      "gate": "n>=128 && events>=theta",
+      "theta_source": "dev_selection",
+      "rank": "events_desc_address_asc",
+      "scheduled_demotion": true,
+      "cleanup": true
+    },
+    {
+      "id": "R6",
+      "matched": true,
+      "source": "unchanged_production",
+      "work": true,
+      "range_buffer": true,
+      "credit": "ns",
+      "epoch": true,
+      "candidates": true,
+      "gate": "gain_ns>=2*conversion_ns(n)",
+      "rank": "gain_over_conversion_desc_then_gain_desc_then_address_asc",
+      "scheduled_demotion": true,
+      "cleanup": true
+    },
+    {
+      "id": "M_NO_IDLE",
+      "matched": true,
+      "work": true,
+      "range_buffer": true,
+      "credit": "ns",
+      "epoch": true,
+      "candidates": true,
+      "gate": "R6",
+      "rank": "R6",
+      "scheduled_demotion": false,
+      "cleanup": true
+    }
+  ],
+  "primary_pairs": [
+    {
+      "id": "P01",
+      "candidate": "M_LIST",
+      "reference": "Original"
+    },
+    {
+      "id": "P02",
+      "candidate": "M_OBSERVE_LIST",
+      "reference": "M_LIST"
+    },
+    {
+      "id": "P03",
+      "candidate": "R6",
+      "reference": "M_LIST"
+    },
+    {
+      "id": "P04",
+      "candidate": "R6",
+      "reference": "M_OBSERVE_LIST"
+    },
+    {
+      "id": "P05",
+      "candidate": "R6",
+      "reference": "Original"
+    },
+    {
+      "id": "P06",
+      "candidate": "R6",
+      "reference": "M_EVENT_selected"
+    },
+    {
+      "id": "P07",
+      "candidate": "R6",
+      "reference": "M_FIXED_selected"
+    },
+    {
+      "id": "P08",
+      "candidate": "R6",
+      "reference": "M_NO_IDLE"
+    }
+  ],
+  "diagnostic_pairs": [
+    {
+      "id": "DIA01",
+      "candidate": "R6",
+      "reference": "M_EVENT_16"
+    },
+    {
+      "id": "DIA02",
+      "candidate": "R6",
+      "reference": "M_FIXED_128"
+    }
+  ],
+  "seeds": {
+    "dev": [
+      90001,
+      90002,
+      90003
+    ],
+    "final": [
+      91001,
+      91002,
+      91003,
+      91004,
+      91005,
+      91006,
+      91007,
+      91008,
+      91009,
+      91010
+    ],
+    "aa": [
+      92001
+    ],
+    "mechanism": [
+      93001,
+      93002,
+      93003
+    ],
+    "random_test": [
+      94001,
+      94002
+    ]
+  },
+  "dataset": {
+    "id": "NYC_2024_01",
+    "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/公开数据实验/data/tlc_2024_01_uint64.bin",
+    "sha256": "070d1574bf455dce54daad47a64ecda9176bc6cd1af771d84d8b0c3de1b0da7d",
+    "rows": 2964617,
+    "stride": 2964618,
+    "span": 2678400,
+    "key_unit": "civil_month_relative_seconds",
+    "identity": "source_row_ordinal_1_based",
+    "deduplicate": false
+  },
+  "rng": {
+    "engine": "std::mt19937_64",
+    "uint64_arithmetic": "modulo_2^64",
+    "public_init": "7817329+seed*104729",
+    "public_start": "uniform_integer_inclusive[0,rows-N-U]",
+    "drift_start": "0x6249037adf150be1+seed*104729",
+    "drift_cancel": "0x81ec39b7526a04df XOR(seed*104729)",
+    "drift_shuffle": "0x35710df29a48b6ce+seed*130363",
+    "synthetic_init": "0x6a09e667f3bcc909 XOR(seed*104729) XOR(tag*0x9e3779b97f4a7c15)",
+    "synthetic_tags": {
+      "low_work": 1,
+      "high_work": 2,
+      "prefix": 3,
+      "endpoint": 4,
+      "competition": 5
+    }
+  },
+  "synthetic": {
+    "stride": 1099511627776,
+    "span": 4096,
+    "initial_identity": "1..N",
+    "time": "bucket_slot",
+    "code": "time*stride+row_id",
+    "slot_validation": "domain.slot(code)==time",
+    "low_rank": "uniform_inclusive[2,8]",
+    "high_rank": "uniform_inclusive[ceil(n/4),floor(3*n/4)]",
+    "prefix": "r=floor(3*n/4);lo=k_r.code;hi=k_(r+8).code;output_exactly_8",
+    "endpoint": "erase_min;insert_new_tail_identity_from_N+1",
+    "competition": "bucket=unit_zero_based_mod_64;high_rank",
+    "same_record_reinsert_modes": [
+      "low_work",
+      "high_work",
+      "prefix",
+      "competition"
+    ]
+  },
+  "final_cases": [
+    {
+      "id": "F01",
+      "name": "ordered_sparse",
+      "source": "NYC_2024_01",
+      "N": 262144,
+      "U": 262144,
+      "q": 256,
+      "c": 0,
+      "queries": 1024,
+      "api_calls": 525312
+    },
+    {
+      "id": "F02",
+      "name": "ordered_sparse_cancel",
+      "source": "NYC_2024_01",
+      "N": 262144,
+      "U": 262144,
+      "q": 256,
+      "c": 256,
+      "queries": 1024,
+      "scheduled_random_cancels": 1024,
+      "api_calls": 525312
+    },
+    {
+      "id": "F03",
+      "name": "ordered_dense",
+      "source": "NYC_2024_01",
+      "N": 262144,
+      "U": 262144,
+      "q": 1,
+      "c": 0,
+      "queries": 262144,
+      "api_calls": 786432
+    },
+    {
+      "id": "F04",
+      "name": "s0_sparse_shuffle_sparse_v1",
+      "source": "NYC_2024_01",
+      "N": 262144,
+      "U": 262144,
+      "phase_lengths": [
+        87381,
+        87381,
+        87382
+      ],
+      "phase_q": [
+        256,
+        8,
+        256
+      ],
+      "phase_c": [
+        256,
+        "every_unit_random",
+        256
+      ],
+      "phase_queries": [
+        341,
+        10922,
+        341
+      ],
+      "queries": 11604,
+      "api_calls": 535892
+    },
+    {
+      "id": "F05",
+      "name": "synthetic_low_work",
+      "source": "synthetic",
+      "buckets": 1,
+      "n": 8192,
+      "N": 8192,
+      "U": 4096,
+      "q": 0,
+      "queries": 0,
+      "api_calls": 8192
+    },
+    {
+      "id": "F06",
+      "name": "synthetic_high_work",
+      "source": "synthetic",
+      "buckets": 1,
+      "n": 8192,
+      "N": 8192,
+      "U": 4096,
+      "q": 0,
+      "queries": 0,
+      "api_calls": 8192
+    },
+    {
+      "id": "F07",
+      "name": "synthetic_prefix",
+      "source": "synthetic",
+      "buckets": 1,
+      "n": 8192,
+      "N": 8192,
+      "U": 4096,
+      "q": 1,
+      "output_per_query": 8,
+      "queries": 4096,
+      "api_calls": 12288
+    }
+  ],
+  "dev_cases": [
+    {
+      "id": "D01",
+      "family": "endpoint",
+      "buckets": 1,
+      "n": 256,
+      "N": 256,
+      "U": 512,
+      "q": 0
+    },
+    {
+      "id": "D02",
+      "family": "endpoint",
+      "buckets": 1,
+      "n": 4096,
+      "N": 4096,
+      "U": 8192,
+      "q": 0
+    },
+    {
+      "id": "D03",
+      "family": "low_work",
+      "buckets": 1,
+      "n": 256,
+      "N": 256,
+      "U": 512,
+      "q": 0
+    },
+    {
+      "id": "D04",
+      "family": "low_work",
+      "buckets": 1,
+      "n": 4096,
+      "N": 4096,
+      "U": 8192,
+      "q": 0
+    },
+    {
+      "id": "D05",
+      "family": "high_work",
+      "buckets": 1,
+      "n": 256,
+      "N": 256,
+      "U": 512,
+      "q": 0
+    },
+    {
+      "id": "D06",
+      "family": "high_work",
+      "buckets": 1,
+      "n": 4096,
+      "N": 4096,
+      "U": 8192,
+      "q": 0
+    },
+    {
+      "id": "D07",
+      "family": "prefix",
+      "buckets": 1,
+      "n": 256,
+      "N": 256,
+      "U": 512,
+      "q": 1
+    },
+    {
+      "id": "D08",
+      "family": "prefix",
+      "buckets": 1,
+      "n": 4096,
+      "N": 4096,
+      "U": 8192,
+      "q": 1
+    },
+    {
+      "id": "D09",
+      "family": "competition",
+      "buckets": 64,
+      "n": 256,
+      "N": 16384,
+      "U": 512,
+      "q": 0
+    },
+    {
+      "id": "D10",
+      "family": "competition",
+      "buckets": 64,
+      "n": 1024,
+      "N": 65536,
+      "U": 8192,
+      "q": 0
+    }
+  ],
+  "dev_selection": {
+    "event_candidates": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "fixed_candidates": [
+      128,
+      512,
+      2048,
+      8192
+    ],
+    "candidate_order": [
+      "E8",
+      "E16",
+      "E32",
+      "E64",
+      "F128",
+      "F512",
+      "F2048",
+      "F8192"
+    ],
+    "reference": "M_LIST",
+    "objective": "mean(log(two_round_total_ratio)) over all 30 inputs equal weight",
+    "tie": "exact_floating_equality_then_smaller_threshold",
+    "required_complete_inputs": 30,
+    "selected_theta": null,
+    "selected_h": null,
+    "status": "NOT_RUN",
+    "output": "dev_selection.json",
+    "write_once": true,
+    "fixed_8192_role": "never_promotes_on_registered_dev_sizes_acts_as_observe_manage_extreme_candidate"
+  },
+  "timing": {
+    "rounds": 2,
+    "children_per_pair": 4,
+    "rotation": "bench_pinned_pair balanced REF/CAND order",
+    "ratio": "exp(mean(log(CAND_round/REF_round)))",
+    "components": [
+      "build",
+      "online",
+      "total"
+    ],
+    "build": "Index_constructor+reserves+build(sorted_initial)",
+    "online": "erase+insert+full_range_output+query_hash_check+output_destruction",
+    "total": "build+online",
+    "excluded": [
+      "input_preparation",
+      "reference_preparation",
+      "initial_values_check",
+      "final_values_check",
+      "destroy"
+    ],
+    "auxiliary": [
+      "destroy",
+      "lifecycle"
+    ],
+    "pair_schedule": "case_id_ascending,seed_ascending,pair_id_ascending",
+    "all_runs_serial": true
+  },
+  "aa": {
+    "rounds": 10,
+    "blocks": 5,
+    "children_per_profile": 20,
+    "dev": {
+      "methods": [
+        "M_LIST",
+        "M_EVENT_16"
+      ],
+      "cases": [
+        "D02",
+        "D06"
+      ],
+      "timepoints": [
+        "before",
+        "after"
+      ],
+      "children": 160
+    },
+    "final": {
+      "methods": [
+        "Original",
+        "M_LIST",
+        "R6"
+      ],
+      "cases": [
+        "F01",
+        "F03",
+        "F06"
+      ],
+      "timepoints": [
+        "before",
+        "after"
+      ],
+      "children": 360
+    },
+    "floor": "per component maximum absolute log(two_round_AA_ratio) across all before/after profiles and blocks",
+    "interpretation": "finite_observed_envelope_not_confidence_bound"
+  },
+  "environment": {
+    "platform": "Windows",
+    "cpu_reference": "Intel Core i7-13650HX",
+    "logical_cpu": 3,
+    "affinity_mask": "0x8",
+    "core_class": "P",
+    "compiler": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/adaptive_poolhbi/final_tools/llvm-mingw-20260922-ucrt-x86_64/bin/clang++.exe",
+    "compiler_sha256": "20ba1856942744291a6aaaf9f2c94f6d0cd7cac5aa9557fce96471dc7ef25d6f",
+    "flags": [
+      "-std=c++17",
+      "-O3",
+      "-DNDEBUG",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unknown-pragmas",
+      "-Wno-misleading-indentation"
+    ],
+    "native_forbidden_macros": [
+      "INDEX_MEMORY",
+      "INDEX_FAILURE_TEST",
+      "ADAPTIVE_ABLATION",
+      "ADAPTIVE_ALLOC_TRACK",
+      "S0_EVENT_TRACE",
+      "ALLOCATION_FAILURE_INJECTION",
+      "GLOBAL_ALLOCATION_TRACKING"
+    ],
+    "topology_tool": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/公开数据实验/core_topology.exe",
+    "pin_tool": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/公开数据实验/pin_launch.exe",
+    "pair_runner": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/公开数据实验/bench_pinned_pair.py",
+    "quiet_guard": {
+      "api": "GetSystemTimes",
+      "max_busy_fraction": 0.1,
+      "initial_seconds": 2,
+      "min_subsequent_seconds": 0.2,
+      "retry_seconds": 2,
+      "max_wait_seconds": 300
+    },
+    "live_environment_verification": "S1_REQUIRED_NOT_RUN",
+    "pair_python": "C:/Users/zhangjiacheng/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "pair_python_sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+    "historical_python_sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a",
+    "mode_macros": {
+      "native": {
+        "enabled": [],
+        "forbidden": [
+          "INDEX_MEMORY",
+          "INDEX_FAILURE_TEST",
+          "ADAPTIVE_ABLATION",
+          "ADAPTIVE_ALLOC_TRACK",
+          "S0_EVENT_TRACE",
+          "ALLOCATION_FAILURE_INJECTION",
+          "GLOBAL_ALLOCATION_TRACKING"
+        ],
+        "account_values": "NA"
+      },
+      "latency": {
+        "enabled": [
+          "S0_EVENT_TRACE"
+        ],
+        "forbidden": [
+          "INDEX_MEMORY",
+          "INDEX_FAILURE_TEST",
+          "ADAPTIVE_ALLOC_TRACK",
+          "ADAPTIVE_ABLATION"
+        ],
+        "account_values": "NA",
+        "observer_copy": true
+      },
+      "resource": {
+        "enabled": [
+          "INDEX_MEMORY",
+          "ADAPTIVE_ALLOC_TRACK",
+          "S0_EVENT_TRACE"
+        ],
+        "forbidden": [
+          "INDEX_FAILURE_TEST",
+          "ADAPTIVE_ABLATION"
+        ],
+        "account_values": "enabled_matched_accounts_Original_unmapped_NA",
+        "observer_copy": true
+      }
+    }
+  },
+  "statistics": {
+    "paired_inputs_per_cell": 10,
+    "ratio_summary": [
+      "median",
+      "IQR_linear_interpolation",
+      "wins_ratio_lt_1"
+    ],
+    "confirmatory_pairs": [
+      "P03",
+      "P06",
+      "P07"
+    ],
+    "confirmatory_components": [
+      "online",
+      "total"
+    ],
+    "confirmatory_family_size": 42,
+    "family_alpha": 0.05,
+    "ci": "ratio_ci_lower/ratio_ci_upper reported; log_ci_lower/log_ci_upper used for classification",
+    "ci_estimand": "geometric_mean_of_paired_ratios_not_median",
+    "exploratory_ci_alpha": 0.05,
+    "min_relevant_faster_ratio": 0.95,
+    "min_relevant_slower_ratio": 1.05,
+    "strong_fast": "all_10_log_ratios_and_log_ci_upper < -max(component_AA_log_floor,-log(0.95))",
+    "strong_slow": "all_10_log_ratios_and_log_ci_lower > max(component_AA_log_floor,log(1.05))",
+    "otherwise": "unresolved",
+    "outlier_removal": false,
+    "performance_dependent_reruns": false,
+    "interim_sample_expansion": false,
+    "log_ci_lower": "mean_log - t(df=9,p=1-0.05/(2*42))*sample_sd_log/sqrt(10)",
+    "log_ci_upper": "mean_log + t(df=9,p=1-0.05/(2*42))*sample_sd_log/sqrt(10)",
+    "ratio_ci_lower": "exp(log_ci_lower)",
+    "ratio_ci_upper": "exp(log_ci_upper)",
+    "AA_floor_scale": "log_ratio"
+  },
+  "diagnostics": {
+    "mechanism": {
+      "N": 131072,
+      "buckets": 64,
+      "n": 2048,
+      "phase_names": [
+        "A_hot",
+        "idle1",
+        "B_hot",
+        "idle2",
+        "A_return"
+      ],
+      "phase_units": [
+        32768,
+        16384,
+        32768,
+        16384,
+        32768
+      ],
+      "hot_A": [
+        0,
+        31
+      ],
+      "hot_B": [
+        32,
+        63
+      ],
+      "idle": "bucket0 erase_min insert_fresh_tail identity; other buckets remain nonempty",
+      "matched_methods": 6,
+      "runs": 18,
+      "rng_tag": 5,
+      "hot_phase_round_robin_reset": true
+    },
+    "latency": {
+      "runs": 490,
+      "per_API_samples": true,
+      "conversion_fields": [
+        "type",
+        "API_ordinal",
+        "epoch",
+        "slot",
+        "n",
+        "conversion_body_ns",
+        "api_latency_ns"
+      ],
+      "quantiles": [
+        "p50",
+        "p95",
+        "p99",
+        "max"
+      ],
+      "native_R6_modified": false
+    },
+    "resource": {
+      "runs": 490,
+      "global_requested_bytes": true,
+      "whole_peak": "simultaneous_live_requested_bytes_not_sum_of_category_peaks",
+      "snapshot_every_update_units": 512,
+      "snapshot_phase_final": true,
+      "snapshot_conversion_events": true,
+      "snapshot_after_output_released": true
+    },
+    "cpu_profile": {
+      "method": "R6",
+      "cases": [
+        "F01",
+        "F03",
+        "F06",
+        "F07"
+      ],
+      "seed": 91001,
+      "attempts": 4,
+      "unavailable_policy": "record_unavailable_no_fabricated_CPU_percentage"
+    },
+    "mixed_batches_not_joined_as_one_run": true
+  },
+  "planned_counts": {
+    "dev_inputs": 30,
+    "dev_timing_children": 960,
+    "dev_aa_children": 160,
+    "primary_pairs": 560,
+    "primary_timing_children": 2240,
+    "diagnostic_timing_children": 560,
+    "final_aa_children": 360,
+    "total_timing_children": 4280,
+    "mechanism_runs": 18,
+    "latency_runs": 490,
+    "resource_runs": 490,
+    "cpu_profile_attempts": 4
+  },
+  "execution": {
+    "new_implementation_files": 0,
+    "new_test_executions": 0,
+    "trace_generations": 0,
+    "calibration_runs": 0,
+    "timing_children": 0,
+    "mechanism_runs": 0,
+    "latency_runs": 0,
+    "resource_runs": 0,
+    "cpu_profiles": 0
+  },
+  "gate": {
+    "S0_SPEC_FREEZABLE": "SEE_INDEPENDENT_REVIEW",
+    "S1_DEV_READY": false,
+    "S1_FINAL_READY": false
+  },
+  "interfaces": {
+    "cache_format": "APHTRC01_v1_from_frozen_trace_cache.hpp",
+    "request_units": "total_update_units_U",
+    "q_zero_cache_period": "U+1",
+    "expected_query_format": "S0EXP001 + repeated little-endian uint64(API_ordinal,count,code,row_id...)",
+    "synthetic_dataset_sha": "S0_preregistration.json sha256",
+    "outputs": [
+      "cache.meta.json",
+      "raw_native.csv",
+      "phase.csv",
+      "conversion_events.csv",
+      "latency.csv",
+      "resource.csv",
+      "paired_summary.csv",
+      "group_summary.csv",
+      "experiment_manifest.json"
+    ],
+    "hash_basis": "1469598103934665603",
+    "hash_multiplier": "1099511628211",
+    "exact_reference_scope": "correctness_diagnostic_native_uses_hash_count"
+  },
+  "failure": {
+    "stop": [
+      "hash_mismatch",
+      "semantic_error",
+      "spec_violation",
+      "nonpositive_time",
+      "missing_or_duplicate_child",
+      "affinity_failure"
+    ],
+    "retain_failed_attempts": true,
+    "resume": "complete_hash_matching_pairs_only",
+    "environment_interrupted_pair": "invalidate_whole_pair_then_new_complete_attempt_retain_prior",
+    "slow_or_unresolved": "keep_and_continue",
+    "version_change": "new_protocol_and_batch_no_overwrite"
+  }
+}

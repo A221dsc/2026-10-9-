@@ -1,0 +1,10 @@
+{
+  "schema": "S1.interruption_resume_audit.v1",
+  "checked_at": "2026-10-09T09:12:54.7872317+08:00",
+  "S0_seal_sha256": "6733092103531288c54f4935d2102406be1dc16d15d5df2646affd4a5c79df2a",
+  "verified_bindings": 59,
+  "failures": [],
+  "status": "PASS",
+  "old_sources_unchanged": true,
+  "experiments_started": 0
+}

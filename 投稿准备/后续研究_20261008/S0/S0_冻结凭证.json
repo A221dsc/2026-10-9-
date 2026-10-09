@@ -1,0 +1,88 @@
+{
+  "schema": "adaptive_poolhbi.S0.freeze_seal.v1",
+  "frozen_at": "2026-10-09T00:05:41.3667173+08:00",
+  "registration_date": "2026-10-08",
+  "status": "S0_SPEC_FREEZABLE",
+  "scope": "同布局比较设计与实验预注册",
+  "verification": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_核验记录.json",
+    "sha256": "be774162cdbabdcb79b42d9380d57754af264b6ee40d6e39b272fe1ff8fbd1d0",
+    "check_count": 104,
+    "failed_count": 0
+  },
+  "manifest": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_资产清单.json",
+    "sha256": "2629d15bc32d418b3fd8e6e761bf7953c511ea0e043b1918343d194d899e8569"
+  },
+  "review": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_独立审查_round2.md",
+    "sha256": "41659d141111a5106465ad1b0041f5e63ea573079dbf30d0347292b35def77d4",
+    "decision": "Approved/freezable"
+  },
+  "normative_assets": [
+    {
+      "role": "S0_asset:S0_同布局比较合约_v1.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_同布局比较合约_v1.md",
+      "bytes": 13482,
+      "sha256": "c0a9a6bb805ff03c38c61c220b10526c5b7a5d0e9796ea82e2ed0d7c7ef0027c",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_实验预注册_v1.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_实验预注册_v1.md",
+      "bytes": 18770,
+      "sha256": "860b923dba0db7933f2deacdff8539a2cc75b029058f5f06465a074854e09a08",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_preregistration.json",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_preregistration.json",
+      "bytes": 20742,
+      "sha256": "bdb24556642d4137ab485befac9758b0abb04d933ebe5a3493b03d981cd9118a",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_测试与指标覆盖矩阵.csv",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_测试与指标覆盖矩阵.csv",
+      "bytes": 7412,
+      "sha256": "92c7d6e72b7f0ba9726560418ae3fdda92b5602ca819e0906c2fbc4370c976fc",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_审计与范围裁决.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_审计与范围裁决.md",
+      "bytes": 6098,
+      "sha256": "d1a27b81abc1606726019d6a41fd484268987a782a1c479ab0ffd3930f5b1c4a",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_入口清单.md",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_入口清单.md",
+      "bytes": 4472,
+      "sha256": "d9f0586f3ee5892206d8dd61d07bdc9778f014377af1385e650de8909831d93d",
+      "expected_sha256": null,
+      "matches_expected": null
+    },
+    {
+      "role": "S0_asset:S0_静态核验.ps1",
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_静态核验.ps1",
+      "bytes": 15506,
+      "sha256": "1df695ed1f211e09f41319e8d52cafeded623817341a575a6e585dfeef591c98",
+      "expected_sha256": null,
+      "matches_expected": null
+    }
+  ],
+  "S1_DEV_READY": false,
+  "S1_FINAL_READY": false,
+  "new_GREEN": null,
+  "new_binary": null,
+  "selected_theta": null,
+  "selected_h": null,
+  "timing_children_run": 0,
+  "next_stage": "S1_RED_FIRST_THEN_IMPLEMENTATION"
+}

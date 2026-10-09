@@ -1,0 +1,1568 @@
+{
+  "schema": "adaptive_v4_R0_R11_frozen_v1",
+  "status": "FROZEN",
+  "main_arm": "R6",
+  "specification": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\阶段3_设计修订与冻结规格_v4_收口版.md",
+    "sha256": "23f9ec384834d0a2a6bc39423efbd3de33d5e5ddcb3f773ec2d3c57a957813a9"
+  },
+  "candidate_origin": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\R0-R11_配置冻结候选.json",
+    "sha256": "84ed49b0b51af8514939d320d8e0a6895694045812b31de0c427efad7374f9b9"
+  },
+  "common": {
+    "epoch_size": 512,
+    "min_tree_size": 128,
+    "down_idle_epochs": 4,
+    "cooldown_epochs": 8,
+    "max_convert_records": 0,
+    "scan_ns_per_work": 1.1427456845204484,
+    "conversion_base_ns": 0.0,
+    "conversion_ns_per_record": 31.412726323575615,
+    "tree_cost_expression": "30+5*log2(128*2^class+1)",
+    "tree_cost_provisional": true
+  },
+  "arms": {
+    "R0": {
+      "signal": "off",
+      "payback": 2.0,
+      "tree_budget": 4096,
+      "demotion": false,
+      "cooldown": false,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R1": {
+      "signal": "event_count",
+      "payback": 2.0,
+      "tree_budget": 4096,
+      "demotion": false,
+      "cooldown": false,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R2": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 4096,
+      "demotion": false,
+      "cooldown": false,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R3": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 4096,
+      "demotion": false,
+      "cooldown": false,
+      "decay_factor": 0.75,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R4": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": false,
+      "cooldown": false,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R5": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": false,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R6": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R7": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 0.75,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R8": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 1.0,
+      "gain_clip": true,
+      "scheduled_limit": 1
+    },
+    "R9": {
+      "signal": "binary_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    },
+    "R10": {
+      "signal": "actual_work",
+      "payback": 2.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 2
+    },
+    "R11": {
+      "signal": "actual_work",
+      "payback": 0.0,
+      "tree_budget": 32,
+      "demotion": true,
+      "cooldown": true,
+      "decay_factor": 1.0,
+      "gain_clip": false,
+      "scheduled_limit": 1
+    }
+  },
+  "parents": {
+    "R0": null,
+    "R1": "R0",
+    "R2": "R1",
+    "R3": "R2",
+    "R4": "R2",
+    "R5": "R4",
+    "R6": "R5",
+    "R7": "R6",
+    "R8": "R6",
+    "R9": "R6",
+    "R10": "R6",
+    "R11": "R6"
+  },
+  "single_diffs": {
+    "R1": [
+      "signal"
+    ],
+    "R2": [
+      "signal"
+    ],
+    "R3": [
+      "decay_factor"
+    ],
+    "R4": [
+      "tree_budget"
+    ],
+    "R5": [
+      "demotion"
+    ],
+    "R6": [
+      "cooldown"
+    ],
+    "R7": [
+      "decay_factor"
+    ],
+    "R8": [
+      "gain_clip"
+    ],
+    "R9": [
+      "signal"
+    ],
+    "R10": [
+      "scheduled_limit"
+    ],
+    "R11": [
+      "payback"
+    ]
+  },
+  "cleanup_contract": {
+    "quota_exempt": true,
+    "immediate": true,
+    "cleanup_counter": "cleanup_demotions",
+    "scheduled_counter": "scheduled_demotions",
+    "total_counter": "total_demotions",
+    "identity": "total_demotions = scheduled_demotions + cleanup_demotions"
+  },
+  "runtime_fingerprints": {
+    "R0": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R0",
+      "parent": null,
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "off",
+        "payback": 2,
+        "tree_budget": 4096,
+        "demotion": false,
+        "cooldown": false,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": false,
+      "promotion_enabled": false,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R1": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R1",
+      "parent": "R0",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "event_count",
+        "payback": 2,
+        "tree_budget": 4096,
+        "demotion": false,
+        "cooldown": false,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "event",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": 16,
+      "payback_used": false,
+      "promotion_enabled": true,
+      "rank_rule": "events_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R2": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R2",
+      "parent": "R1",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 4096,
+        "demotion": false,
+        "cooldown": false,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R3": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R3",
+      "parent": "R2",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 4096,
+        "demotion": false,
+        "cooldown": false,
+        "decay_factor": 0.75,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "multiply_LIST_gain_in_all_4096_buckets_before_epoch_candidate_revalidation",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R4": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R4",
+      "parent": "R2",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": false,
+        "cooldown": false,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R5": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R5",
+      "parent": "R4",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": false,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R6": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R6",
+      "parent": "R5",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": true,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R7": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R7",
+      "parent": "R6",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": true,
+        "decay_factor": 0.75,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "multiply_LIST_gain_in_all_4096_buckets_before_epoch_candidate_revalidation",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R8": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R8",
+      "parent": "R6",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": true,
+        "decay_factor": 1,
+        "gain_clip": true,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R9": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R9",
+      "parent": "R6",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "binary_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": true,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R10": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R10",
+      "parent": "R6",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 2,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": true,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 2
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    },
+    "R11": {
+      "schema": "adaptive_poolhbi.v4.config.v1",
+      "configuration_status": "VALUES_FIXED_ENTRY_GATE_EXTERNAL",
+      "build_mode": "ablation",
+      "arm": "R11",
+      "parent": "R6",
+      "parameters": {
+        "epoch_size": 512,
+        "min_tree_size": 128,
+        "down_idle_epochs": 4,
+        "cooldown_epochs": 8,
+        "max_convert_records": 0,
+        "scan_ns_per_work": 1.1427456845204484,
+        "conversion_base_ns": 0,
+        "conversion_ns_per_record": 31.412726323575615,
+        "tree_cost_expression": "30+5*log2(128*2^class+1)",
+        "tree_cost_provisional": true,
+        "signal": "actual_work",
+        "payback": 0,
+        "tree_budget": 32,
+        "demotion": true,
+        "cooldown": true,
+        "decay_factor": 1,
+        "gain_clip": false,
+        "scheduled_limit": 1
+      },
+      "tree_cost_ns": [
+        [
+          65.05613627711627,
+          65.05613627711627,
+          65.05613627711627
+        ],
+        [
+          70.0281227459694,
+          70.0281227459694,
+          70.0281227459694
+        ],
+        [
+          75.01407507803526,
+          75.01407507803526,
+          75.01407507803526
+        ],
+        [
+          80.00704097196405,
+          80.00704097196405,
+          80.00704097196405
+        ],
+        [
+          85.00352134505623,
+          85.00352134505623,
+          85.00352134505623
+        ],
+        [
+          90.0017608874015,
+          90.0017608874015,
+          90.0017608874015
+        ],
+        [
+          95.0008804974322,
+          95.0008804974322,
+          95.0008804974322
+        ],
+        [
+          100.00044026215062,
+          100.00044026215062,
+          100.00044026215062
+        ],
+        [
+          105.00022013443414,
+          105.00022013443414,
+          105.00022013443414
+        ],
+        [
+          110.0001100680568,
+          110.0001100680568,
+          110.0001100680568
+        ]
+      ],
+      "tree_cost_operations": [
+        "insert",
+        "erase",
+        "range"
+      ],
+      "tree_cost_unit": "ns/observation",
+      "conversion_unit": "ns",
+      "credit_unit": "ns",
+      "work_unit": "avoidable_pointer_steps",
+      "actual_work_counter_shared": true,
+      "event_threshold": null,
+      "payback_used": true,
+      "promotion_enabled": true,
+      "rank_rule": "gain_over_conversion_then_gain_then_bucket_address",
+      "decay_execution": "identity_no_decay_scan",
+      "cleanup": {
+        "immediate": true,
+        "quota_exempt": true,
+        "counter_identity": "total_demotions=scheduled_demotions+cleanup_demotions"
+      },
+      "layout": {
+        "record_bytes": 16,
+        "node_bytes": 32,
+        "adaptive_tail_bytes": 32,
+        "bucket_bytes": 64,
+        "root_count": 64,
+        "buckets_per_root": 64,
+        "bucket_count": 4096,
+        "pointer_bytes": 8,
+        "eager_buckets": true
+      }
+    }
+  },
+  "runtime_status": {
+    "R0": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R1": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R2": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R3": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R4": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R5": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R6": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R7": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R8": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R9": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R10": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN",
+    "R11": "IMPLEMENTED_CONFIG_CORRECTNESS_PASS_EXPERIMENT_NOT_RUN"
+  },
+  "source_sha256": {
+    "adaptive_poolhbi_final.hpp": "8e7a351e8ee14a1a5511a99502f7d938296cc57c3757a74d7b45fc2071a63e0c",
+    "adaptive_types.hpp": "5bf2baa9fab583e3342fd45485d3770ac4e2a71d0abd5a88e63e15d34e78cabe",
+    "shared_allocator.hpp": "66ad9ec278c27a07fcc8c63d00c303f46a48fe7ac4e26bdf801d7fca024c462f",
+    "frozen_config.hpp": "5efb54ce732ede2b9b25f7ea39240fccb95bdc08462733f89d3363c0473f6074",
+    "final_index_cli.cpp": "f8c6b62c9310a3a8c3f254a97d20e57d5ac03d160d4093d0a42c585c1d2478ac"
+  },
+  "binaries": {
+    "production_R6": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\config_runs\\green_final\\adaptive_final_production.exe",
+      "sha256": "44b47e01b2c3acfeb269593c0a694d1859ddbf4aea3666dbbbc48ebdc6d6fcb8"
+    },
+    "ablation_R0_R11": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\config_runs\\green_final\\adaptive_final_ablation.exe",
+      "sha256": "8d34b4f598bc51cd088026d755c84cc5ae251f40fbed077c29ceab6a768536e8"
+    }
+  },
+  "configuration_checks": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\config_runs\\green_final\\config_check_summary.json",
+    "sha256": "06e6654c4492299fe3a395ee5252856f6d37ba6948d865a9da9dce5b01484654"
+  },
+  "formal_GREEN": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\adaptive_poolhbi\\final\\GREEN_测试记录.json",
+    "sha256": "6c61d867b8baf792f76d6a3eabdab63e9550ea25f3bbed93aca44de2abd13559"
+  },
+  "main_cost_table_provisional": true,
+  "benchmark_runs": 0,
+  "scope": "Configuration values, executable mapping and v4 main correctness frozen. No comparative mechanism benefit, parameter tuning or wall-clock evidence claimed."
+}

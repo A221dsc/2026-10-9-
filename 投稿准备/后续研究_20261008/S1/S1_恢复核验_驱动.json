@@ -1,0 +1,13 @@
+{
+  "schema": "S1.driver_resume_audit.v1",
+  "checked_at": "2026-10-09T15:22:28.8835641+08:00",
+  "source_bundle_sha": "71332e2719f21214c8c590b1763572dbbed205e7ed21281a23435212040c7ca1",
+  "driver_verification_sha": "b4496b89e601fdc8211b3a4e668b3213e7edbb216c537597a857a5e0d5d7a028",
+  "old_bindings": 59,
+  "failures": [],
+  "status": "PASS",
+  "calibration_runs": 0,
+  "performance_runs": 0,
+  "formal_mechanism_runs": 0,
+  "review_status": "INDEPENDENT_SPEC_REVIEW_RESUMED"
+}
