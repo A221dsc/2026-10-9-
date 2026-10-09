@@ -113,7 +113,7 @@ def aa_floor(rows,scope):
 def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=False,trust=None,selection=None,selection_trust=None,aa_inventory=None,aa_trust=None):
     """Aggregate exactly ten independently identified, validated final inputs."""
     from pathlib import Path
-    from entry_gate import validate_pair, verify_complete_aa
+    from entry_gate import validate_pair, verify_complete_aa, _same_selection_binding, sha
     if not test_fixture and aa_inventory is None:raise ValueError('production final summary requires complete AA inventory')
     aa=None
     if aa_inventory is not None:
@@ -129,6 +129,9 @@ def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=F
              'DIA01':('M_EVENT_16','R6'),'DIA02':('M_FIXED_128','R6')}
     if pair in ('P06','P07'):
         from select_dev import verify_selection
+        if aa is not None and aa.get('matrix') is not None:
+            if not isinstance(selection,(str,Path)):raise ValueError('same frozen dev selection file required')
+            _same_selection_binding(aa['matrix']['selection_binding'],{'path':str(selection),'sha256':sha(selection)})
         selected=verify_selection(selection,test_fixture=test_fixture,trust=selection_trust)
         threshold=selected['selected_theta' if pair=='P06' else 'selected_h']
         methods[pair]=(f'M_EVENT_{threshold}' if pair=='P06' else f'M_FIXED_{threshold}','R6')

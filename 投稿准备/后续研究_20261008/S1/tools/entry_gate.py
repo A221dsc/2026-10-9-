@@ -278,6 +278,11 @@ def _file_binding(binding):
     require(sha(binding['path'])==binding.get('sha256'),'entry bound file bytes')
     return binding
 
+def _same_selection_binding(bound,expected):
+    actual=_file_binding(bound);frozen=_file_binding(expected)
+    require(Path(actual['path']).resolve()==Path(frozen['path']).resolve() and actual['sha256']==frozen['sha256'],
+            'same frozen dev selection file/bytes required')
+
 def _context_binding(receipt,context,names,*,test_fixture):
     context=context or {}
     require(set(receipt.get('bindings',{}))==set(names),'complete cross-asset bindings required')
@@ -366,7 +371,7 @@ def verify_formal_matrix(path,*,test_fixture=False,trust=None):
         locks[p]=out['manifest_sha256'];cells[f"{e['case_id']}:{e['seed']}:{e['pair_id']}"]=p
         starts.append(out['started_ns']);ends.append(out['ended_ns'])
     return {'batch_id':r['batch_id'],'matrix_interval':{'started_ns':min(starts),'ended_ns':max(ends)},
-            'pair_manifest_sha':locks,'matrix_cells':cells,'manifest_sha256':sha(path)}
+            'pair_manifest_sha':locks,'matrix_cells':cells,'manifest_sha256':sha(path),'selection_binding':bound}
 
 def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=None,phase='start'):
     require(phase in ('start','complete'),'entry gate phase must be start or complete')
@@ -451,6 +456,10 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
         return verify_selection(trust['path'],trust=trust)
     elif name=='formal_matrix_inventory':
         require(trust is not None and trust.get('path'),'frozen full formal matrix file required')
+        current=(context or {}).get('dev_selection',{})
+        require(current.get('receipt') is not None,'current frozen dev selection dependency required')
+        expected=current['receipt'].get('selection',{'path':current['path'],'sha256':current['sha256']})
+        _same_selection_binding(receipt['selection'],expected)
         return verify_formal_matrix(trust['path'],test_fixture=test_fixture,trust=trust)
     elif name=='selected_configs':
         ctx=_context_binding(receipt,context,('dev_selection','frozen_binaries','protocol_and_sources'),test_fixture=test_fixture)
