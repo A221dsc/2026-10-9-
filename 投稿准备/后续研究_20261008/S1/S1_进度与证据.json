@@ -2,7 +2,7 @@
   "schema": "S1.engineering_progress.v1",
   "client_date": "2026-10-09",
   "scope": "S0冻结合约的工程实施",
-  "stage": "CHUNK3_IMPLEMENTING_RED_FIRST",
+  "stage": "CHUNK3_SPEC_REJECTED_FIXING_ENTRY_SEMANTICS",
   "plan": "S1_工程实施计划.md",
   "steps": [
     {
@@ -57,7 +57,7 @@
       "green_before_review_fix": "artifacts/driver/green_complete_03/manifest.json",
       "review_regressions": "artifacts/driver/review_green_regressions_root_01/manifest.json",
       "new_source_bundle_sha": "18667439ba0f6dafdefed29a5b8fff4671821b89dc9760773e1a5e4e592c7024",
-      "must_fix_status": "MF1-MF3 Closed by independent round2; quality pending",
+      "must_fix_status": "MF1-MF3 Closed; independent specification and quality Approved",
       "spec_review_round2": "S1_驱动规格审查_round2.md",
       "quality_review": "S1_驱动质量审查.md",
       "quality_minor": [
@@ -67,7 +67,15 @@
     {
       "chunk": 3,
       "name": "统计与入口",
-      "status": "IN_PROGRESS_RED_FIRST",
+      "status": "GREEN_CANDIDATE_SPEC_NOT_APPROVED",
+      "green_before_review_fix": "artifacts/analysis/green_complete_03/manifest.json",
+      "root_verification_before_review_fix": "artifacts/analysis/root_verify_complete_01/manifest.json",
+      "spec_review_round1": "S1_统计与入口规格审查.md",
+      "must_fix": [
+        "MF1: production dev selection must reject fixtures and recompute verified scores",
+        "MF2: selected configurations and start manifests require complete cross-asset bindings",
+        "MF3: start gate uses before A/A; completed analysis requires before plus after"
+      ],
       "required_ids": [
         "SX20",
         "SX21",
@@ -75,6 +83,13 @@
       ]
     }
   ],
+  "version_control": {
+    "repository": "https://github.com/A221dsc/2026-10-9-",
+    "candidate_commit": "8b867c7",
+    "branch": "s1-entry-hardening",
+    "candidate_pushed": true,
+    "engineering_frozen": false
+  },
   "calibration_runs": 0,
   "performance_runs": 0,
   "formal_mechanism_runs": 0,
