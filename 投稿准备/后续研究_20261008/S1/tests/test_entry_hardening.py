@@ -322,6 +322,27 @@ class HardeningTiming(unittest.TestCase):
         for mode in ('latency','resource'):
             with self.assertRaises(ValueError):gate._aa_pair_identity({**out,'mode':mode},entry)
 
+class HardeningPhaseClosure(unittest.TestCase):
+    def test_dev_completion_requires_frozen_complete_selection(self):
+        out=gate.readiness({'kernel':True,'driver':True,'analysis':True},{},scope='dev',phase='complete')
+        self.assertFalse(out['DEV_READY']);self.assertIn('dev_selection',out['missing_dev_assets'])
+    def test_original_start_before_binding_survives_complete_inventory(self):
+        root=scratch();start,ctx=schema_context(root/'schema');aa=aa_receipt(root/'aa','dev',('before','after'))
+        aa['environment_sha256']=ctx['fresh_environment_receipt']['sha256']
+        aa['observed_floor']={'build':0.,'online':0.,'total':0.,'interpretation':'finite_observed_envelope_not_confidence_bound'}
+        before=copy.deepcopy(aa);before['entries']=[e for e in aa['entries'] if e['timepoint']=='before'];before.pop('observed_floor')
+        p=Path(ctx['dev_aa_inventory']['path']);fx.write_json(p,before)
+        ctx['dev_aa_inventory']={'path':str(p),'sha256':fx.sha(p),'receipt':before}
+        start['bindings']['dev_aa_inventory']={'path':str(p),'sha256':fx.sha(p)}
+        gate._inventory_identity('start_manifest',start,test_fixture=True,context=ctx)
+        aa['before_inventory']={'path':str(p),'sha256':fx.sha(p)};q=root/'complete_aa_fixture.json';fx.write_json(q,aa)
+        complete=gate._inventory_identity('dev_aa_inventory',aa,test_fixture=True,context=ctx,phase='complete')
+        ctx['dev_aa_inventory']={'path':str(q),'sha256':fx.sha(q),'receipt':aa,'verified':complete}
+        try:gate._inventory_identity('start_manifest',start,test_fixture=True,context=ctx,phase='complete')
+        except ValueError as error:self.fail(f'original frozen before binding must survive completion: {error}')
+        damaged=copy.deepcopy(aa);damaged['before_inventory']['sha256']='0'*64
+        with self.assertRaises(ValueError):gate._inventory_identity('dev_aa_inventory',damaged,test_fixture=True,context=ctx,phase='complete')
+
 if __name__=='__main__':
     suite=unittest.defaultTestLoader.loadTestsFromName(args.case,sys.modules[__name__])
     result=unittest.TextTestRunner(verbosity=2).run(suite)
