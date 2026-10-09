@@ -19,29 +19,38 @@
   "binaries": [
     {
       "mode": "native",
-      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_native.exe",
+      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/release/binaries/s1_native.exe",
       "build_source_git_commit": "8b867c7",
       "proof_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/manifest.json",
-      "in_git": false
+      "in_git": true,
+      "reviewed_archive_path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_native.exe",
+      "repository_path": "投稿准备/后续研究_20261008/S1/release/binaries/s1_native.exe",
+      "version_method": "Git commit and reviewed stage tag; original build evidence retained locally"
     },
     {
       "mode": "latency",
-      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_latency.exe",
+      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/release/binaries/s1_latency.exe",
       "build_source_git_commit": "8b867c7",
       "proof_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/manifest.json",
-      "in_git": false
+      "in_git": true,
+      "reviewed_archive_path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_latency.exe",
+      "repository_path": "投稿准备/后续研究_20261008/S1/release/binaries/s1_latency.exe",
+      "version_method": "Git commit and reviewed stage tag; original build evidence retained locally"
     },
     {
       "mode": "resource",
-      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_resource.exe",
+      "path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/release/binaries/s1_resource.exe",
       "build_source_git_commit": "8b867c7",
       "proof_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/manifest.json",
-      "in_git": false
+      "in_git": true,
+      "reviewed_archive_path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/driver/green_review_fixes_root_01/s1_resource.exe",
+      "repository_path": "投稿准备/后续研究_20261008/S1/release/binaries/s1_resource.exe",
+      "version_method": "Git commit and reviewed stage tag; original build evidence retained locally"
     }
   ],
   "source_freeze_complete": false,
   "compatibility": "Existing protocol/data/binary/sidecar integrity fields remain validation inputs; no new manual source SHA256 version inventory.",
-  "archive_policy": "Full local execution archives, runtimes, binaries and datasets are Git-ignored. Failure records remain local and are referenced by committed stage records.",
+  "archive_policy": "Three reviewed driver byte snapshots are Git-versioned under release/binaries. Full execution archives, other compiled artifacts, runtimes and datasets remain Git-ignored.",
   "experiment_entry_state": {
     "DEV_READY": false,
     "FINAL_READY": false,

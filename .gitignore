@@ -60,3 +60,13 @@ __pycache__/
 *.ll
 *.s
 
+# Only the three reviewed driver snapshots are versioned as binary assets.
+!/投稿准备/后续研究_20261008/S1/release/
+/投稿准备/后续研究_20261008/S1/release/*
+!/投稿准备/后续研究_20261008/S1/release/README.md
+!/投稿准备/后续研究_20261008/S1/release/binaries/
+/投稿准备/后续研究_20261008/S1/release/binaries/*
+!/投稿准备/后续研究_20261008/S1/release/binaries/s1_native.exe
+!/投稿准备/后续研究_20261008/S1/release/binaries/s1_latency.exe
+!/投稿准备/后续研究_20261008/S1/release/binaries/s1_resource.exe
+
