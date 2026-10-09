@@ -24,7 +24,8 @@ HARDENING_CASES=[*[f'HardeningSelection.{name}' for name in (
     'test_saved_bindings_are_recomputed','test_saved_rules_are_registered','test_production_refuses_fixture_even_with_frozen_outer_bytes',
     'test_matrix_missing_duplicate_and_nonshared_input_rejected','test_p06_p07_require_the_same_verified_selection',
     'test_write_once_selection_to_entry_wrapper_is_closed')],'HardeningManifest','HardeningAA','HardeningHistory','HardeningFinalAnalysis',
-    'SelectionRed','ManifestRed','AABeforeRed','HardeningTiming','HardeningPhaseClosure']
+    'SelectionRed','ManifestRed','AABeforeRed','HardeningTiming','HardeningPhaseClosure',
+    'HardeningSelectionLink.test_mismatched_selection_record_rejected','HardeningSelectionLink.test_same_selection_record_accepted']
 
 def arguments(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
@@ -79,8 +80,8 @@ def run(args):
             command+=['--prepare-batch',case[7:],'--fixture-output',str(out/'dev_fixture')]
         else:
             command+=['--red' if args.task=='red' else '--case',case]
-            if case=='Selection' or ((case.startswith('HardeningSelection.') or case=='HardeningHistory') and args.task=='fixtures'):command+=['--fixture-output',str(out/'dev_fixture')]
-        if fixture_reuse and (case.startswith('Prepare') or case=='Selection' or case.startswith('HardeningSelection.') or case=='HardeningHistory'):
+            if case=='Selection' or ((case.startswith('HardeningSelection.') or case in ('HardeningHistory','HardeningSelectionLink')) and args.task=='fixtures'):command+=['--fixture-output',str(out/'dev_fixture')]
+        if fixture_reuse and (case.startswith('Prepare') or case=='Selection' or case.startswith('HardeningSelection.') or case in ('HardeningHistory','HardeningSelectionLink')):
             command+=['--fixture-source',fixture_reuse['path']]
         process={'command':command,'cwd':str(S1),'started_ns':time.time_ns(),'timeout_seconds':55,'test_fixture':True}
         try:

@@ -343,6 +343,27 @@ class HardeningPhaseClosure(unittest.TestCase):
         damaged=copy.deepcopy(aa);damaged['before_inventory']['sha256']='0'*64
         with self.assertRaises(ValueError):gate._inventory_identity('dev_aa_inventory',damaged,test_fixture=True,context=ctx,phase='complete')
 
+class HardeningSelectionLink(unittest.TestCase):
+    def inputs(self,other=False):
+        # The timed-out preparation attempt retained all complete fixture bytes.
+        # Reuse them read-only; each public call still validates 240 selection
+        # pairs, every formal AA pair, and all ten final cell pairs.
+        candidates=list((S1/'artifacts/analysis/red_selection_link_01/scratch').glob('*/aa_fixture.json'))
+        self.assertEqual(len(candidates),1);root=candidates[0].parent
+        original=root/'a_selection_fixture.json';bound=root/('b_selection_fixture.json' if other else 'a_selection_fixture.json')
+        paths=sorted(root.glob('final-*/pair_fixture.json'))
+        matrix={'batch_id':'ENGINEERING_FIXTURE','matrix_interval':{'started_ns':100,'ended_ns':200},
+                'matrix_cells':{f'F01:{s}:P06':str(q.resolve()) for s,q in zip(range(91001,91011),paths)},
+                'pair_manifest_sha':{str(q.resolve()):fx.sha(q) for q in paths},'selection_binding':{'path':str(bound),'sha256':fx.sha(bound)}}
+        return paths,original,candidates[0],matrix
+    def test_mismatched_selection_record_rejected(self):
+        paths,original,p,matrix=self.inputs(other=True);a=importlib.import_module('analysis')
+        with self.assertRaisesRegex(ValueError,'same frozen dev selection'):
+            a.summarize_pairs(paths,'P06','F01','total',None,test_fixture=True,selection=original,aa_inventory=p,aa_trust={'test_matrix':matrix})
+    def test_same_selection_record_accepted(self):
+        paths,original,p,matrix=self.inputs();a=importlib.import_module('analysis')
+        self.assertEqual(a.summarize_pairs(paths,'P06','F01','total',None,test_fixture=True,selection=original,aa_inventory=p,aa_trust={'test_matrix':matrix})['n'],10)
+
 if __name__=='__main__':
     suite=unittest.defaultTestLoader.loadTestsFromName(args.case,sys.modules[__name__])
     result=unittest.TextTestRunner(verbosity=2).run(suite)
