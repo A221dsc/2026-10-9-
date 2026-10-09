@@ -28,7 +28,8 @@ HARDENING_CASES=[*[f'HardeningSelection.{name}' for name in (
     'HardeningSelectionLink.test_mismatched_selection_record_rejected','HardeningSelectionLink.test_same_selection_record_accepted',
     *[f'BatchIdentity.{name}' for name in ('test_copied_lock_is_not_an_independent_diagnostic','test_same_methods_wrong_cell_execution_is_rejected','test_shared_reference_children_are_rejected')],
     *[f'BatchChronology.{name}' for name in ('test_dev_pair_overlap_rejected','test_dev_serial_wrong_candidate_order_rejected','test_formal_serial_wrong_main_diagnostic_order_rejected','test_aa_timepoint_overlap_rejected','test_start_plans_freeze_registered_order')],
-    'BatchPositive.test_independent_registered_dev_batch_accepted','BatchPositive.test_independent_formal_batch_accepts_unordered_entries','BatchPositive.test_registered_adapter_keeps_diagnostic_independent']
+    'BatchPositive.test_independent_registered_dev_batch_accepted','BatchPositive.test_independent_formal_batch_accepts_unordered_entries','BatchPositive.test_registered_adapter_keeps_diagnostic_independent',
+    'BatchAAOrder.test_completed_inventory_order_independent']
 
 def arguments(argv=None):
     p=argparse.ArgumentParser(description=__doc__)

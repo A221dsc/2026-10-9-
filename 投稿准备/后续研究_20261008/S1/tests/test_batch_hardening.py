@@ -155,6 +155,33 @@ class BatchPositive(unittest.TestCase):
     def test_independent_formal_batch_accepts_unordered_entries(self):
         r=formal_record();r['entries'].reverse();out=formal_call(r,scratch());self.assertEqual(len(out['matrix_cells']),700);self.assertEqual(len(out['pair_manifest_sha']),700)
 
+class BatchAAOrder(unittest.TestCase):
+    def test_completed_inventory_order_independent(self):
+        import runpy
+        previous=sys.argv;sys.argv=[str(S1/'tests/test_entry_hardening.py'),'--case','unused','--scratch-output',args.scratch_output]
+        try:helper=runpy.run_path(str(S1/'tests/test_entry_hardening.py'),run_name='batch_support')
+        finally:sys.argv=previous
+        root=scratch();r=helper['aa_receipt'](root/'aa','dev',('before','after'))
+        before=copy.deepcopy(r);before['entries']=[e for e in r['entries'] if e['timepoint']=='before']
+        gate._inventory_identity('dev_aa_inventory',before,test_fixture=True,phase='start')
+        for e in r['entries']:gate.validate_pair(e['pair_path'],test_fixture=True)
+        original=root/'before_inventory_fixture.json';fx.write_json(original,before);digest=fx.sha(original)
+        r['before_inventory']={'path':str(original),'sha256':digest}
+        r['observed_floor']={'build':0.,'online':0.,'total':0.,'interpretation':'finite_observed_envelope_not_confidence_bound'}
+        r['entries'].reverse()  # Array order changes; frozen content and clocks do not.
+        try:out=gate._inventory_identity('dev_aa_inventory',r,test_fixture=True,phase='complete')
+        except ValueError as error:self.fail(f'complete AA inventory order must be independent of original before array order: {error}')
+        self.assertEqual(out['observed_floor']['total'],0.);self.assertEqual(fx.sha(original),digest)
+        duplicate=copy.deepcopy(r);duplicate['entries'].append(copy.deepcopy(duplicate['entries'][0]))
+        with self.assertRaises(ValueError):gate._inventory_identity('dev_aa_inventory',duplicate,test_fixture=True,phase='complete')
+        # Rehashing a different original file must not hide changed full entry
+        # content or duplicate/missing registered cells.
+        for mutate in (lambda x:x['entries'][0].update(changed_entry_content=True),
+                       lambda x:x['entries'].__setitem__(1,copy.deepcopy(x['entries'][0]))):
+            changed=copy.deepcopy(before);mutate(changed);q=scratch()/'different_before_fixture.json';fx.write_json(q,changed)
+            bad=copy.deepcopy(r);bad['before_inventory']={'path':str(q),'sha256':fx.sha(q)}
+            with self.assertRaises(ValueError):gate._inventory_identity('dev_aa_inventory',bad,test_fixture=True,phase='complete')
+
 if __name__=='__main__':
     name='BatchPreparation.test_manifest' if args.case=='BatchFormalManifest' else 'BatchPreparation.test_formal_seventy' if args.case.startswith('BatchFormal') else args.case
     result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromName(name,sys.modules[__name__]))
