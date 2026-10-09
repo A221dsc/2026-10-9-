@@ -2,7 +2,7 @@
   "schema": "S1.engineering_progress.v1",
   "client_date": "2026-10-09",
   "scope": "S0冻结合约的工程实施",
-  "stage": "CHUNK3_SPEC_REJECTED_FIXING_ENTRY_SEMANTICS",
+  "stage": "CHUNK3_MF4_MF5_RED_CAPTURED_FIXING",
   "plan": "S1_工程实施计划.md",
   "steps": [
     {
@@ -57,42 +57,53 @@
       "review_red": "artifacts/driver/review_red_capture_root_01/manifest.json",
       "green_before_review_fix": "artifacts/driver/green_complete_03/manifest.json",
       "review_regressions": "artifacts/driver/review_green_regressions_root_01/manifest.json",
-      "new_source_bundle_sha": "18667439ba0f6dafdefed29a5b8fff4671821b89dc9760773e1a5e4e592c7024",
       "must_fix_status": "MF1-MF3 Closed; independent specification and quality Approved",
       "spec_review_round2": "S1_驱动规格审查_round2.md",
       "quality_review": "S1_驱动质量审查.md",
       "quality_minor": [
         "Local/build-only ENGINEERING_GREEN is not coverage proof; entry must validate complete suites"
-      ]
+      ],
+      "implementation_git_commit": "8b867c7"
     },
     {
       "chunk": 3,
       "name": "统计与入口",
-      "status": "GREEN_CANDIDATE_SPEC_NOT_APPROVED",
+      "status": "GREEN_BASELINE_ROUND2_NOT_APPROVED",
       "green_before_review_fix": "artifacts/analysis/green_complete_03/manifest.json",
       "root_verification_before_review_fix": "artifacts/analysis/root_verify_complete_01/manifest.json",
       "review_red": "artifacts/analysis/red_entry_mf123_02/manifest.json",
       "red_support_commit": "948802c",
       "spec_review_round1": "S1_统计与入口规格审查.md",
       "must_fix": [
-        "MF1: production dev selection must reject fixtures and recompute verified scores",
-        "MF2: selected configurations and start manifests require complete cross-asset bindings",
-        "MF3: start gate uses before A/A; completed analysis requires before plus after"
+        "MF4: whole-batch independent children and execution identity",
+        "MF5: whole-batch serial timing and registered actual chronology"
       ],
       "required_ids": [
         "SX20",
         "SX21",
         "SX23"
       ],
-      "green_candidate": "artifacts/analysis/green_complete_mf123_final_01/manifest.json",
-      "green_candidate_version": "0233724",
+      "green_candidate": "artifacts/analysis/green_complete_mf123_identity_01/manifest.json",
+      "green_candidate_version": "37bfde7",
       "green_candidate_result": {
-        "tests": 63,
-        "processes": 30,
-        "exit_zero": 30,
+        "tests": 65,
+        "processes": 32,
+        "exit_zero": 32,
         "root_read_all_logs": true
       },
-      "remaining": "Explicit same-selection identity cross-link, complete GREEN, independent specification and quality reviews"
+      "remaining": "Limited MF4/MF5 RED -> GREEN -> independent round3 -> quality review",
+      "root_verification": "artifacts/analysis/root_git_analysis_verify_final_01/manifest.json",
+      "spec_review_round2": "S1_统计与入口规格审查_round2.md",
+      "prior_must_fix_status": "MF1-MF3 independently Closed",
+      "batch_review_red": "artifacts/analysis/red_batch_mf45_01/manifest.json",
+      "batch_red_git_commit": "41a0a97",
+      "batch_red_result": {
+        "tests": 8,
+        "actual_processes": 8,
+        "expected_exit_1": 8,
+        "behavior": "AssertionError: ValueError not raised",
+        "production_unchanged_from_git": "37bfde7"
+      }
     }
   ],
   "version_control": {
@@ -101,7 +112,8 @@
     "branch": "s1-entry-hardening",
     "candidate_pushed": true,
     "engineering_frozen": false,
-    "latest_pushed_candidate": "0233724"
+    "latest_pushed_candidate": "37bfde7",
+    "latest_confirmed_remote_head": "12276cc"
   },
   "calibration_runs": 0,
   "performance_runs": 0,

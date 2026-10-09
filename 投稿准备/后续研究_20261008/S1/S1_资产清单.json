@@ -1,6 +1,6 @@
 {
   "schema": "S1.git_engineering_assets.v1",
-  "state": "CANDIDATE_PENDING_CHUNK3_REVIEW",
+  "state": "GREEN_BASELINE_ROUND2_REJECTED_MF4_MF5_REPAIR",
   "repository": "https://github.com/A221dsc/2026-10-9-",
   "branch": "s1-entry-hardening",
   "source_git_commit": "37bfde7ccd58c45efdf249cdcd605fe2713965b0",
@@ -47,5 +47,12 @@
     "FINAL_READY": false,
     "selected_theta": null,
     "selected_h": null
+  },
+  "working_tree_repair_pending": true,
+  "independent_review_round2": {
+    "report": "S1_统计与入口规格审查_round2.md",
+    "verdict": "NOT APPROVED",
+    "important": 2,
+    "prior_MF1_MF2_MF3": "Closed"
   }
 }
