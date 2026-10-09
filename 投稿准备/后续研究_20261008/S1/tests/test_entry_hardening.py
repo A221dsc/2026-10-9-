@@ -62,6 +62,8 @@ def aa_receipt(root,scope='dev',timepoints=('before',)):
                 for block in range(1,6):
                     p=fx.pair(root/f'{timepoint}-{method}-{case}-{block}',case=case,seed=92001,
                               candidate=method,reference=method,profile='aa',pair_id=f'{timepoint}:{method}:{case}:{block}')
+                    index=len([e for e in entries if e['timepoint']==timepoint])
+                    fx.set_pair_times(p,(60000 if timepoint=='after' else 0)+index*40)
                     entries.append({'timepoint':timepoint,'method':method,'case_id':case,'block':block,
                                     'batch_id':'ENGINEERING_FIXTURE','pair_path':str(p)})
     return receipt('dev_aa_inventory' if scope=='dev' else 'formal_aa_inventory',
@@ -172,10 +174,12 @@ def schema_context(root,formal=False):
     pairs={'P01':('Original','M_LIST'),'P02':('M_LIST','M_OBSERVE_LIST'),'P03':('M_LIST','R6'),'P04':('M_OBSERVE_LIST','R6'),'P05':('Original','R6'),
            'P06':('M_EVENT_16','R6'),'P07':('M_FIXED_128','R6'),'P08':('M_NO_IDLE','R6'),'DIA01':('M_EVENT_16','R6'),'DIA02':('M_FIXED_128','R6')} if formal else {m:('M_LIST',m) for m in fx.METHODS}
     for trace in traces:
-        for pid,(ref,cand) in pairs.items():
+        for pid in sorted(pairs) if formal else pairs:
+            ref,cand=pairs[pid]
             inp={name:{'path':trace[key+'_path'],'sha256':fx.sha(trace[key+'_path'])} for name,key in [('cache','cache'),('expected','expected'),('meta','metadata')]}
             entries.append({'schema':'S1.start.pair.v1','status':'NOT_RUN','batch_id':'ENGINEERING_FIXTURE','profile':'final' if formal else 'dev',
                             'case_id':trace['case_id'],'seed':trace['seed'],'pair_id':pid,'reference':ref,'candidate':cand,'mode':'native','children':4,
+                            'execution_pair_id':f"{trace['case_id']}:{trace['seed']}:{pid}",
                             'input':inp,'binary':{'path':str(binary),'sha256':fx.sha(binary)},'configs':{m:configs[m] for m in (ref,cand)},
                             'source_bundle_sha':'b'*64,'protocol_sha256':gate.sha(gate.PROTOCOL)})
     name='final_start_manifest' if formal else 'start_manifest'
@@ -295,14 +299,16 @@ class HardeningTiming(unittest.TestCase):
     def test_rehashed_after_before_matrix_is_rejected(self):
         r=aa_receipt(scratch(),'final',('before','after'));r['observed_floor']={'build':0.,'online':0.,'total':0.,'interpretation':'finite_observed_envelope_not_confidence_bound'}
         p=scratch()/'bounded_aa_fixture.json';fx.write_json(p,r)
-        trust={'test_matrix':{'batch_id':'ENGINEERING_FIXTURE','matrix_interval':{'started_ns':100,'ended_ns':200},'matrix_cells':{},'pair_manifest_sha':{}}}
+        for index,e in enumerate(e for e in r['entries'] if e['timepoint']=='after'):
+            fx.set_pair_times(e['pair_path'],3000+index*40)
+        trust={'test_matrix':{'batch_id':'ENGINEERING_FIXTURE','matrix_interval':{'started_ns':5000,'ended_ns':20000},'matrix_cells':{},'pair_manifest_sha':{}}}
         with self.assertRaisesRegex(ValueError,'AA actual process order'):
             gate.verify_complete_aa(p,test_fixture=True,trust=trust)
         for e in r['entries']:
-            if e['timepoint']=='after':fx.shift_pair_times(e['pair_path'],300)
+            if e['timepoint']=='after':fx.shift_pair_times(e['pair_path'],60000)
         out=gate.verify_complete_aa(p,test_fixture=True,trust=trust)
         self.assertEqual(out['observed_floor']['total'],0.)
-        target=next(e for e in r['entries'] if e['timepoint']=='after');fx.shift_pair_times(target['pair_path'],-250)
+        target=next(e for e in r['entries'] if e['timepoint']=='after');fx.set_pair_times(target['pair_path'],4000)
         gate.validate_pair(target['pair_path'],test_fixture=True)
         with self.assertRaisesRegex(ValueError,'AA actual process order'):gate.verify_complete_aa(p,test_fixture=True,trust=trust)
     def test_formal_complete_shape_requires_all_700_pairs(self):
@@ -345,17 +351,18 @@ class HardeningPhaseClosure(unittest.TestCase):
 
 class HardeningSelectionLink(unittest.TestCase):
     def inputs(self,other=False):
-        # The timed-out preparation attempt retained all complete fixture bytes.
-        # Reuse them read-only; each public call still validates 240 selection
-        # pairs, every formal AA pair, and all ten final cell pairs.
-        candidates=list((S1/'artifacts/analysis/red_selection_link_01/scratch').glob('*/aa_fixture.json'))
-        self.assertEqual(len(candidates),1);root=candidates[0].parent
-        original=root/'a_selection_fixture.json';bound=root/('b_selection_fixture.json' if other else 'a_selection_fixture.json')
-        paths=sorted(root.glob('final-*/pair_fixture.json'))
-        matrix={'batch_id':'ENGINEERING_FIXTURE','matrix_interval':{'started_ns':100,'ended_ns':200},
+        # New serial test-only evidence; old overlapping archives stay immutable.
+        root=scratch();selected=selection.select(fixture_paths(),test_fixture=True)
+        original=root/'a_selection_fixture.json';fx.write_json(original,selected)
+        alternate=root/'b_selection_fixture.json';fx.write_json(alternate,{**selected,'fixture_copy':True})
+        bound=alternate if other else original
+        paths=[fx.pair(root/f'final-{s}',case='F01',seed=s,candidate='R6',reference='M_EVENT_16',profile='final') for s in range(91001,91011)]
+        aa=aa_receipt(root/'aa','final',('before','after'));aa['observed_floor']={'build':0.,'online':0.,'total':0.,'interpretation':'finite_observed_envelope_not_confidence_bound'}
+        aa_path=root/'aa_fixture.json';fx.write_json(aa_path,aa)
+        matrix={'batch_id':'ENGINEERING_FIXTURE','matrix_interval':{'started_ns':20000,'ended_ns':55000},
                 'matrix_cells':{f'F01:{s}:P06':str(q.resolve()) for s,q in zip(range(91001,91011),paths)},
                 'pair_manifest_sha':{str(q.resolve()):fx.sha(q) for q in paths},'selection_binding':{'path':str(bound),'sha256':fx.sha(bound)}}
-        return paths,original,candidates[0],matrix
+        return paths,original,aa_path,matrix
     def test_mismatched_selection_record_rejected(self):
         paths,original,p,matrix=self.inputs(other=True);a=importlib.import_module('analysis')
         with self.assertRaisesRegex(ValueError,'same frozen dev selection'):

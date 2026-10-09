@@ -25,7 +25,19 @@ def write_csv(path, rows):
 def pair(root, case='D01', seed=90001, candidate='M_EVENT_8', total=200, online=100,
          pair_id=None, profile='dev', reference='M_LIST'):
     root = Path(root); root.mkdir(parents=True)
-    identity = pair_id or f'{case}:{seed}:{candidate}'
+    # Execution IDs map an existing registered comparison to its input; they
+    # are JSON/CLI strings, never Windows directory names or new comparisons.
+    labels={('Original','M_LIST'):'P01',('M_LIST','M_OBSERVE_LIST'):'P02',('M_LIST','R6'):'P03',
+            ('M_OBSERVE_LIST','R6'):'P04',('Original','R6'):'P05',('M_EVENT_16','R6'):'P06',
+            ('M_FIXED_128','R6'):'P07',('M_NO_IDLE','R6'):'P08'}
+    label=labels.get((reference,candidate),candidate) if profile=='final' else candidate
+    identity = pair_id or f'{case}:{seed}:{label}'
+    start=1
+    if profile=='dev' and case in [f'D{i:02}' for i in range(1,11)] and seed in (90001,90002,90003) and candidate in METHODS:
+        start=2000+(((int(case[1:])-1)*3+seed-90001)*8+METHODS.index(candidate))*40
+    if profile=='final' and case in [f'F{i:02}' for i in range(1,8)] and seed in range(91001,91011):
+        order=['DIA01','DIA02',*[f'P{i:02}' for i in range(1,9)]];tag=identity.rsplit(':',1)[-1]
+        if tag in order:start=20000+(((int(case[1:])-1)*10+seed-91001)*10+order.index(tag))*40
     assets = root / 'assets'; assets.mkdir()
     for name, content in [('protocol.json', b'ENGINEERING_FIXTURE protocol'),
                           ('binary.exe', b'ENGINEERING_FIXTURE never executable'),
@@ -102,7 +114,7 @@ def pair(root, case='D01', seed=90001, candidate='M_EVENT_8', total=200, online=
                  '--cache-sha',cache_sha,'--method',method,'--output',str(d),'--batch-id','ENGINEERING_FIXTURE',
                  '--attempt-id','fixture-1','--pair-id',identity,'--round',str(rnd),'--role',role]
         write_json(d/'process.json',{'command':command,'exit_code':0,'order_index':len(children),
-                                    'started_ns':len(children)*10+1,'ended_ns':len(children)*10+2})
+                                    'started_ns':start+len(children)*2,'ended_ns':start+len(children)*2+1})
         (d/'stdout.txt').write_text(f'verified native {method} valid\n',encoding='utf-8')
         (d/'stderr.txt').write_bytes(b'')
         children.append({'path':str(d),'files':{name:sha(d/name) for name in
@@ -129,3 +141,10 @@ def shift_pair_times(manifest,offset):
     for i,c in enumerate(m['children']):
         p=Path(c['path'])/'process.json';r=json.loads(p.read_text())
         r['started_ns']+=offset;r['ended_ns']+=offset;write_json(p,r);rebind_child(manifest,i,'process.json')
+
+def set_pair_times(manifest,start):
+    m=json.loads(Path(manifest).read_text())
+    if m.get('test_fixture') is not True:raise ValueError('fixture clocks only')
+    for i,c in enumerate(m['children']):
+        p=Path(c['path'])/'process.json';r=json.loads(p.read_text())
+        r.update(started_ns=start+i*2,ended_ns=start+i*2+1);write_json(p,r);rebind_child(manifest,i,'process.json')
