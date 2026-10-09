@@ -28,11 +28,11 @@ HARDENING_CASES=[*[f'HardeningSelection.{name}' for name in (
     'HardeningSelectionLink.test_mismatched_selection_record_rejected','HardeningSelectionLink.test_same_selection_record_accepted',
     *[f'BatchIdentity.{name}' for name in ('test_copied_lock_is_not_an_independent_diagnostic','test_same_methods_wrong_cell_execution_is_rejected','test_shared_reference_children_are_rejected')],
     *[f'BatchChronology.{name}' for name in ('test_dev_pair_overlap_rejected','test_dev_serial_wrong_candidate_order_rejected','test_formal_serial_wrong_main_diagnostic_order_rejected','test_aa_timepoint_overlap_rejected','test_start_plans_freeze_registered_order')],
-    'BatchPositive.test_independent_registered_dev_batch_accepted','BatchPositive.test_independent_formal_batch_accepts_unordered_entries']
+    'BatchPositive.test_independent_registered_dev_batch_accepted','BatchPositive.test_independent_formal_batch_accepts_unordered_entries','BatchPositive.test_registered_adapter_keeps_diagnostic_independent']
 
 def arguments(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--tag',required=True);p.add_argument('--task',choices=['fixtures','red','red-entry','entry','batch-prepare','red-batch'],default='fixtures')
+    p.add_argument('--tag',required=True);p.add_argument('--task',choices=['fixtures','red','red-entry','entry','batch-prepare','red-batch','batch-check'],default='fixtures')
     p.add_argument('--case',choices=HARDENING_CASES)
     p.add_argument('--fixture-source')
     args=p.parse_args(argv)
@@ -75,7 +75,8 @@ def run(args):
     # matrix. Separate processes preserve the frozen 55-second process budget.
     hardening=HARDENING_CASES
     batch_red=[x for x in hardening if x.startswith(('BatchIdentity.','BatchChronology.'))]
-    cases=[*[f'Prepare{i}' for i in range(8)],'Selection',*[f'BatchFormal{i}' for i in range(10)],'BatchFormalManifest'] if args.task=='batch-prepare' else batch_red if args.task=='red-batch' else ['SelectionRed','ManifestRed','AABeforeRed'] if args.task=='red-entry' else ['gm','decision','selection','sidecar'] if args.task=='red' else ['Statistics','Sidecar',*[f'Prepare{i}' for i in range(8)],'Selection','AdapterGate',*hardening] if args.task=='fixtures' else ['AdapterGate',*hardening]
+    formal_preparation=[*[f'BatchFormal{i}' for i in range(10)],'BatchFormalManifest']
+    cases=[*[f'Prepare{i}' for i in range(8)],'Selection',*formal_preparation] if args.task=='batch-prepare' else [x for x in hardening if x.startswith('Batch')] if args.task=='batch-check' else batch_red if args.task=='red-batch' else ['SelectionRed','ManifestRed','AABeforeRed'] if args.task=='red-entry' else ['gm','decision','selection','sidecar'] if args.task=='red' else ['Statistics','Sidecar',*[f'Prepare{i}' for i in range(8)],'Selection','AdapterGate',*([] if fixture_reuse else formal_preparation),*hardening] if args.task=='fixtures' else ['AdapterGate',*hardening]
     if args.case:cases=[args.case]
     for case in cases:
         batch_case=case.startswith('Batch')
@@ -88,6 +89,8 @@ def run(args):
             if case=='Selection' or case.startswith('BatchFormal') or ((case.startswith(('HardeningSelection.','HardeningSelectionLink.')) or case=='HardeningHistory') and args.task=='fixtures'):command+=['--fixture-output',str(out/'dev_fixture')]
         if fixture_reuse and (case.startswith(('Prepare','HardeningSelection.','HardeningSelectionLink.','Batch')) or case in ('Selection','HardeningHistory')):
             command+=['--fixture-source',fixture_reuse['path']]
+        elif batch_case and not case.startswith('BatchFormal') and args.task=='fixtures':
+            command+=['--fixture-source',str(out/'dev_fixture')]
         process={'command':command,'cwd':str(S1),'started_ns':time.time_ns(),'timeout_seconds':55,'test_fixture':True}
         try:
             result=subprocess.run(command,cwd=S1,capture_output=True,timeout=55,env={**os.environ,'PYTHONUTF8':'1','PYTHONDONTWRITEBYTECODE':'1'})

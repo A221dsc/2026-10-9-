@@ -140,6 +140,16 @@ class BatchChronology(unittest.TestCase):
         with self.assertRaises(ValueError):gate._inventory_identity('dev_aa_inventory',r,test_fixture=True,phase='start')
 
 class BatchPositive(unittest.TestCase):
+    def test_registered_adapter_keeps_diagnostic_independent(self):
+        import pair_adapter as adapter
+        root=scratch();cache=root/'cache.bin';cache.write_bytes(b'ENGINEERING_FIXTURE')
+        plans=[]
+        for label in ('DIA01','P06'):
+            cell=('F01',91001,label);identity=adapter.registered_pair_id(*cell)
+            plan=adapter.command_plan('pin.exe','native.exe',cache,fx.sha(cache),'M_EVENT_16','R6',root,'batch','attempt',identity,cell=cell)
+            self.assertTrue(all(identity in row['command'] for row in plan));plans.extend(plan)
+        self.assertEqual(len({row['command'][row['command'].index('--output')+1] for row in plans}),8)
+        with self.assertRaises(ValueError):adapter.command_plan('pin.exe','native.exe',cache,fx.sha(cache),'M_EVENT_16','R6',root,'batch','attempt','F01:91001:P06',cell=('F01',91001,'DIA01'))
     def test_independent_registered_dev_batch_accepted(self):
         out=selection.select(list(reversed(dev_paths())),test_fixture=True);self.assertEqual((out['children'],out['selected_theta'],out['selected_h']),(960,16,128))
     def test_independent_formal_batch_accepts_unordered_entries(self):

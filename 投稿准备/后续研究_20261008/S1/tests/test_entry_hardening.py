@@ -28,7 +28,7 @@ def scratch():
     p=root/uuid.uuid4().hex;p.mkdir(parents=True);return p
 
 def fixture_paths():
-    root=Path(args.fixture_source or args.fixture_output) if args.fixture_source or args.fixture_output else S1/'artifacts/analysis/green_complete_03/dev_fixture'
+    root=Path(args.fixture_source or args.fixture_output) if args.fixture_source or args.fixture_output else S1/'artifacts/analysis/batch_fixture_mf45_01/dev_fixture'
     return sorted(root.glob('D*-*/pair_fixture.json'))
 
 def receipt(name,**kw):

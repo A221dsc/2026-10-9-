@@ -2,9 +2,10 @@
 from pathlib import Path
 import json
 import math
-from entry_gate import validate_pair, sha, load
+from entry_gate import validate_pair, validate_batch, sha, load
+from pair_adapter import DEV_CANDIDATES
 
-CANDIDATES=[*[f'M_EVENT_{x}' for x in (8,16,32,64)],*[f'M_FIXED_{x}' for x in (128,512,2048,8192)]]
+CANDIDATES=DEV_CANDIDATES
 INPUTS={(f'D{i:02}',s) for i in range(1,11) for s in (90001,90002,90003)}
 FAMILIES={'endpoint':('D01','D02'),'low_work':('D03','D04'),'high_work':('D05','D06'),
           'prefix':('D07','D08'),'competition':('D09','D10')}
@@ -18,7 +19,7 @@ def choose_score(scores):
 def select(paths,*,test_fixture=False,trust=None):
     paths=list(paths)
     if len(paths)!=240 or len({str(Path(p).resolve()) for p in paths})!=240:raise ValueError('240 distinct complete dev pairs required')
-    cells={};hashes={};input_hashes={};identities={};common={};configs={};starts=[];ends=[]
+    cells={};hashes={};input_hashes={};identities={};common={};configs={};records=[]
     for p in paths:
         binding=None if test_fixture else (trust or {}).get(str(Path(p).resolve()))
         out=validate_pair(p,test_fixture=test_fixture,trust=binding)
@@ -27,7 +28,7 @@ def select(paths,*,test_fixture=False,trust=None):
         cache=out['rows'][0]['cache_sha'];previous=input_hashes.setdefault(key[:2],cache)
         if previous!=cache:raise ValueError('candidates do not share identical input bytes')
         cells[key]=math.log(out['ratios']['total']);hashes[str(Path(p).resolve())]=out['manifest_sha256']
-        starts.append(out['started_ns']);ends.append(out['ended_ns'])
+        records.append((key,out))
         lock=load(p)
         for name,value in {'native_binary_sha256':lock['files']['binary']['sha256'],
                            'protocol_sha256':lock['files']['protocol']['sha256'],'source_bundle_sha':lock['source_bundle_sha']}.items():
@@ -38,6 +39,8 @@ def select(paths,*,test_fixture=False,trust=None):
             'files':lock['files'],'source_files':lock['source_files'],
             'child_files':{c['path']:c['files'] for c in lock['children']},'config_logical':lock['config_logical']}
     if set(cells)!={(c,s,m) for c,s in INPUTS for m in CANDIDATES}:raise ValueError('complete 30 x 8 dev matrix required')
+    batch=validate_batch(records,scope='dev')
+    if batch['children']!=960:raise ValueError('960 independent dev children required')
     scores={m:math.fsum(cells[c,s,m] for c,s in sorted(INPUTS))/30 for m in CANDIDATES}
     theta=choose_score([(int(m[8:]),scores[m]) for m in CANDIDATES if m.startswith('M_EVENT_')])
     h=choose_score([(int(m[8:]),scores[m]) for m in CANDIDATES if m.startswith('M_FIXED_')])
@@ -48,7 +51,7 @@ def select(paths,*,test_fixture=False,trust=None):
             'pair_manifest_sha':hashes,'input_cache_sha':{f'{c}:{s}':v for (c,s),v in sorted(input_hashes.items())},
             'identity_bindings':identities,
             **common,'method_config_sha256':configs,
-            'matrix_interval':{'started_ns':min(starts),'ended_ns':max(ends)},
+            'matrix_interval':batch['matrix_interval'],
             'selection_rule':'exact_float_tie_then_smaller_threshold','write_once':True}
 
 def verify_selection(record,*,test_fixture=False,trust=None):

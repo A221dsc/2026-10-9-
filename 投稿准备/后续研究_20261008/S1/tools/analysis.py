@@ -113,7 +113,7 @@ def aa_floor(rows,scope):
 def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=False,trust=None,selection=None,selection_trust=None,aa_inventory=None,aa_trust=None):
     """Aggregate exactly ten independently identified, validated final inputs."""
     from pathlib import Path
-    from entry_gate import validate_pair, verify_complete_aa, _same_selection_binding, sha
+    from entry_gate import validate_pair, validate_batch, verify_complete_aa, _same_selection_binding, sha
     if not test_fixture and aa_inventory is None:raise ValueError('production final summary requires complete AA inventory')
     aa=None
     if aa_inventory is not None:
@@ -136,7 +136,7 @@ def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=F
         threshold=selected['selected_theta' if pair=='P06' else 'selected_h']
         methods[pair]=(f'M_EVENT_{threshold}' if pair=='P06' else f'M_FIXED_{threshold}','R6')
     if pair not in methods or case not in {f'F{i:02}' for i in range(1,8)}:raise ValueError('unregistered final cell')
-    by_seed={};locks={}
+    by_seed={};locks={};records=[]
     for path in paths:
         out=validate_pair(path,test_fixture=test_fixture,trust=None if test_fixture else (trust or {}).get(str(Path(path).resolve())))
         if out['case_id']!=case or out['profile']!='final' or out['mode']!='native' or (out['reference'],out['candidate'])!=methods[pair] or out['seed'] in by_seed:
@@ -147,7 +147,9 @@ def summarize_pairs(paths,pair,case,component,aa_log_floor=None,*,test_fixture=F
             if matrix['matrix_cells'].get(key)!=p or matrix['pair_manifest_sha'].get(p)!=out['manifest_sha256']:
                 raise ValueError('final cell absent from frozen complete formal matrix')
         by_seed[out['seed']]=out['ratios'][component];locks[str(Path(path).resolve())]=out['manifest_sha256']
+        records.append(((case,out['seed'],pair),out))
     if set(by_seed)!=set(range(91001,91011)):raise ValueError('all ten registered final seeds required')
+    validate_batch(records,scope='final')
     return {**summarize([by_seed[s] for s in sorted(by_seed)],pair,case,component,aa_log_floor),
             'pair_manifest_sha':locks,'test_fixture':test_fixture,
             'aa_inventory_sha256':aa['manifest_sha256'] if aa else None}

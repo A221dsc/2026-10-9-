@@ -7,6 +7,27 @@ S1=Path(__file__).resolve().parents[1]
 LEGACY=S1.parents[1]/'公开数据实验'/'bench_pinned_pair.py'
 LEGACY_SHA='bd38435b1e5b51d71bafbe0b92a6280f8b9b6af27e4dbb87832b5fa51ca9dea7'
 REGISTERED={'Original','M_LIST','M_OBSERVE_LIST','R6','M_NO_IDLE',*[f'M_EVENT_{x}' for x in (8,16,32,64)],*[f'M_FIXED_{x}' for x in (128,512,2048,8192)]}
+DEV_CANDIDATES=[*[f'M_EVENT_{x}' for x in (8,16,32,64)],*[f'M_FIXED_{x}' for x in (128,512,2048,8192)]]
+FORMAL_LABELS=['DIA01','DIA02',*[f'P{i:02}' for i in range(1,9)]]
+
+def registered_pair_id(case_id,seed,cell_id):
+    """Map an unchanged registered comparison to its lock/raw/CLI identity.
+
+    The composite string is not a new statistical label or a directory name.
+    """
+    dev=case_id in {f'D{i:02}' for i in range(1,11)}
+    formal=case_id in {f'F{i:02}' for i in range(1,8)}
+    if not ((dev and seed in (90001,90002,90003) and cell_id in DEV_CANDIDATES)
+            or (formal and seed in range(91001,91011) and cell_id in FORMAL_LABELS)):
+        raise ValueError('registered execution cell required')
+    return f'{case_id}:{seed}:{cell_id}'
+
+def registered_order(cell,scope):
+    case_id,seed,label=cell
+    registered_pair_id(case_id,seed,label)
+    if scope=='dev':return case_id,seed,DEV_CANDIDATES.index(label)
+    if scope=='final':return case_id,seed,label
+    raise ValueError('registered batch scope required')
 
 def verify_legacy():
     sha=hashlib.sha256(LEGACY.read_bytes()).hexdigest()
@@ -41,7 +62,10 @@ def child_command(pin,binary,cache,cache_sha,method,output,batch,attempt,pair_id
             '--cache-sha',cache_sha,'--method',method,'--output',str(Path(output).resolve()),
             '--batch-id',batch,'--attempt-id',attempt,'--pair-id',pair_id,'--round',str(rnd),'--role',role]
 
-def command_plan(pin,binary,cache,cache_sha,reference,candidate,output,batch,attempt,pair_id,aa=False):
+def command_plan(pin,binary,cache,cache_sha,reference,candidate,output,batch,attempt,pair_id,aa=False,*,cell=None):
+    if cell is not None:
+        expected=registered_pair_id(*cell)
+        if aa or pair_id!=expected:raise ValueError('plan registered execution identity mismatch')
     out=[]
     for row in schedule(10 if aa else 2,aa,pair_id):
         d=Path(output)/row['block_pair_id'].replace(':','_')/f"r{row['round']}{row['role']}"

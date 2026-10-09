@@ -182,7 +182,7 @@ def validate_pair(path,*,test_fixture=False,trust=None):
     require(meta['phase_q']==[p.get('q',meta['q']) for p in phases] and meta['phase_c']==[p.get('c',meta['c']) for p in phases],'phase q/c identity')
     require(sum(p['phase_query_count'] for p in phases)==meta['queries'] and sum(p['phase_returned'] for p in phases)==cache['returned'],'phase query sums')
     children=m['children'];require(len(children)==4 and len({c['path'] for c in children})==4,'whole pair requires four distinct children')
-    rows=[];previous_end=-1;started_ns=None
+    rows=[];child_runs=[];previous_end=-1;started_ns=None
     for i,(child,rotation) in enumerate(zip(children,schedule())):
         d=Path(child['path']);require(d.is_absolute() and not (d/'failure.json').exists(),'failure/invalid whole pair')
         required={'raw_native.csv','phase.csv','config.json','run_receipt.json','process.json','stdout.txt','stderr.txt'}
@@ -225,6 +225,8 @@ def validate_pair(path,*,test_fixture=False,trust=None):
         if not fixture:require(config_sha==trust['config_sha256'][method],'frozen config trust mismatch')
         process=load(d/'process.json');require(process['exit_code']==0 and process['order_index']==i,'process exit/order')
         require(previous_end<=process['started_ns']<process['ended_ns'],'serial process timing');previous_end=process['ended_ns']
+        child_runs.append({'path':str(d.resolve()),'started_ns':process['started_ns'],'ended_ns':process['ended_ns'],
+                           'execution_id':(m['batch_id'],m['attempt_id'],m['pair_id'],rnd,role)})
         if started_ns is None:started_ns=process['started_ns']
         expected_command=child_command(files['pin']['path'],files['binary']['path'],files['cache']['path'],files['cache']['sha256'],method,d,m['batch_id'],m['attempt_id'],m['pair_id'],rnd,role)
         require(process['command']==expected_command,'process command exact identity')
@@ -251,7 +253,39 @@ def validate_pair(path,*,test_fixture=False,trust=None):
                                       (rows[3][component+'_ns'],rows[2][component+'_ns'])]) for component in ('build','online','total')}
     return {'rows':rows,'ratios':ratios,'manifest_sha256':sha(path),'case_id':m['case_id'],'seed':m['seed'],
             'reference':m['reference'],'candidate':m['candidate'],'test_fixture':fixture,'profile':m['profile'],'mode':m['mode'],
-            'batch_id':m['batch_id'],'started_ns':started_ns,'ended_ns':previous_end}
+            'batch_id':m['batch_id'],'attempt_id':m['attempt_id'],'pair_id':m['pair_id'],
+            'started_ns':started_ns,'ended_ns':previous_end,'child_runs':child_runs}
+
+def validate_batch(records,*,scope=None):
+    """Check independence and chronology of already fully validated pairs.
+
+    Collectors must call validate_pair before supplying each record. Checking
+    complete pair intervals also prevents interleaving their four AB/BA children.
+    JSON inventory order is irrelevant; chronology comes from process receipts.
+    """
+    from pair_adapter import registered_pair_id, registered_order
+    records=list(records);require(bool(records),'complete batch evidence required')
+    paths=set();executions=set();batches=set()
+    for cell,pair in records:
+        batches.add(pair['batch_id'])
+        require(len(pair['child_runs'])==4,'four validated batch children required')
+        for child in pair['child_runs']:
+            path=str(Path(child['path']).resolve());identity=tuple(child['execution_id'])
+            require(path not in paths and identity not in executions,'independent batch children required')
+            paths.add(path);executions.add(identity)
+        if scope is not None:
+            require(pair['pair_id']==registered_pair_id(*cell),'registered cell/execution pair identity mismatch')
+    require(len(batches)==1 and len(paths)==len(executions)==4*len(records),'one batch with unique actual children required')
+    chronology=sorted(records,key=lambda item:item[1]['started_ns'])
+    previous_end=-1
+    for _,pair in chronology:
+        require(previous_end<=pair['started_ns']<pair['ended_ns'],'all batch pairs must run serially')
+        previous_end=pair['ended_ns']
+    if scope is not None:
+        expected=sorted((cell for cell,_ in records),key=lambda cell:registered_order(cell,scope))
+        require([cell for cell,_ in chronology]==expected,'registered actual batch chronology required')
+    return {'batch_id':next(iter(batches)),'children':len(paths),
+            'matrix_interval':{'started_ns':chronology[0][1]['started_ns'],'ended_ns':previous_end}}
 
 def can_resume(path,**kwargs):
     try:validate_pair(path,**kwargs);return True
@@ -354,13 +388,16 @@ def verify_formal_matrix(path,*,test_fixture=False,trust=None):
             and r.get('test_fixture') is test_fixture and r.get('status')=='COMPLETE','formal completion schema/fixture boundary')
     from select_dev import verify_selection
     bound=_file_binding(r['selection']);selected=verify_selection(bound['path'],test_fixture=test_fixture,trust=(trust or {}).get('selection_trust'))
-    pairs=_formal_matrix_shape(r['entries'],selected);locks={};cells={};inputs={};starts=[];ends=[]
+    pairs=_formal_matrix_shape(r['entries'],selected);locks={};cells={};inputs={};records=[]
     for e in r['entries']:
         p=str(Path(e['pair_path']).resolve());binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(p)
         out=validate_pair(p,test_fixture=test_fixture,trust=binding)
         require((out['profile'],out['mode'],out['case_id'],out['seed'],out['reference'],out['candidate'])==
                 ('final','native',e['case_id'],e['seed'],*pairs[e['pair_id']]),'formal completed pair identity')
         require(out['batch_id']==r['batch_id'],'formal same completed batch')
+        from pair_adapter import registered_pair_id
+        cell=(e['case_id'],e['seed'],e['pair_id'])
+        require(e.get('execution_pair_id')==registered_pair_id(*cell),'formal entry registered execution mapping required')
         cache=out['rows'][0]['cache_sha'];key=(e['case_id'],e['seed'])
         require(inputs.setdefault(key,cache)==cache,'formal pairs must share identical input bytes')
         for row in out['rows']:
@@ -369,8 +406,9 @@ def verify_formal_matrix(path,*,test_fixture=False,trust=None):
             if row['method'] in selected['method_config_sha256']:
                 require(row['config_sha']==selected['method_config_sha256'][row['method']],'formal selected/diagnostic config identity')
         locks[p]=out['manifest_sha256'];cells[f"{e['case_id']}:{e['seed']}:{e['pair_id']}"]=p
-        starts.append(out['started_ns']);ends.append(out['ended_ns'])
-    return {'batch_id':r['batch_id'],'matrix_interval':{'started_ns':min(starts),'ended_ns':max(ends)},
+        records.append((cell,out))
+    batch=validate_batch(records,scope='final');require(batch['children']==2800,'2800 independent formal children required')
+    return {'batch_id':r['batch_id'],'matrix_interval':batch['matrix_interval'],
             'pair_manifest_sha':locks,'matrix_cells':cells,'manifest_sha256':sha(path),'selection_binding':bound}
 
 def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=None,phase='start'):
@@ -409,13 +447,14 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
             require(old.get('schema')=='S1.entry.asset.v1' and old.get('asset')==name and old.get('test_fixture') is test_fixture,'original before AA inventory identity')
             require(old.get('batch_id')==receipt['batch_id'] and old.get('environment_sha256')==receipt['environment_sha256'],'original before AA batch/environment')
             require(old.get('entries')==[e for e in entries if e['timepoint']=='before'],'completed AA must preserve exact original before entries')
-        pair_ids=set();rows=[];intervals={t:{'started_ns':None,'ended_ns':None} for t in timepoints}
+        pair_ids=set();rows=[];records=[];intervals={t:{'started_ns':None,'ended_ns':None} for t in timepoints}
         for e in entries:
             binding=None if test_fixture else (trust or {}).get('pair_trust',{}).get(str(Path(e['pair_path']).resolve()))
             pair=validate_pair(e['pair_path'],test_fixture=test_fixture,trust=binding)
             _aa_pair_identity(pair,e)
             require(e.get('batch_id')==receipt['batch_id'] and all(r['batch_id']==receipt['batch_id'] for r in pair['rows']),'AA same batch required')
             pid=pair['rows'][0]['pair_id'];require(pid not in pair_ids,'AA blocks need independent pair IDs');pair_ids.add(pid)
+            records.append(((e['timepoint'],e['method'],e['case_id'],e['block']),pair))
             interval=intervals[e['timepoint']]
             interval['started_ns']=pair['started_ns'] if interval['started_ns'] is None else min(interval['started_ns'],pair['started_ns'])
             interval['ended_ns']=pair['ended_ns'] if interval['ended_ns'] is None else max(interval['ended_ns'],pair['ended_ns'])
@@ -423,6 +462,7 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
                 rows.append({'timepoint':e['timepoint'],'method':e['method'],'case_id':e['case_id'],'seed':92001,
                              'block':e['block'],'round':int(r['round']),'role':r['role'],'status':'valid',
                              **{c:int(r[c+'_ns']) for c in ('build','online','total')}})
+        validate_batch(records)
         observed=None
         if phase=='complete':
             from analysis import aa_floor
@@ -492,9 +532,12 @@ def _inventory_identity(name,receipt,*,test_fixture=False,trust=None,context=Non
             pairs={m:('M_LIST',m) for m in CANDIDATES}
         expected={(c,s,p) for c,s in inputs for p in pairs};keys=[(e.get('case_id'),e.get('seed'),e.get('pair_id')) for e in entries]
         require(len(keys)==len(expected) and set(keys)==expected,'start complete unique pair plan required')
+        from pair_adapter import registered_pair_id, registered_order
+        require(keys==sorted(expected,key=lambda cell:registered_order(cell,profile)),'start registered execution order required')
         for e in entries:
             require(e.get('schema')=='S1.start.pair.v1' and e.get('status')=='NOT_RUN' and e.get('children')==4
                     and e.get('batch_id')==receipt['batch_id'] and e.get('profile')==profile,'start entry schema/batch/unexecuted status')
+            require(e.get('execution_pair_id')==registered_pair_id(e['case_id'],e['seed'],e['pair_id']),'start registered execution mapping required')
             reference,candidate=pairs[e['pair_id']]
             require((e.get('reference'),e.get('candidate'))==(reference,candidate),'start registered pair methods')
             trace=traces[e['case_id'],e['seed']]
