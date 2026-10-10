@@ -1,0 +1,15 @@
+{
+  "scope": "launcher_only_not_repeat_engineering_review",
+  "command": [
+    "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\tests\\test_dev_launch.py"
+  ],
+  "started_ns": 1791602319968806000,
+  "ended_ns": 1791602320161141000,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "....\r\n----------------------------------------------------------------------\r\nRan 4 tests in 0.009s\r\n\r\nOK\r\n",
+  "checks": 4,
+  "frozen_algorithm_modified": false
+}
