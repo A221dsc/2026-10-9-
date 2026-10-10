@@ -1,0 +1,71 @@
+{
+  "schema": "S1.final.root.git.verification.v1",
+  "client_date": "2026-10-10",
+  "source_git_commit": "b9f5bd9a8e8e8330fc645abaf4a5a1ffdf7d2c3d",
+  "engineering_tag": "s1-engineering-v1",
+  "status": "COMPLETE_GREEN_AND_REVIEWS_APPROVED",
+  "actual_full_root_manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_mf45_final_03/manifest.json",
+  "actual_outer_receipt": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_mf45_final_03.outer_process.json",
+  "outer_exit": 0,
+  "processes": 44,
+  "tests": 77,
+  "success_exits": 44,
+  "maximum_process_seconds": 41.2910654,
+  "timeout_limit_seconds": 55,
+  "inherited_pcore_mask": "0x8",
+  "logical_cpu": 3,
+  "source_archive_current_git_equal_files": 10,
+  "evidence_files_checked": 43193,
+  "evidence_mismatches": 0,
+  "kernel_checks": 99,
+  "random_operations": 3000000,
+  "driver_suites": 35,
+  "driver_commands": 78,
+  "compile_warnings": 0,
+  "review_reports": {
+    "kernel_spec": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_内核规格审查_round2.md",
+    "kernel_quality": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_内核质量审查.md",
+    "driver_spec": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_驱动规格审查_round2.md",
+    "driver_quality": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_驱动质量审查.md",
+    "analysis_spec": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_统计与入口规格审查_round3.md",
+    "analysis_quality": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_统计与入口质量审查.md",
+    "whole": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_全工程最终审查.md"
+  },
+  "failed_full_root_attempts": [
+    {
+      "manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_mf45_final_01/manifest.json",
+      "status": "ENGINEERING_FAILED",
+      "processes": 44,
+      "success_exits": 43,
+      "timeout_exits": 1,
+      "completed_tests": 76,
+      "source_bytes_independently_unchanged": true,
+      "kept": true,
+      "outer_exit": 1
+    },
+    {
+      "manifest": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_mf45_final_02/manifest.json",
+      "status": "ENGINEERING_FAILED",
+      "processes": 44,
+      "success_exits": 36,
+      "timeout_exits": 8,
+      "completed_tests": 64,
+      "source_bytes_independently_unchanged": true,
+      "kept": true,
+      "outer_exit": "UNOBSERVED_RETIRED_TOOL_SESSION"
+    }
+  ],
+  "diagnostic_attempts_retained": [
+    "root_pcore_timeout_probe_01",
+    "root_pcore_unsandboxed_probe_01",
+    "root_timeout_stack_probe_01",
+    "root_timeout_stack_probe_02"
+  ],
+  "diagnostic_limits": "File-reading/validation stack samples and post-hoc machine snapshots do not establish the cause of earlier timeouts or constitute formal quiet-environment receipts. The first stack wrapper failed to import test support and is not a test result. No failure was renamed GREEN.",
+  "version_method": "Git commits and engineering tag; existing archive bindings are validated, not a new manual SHA version inventory",
+  "experiment_runs": 0,
+  "DEV_READY": false,
+  "FINAL_READY": false,
+  "selected_theta": null,
+  "selected_h": null
+}

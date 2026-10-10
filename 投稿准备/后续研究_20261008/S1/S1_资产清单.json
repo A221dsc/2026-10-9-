@@ -1,10 +1,10 @@
 {
   "schema": "S1.git_engineering_assets.v1",
-  "state": "GREEN_BASELINE_ROUND2_REJECTED_MF4_MF5_REPAIR",
+  "state": "ENGINEERING_FROZEN",
   "repository": "https://github.com/A221dsc/2026-10-9-",
   "branch": "s1-entry-hardening",
-  "source_git_commit": "37bfde7ccd58c45efdf249cdcd605fe2713965b0",
-  "freeze_tag": null,
+  "source_git_commit": "b9f5bd9a8e8e8330fc645abaf4a5a1ffdf7d2c3d",
+  "freeze_tag": "s1-engineering-v1",
   "normative_git_tag": "s0-freezable-v1",
   "normative_contract": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_同布局比较合约_v1.md",
   "preregistration": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_preregistration.json",
@@ -48,7 +48,7 @@
       "version_method": "Git commit and reviewed stage tag; original build evidence retained locally"
     }
   ],
-  "source_freeze_complete": false,
+  "source_freeze_complete": true,
   "compatibility": "Existing protocol/data/binary/sidecar integrity fields remain validation inputs; no new manual source SHA256 version inventory.",
   "archive_policy": "Three reviewed driver byte snapshots are Git-versioned under release/binaries. Full execution archives, other compiled artifacts, runtimes and datasets remain Git-ignored.",
   "experiment_entry_state": {
@@ -57,11 +57,61 @@
     "selected_theta": null,
     "selected_h": null
   },
-  "working_tree_repair_pending": true,
+  "working_tree_repair_pending": false,
   "independent_review_round2": {
     "report": "S1_统计与入口规格审查_round2.md",
     "verdict": "NOT APPROVED",
     "important": 2,
     "prior_MF1_MF2_MF3": "Closed"
+  },
+  "independent_review_round3": {
+    "report": "S1_统计与入口规格审查_round3.md",
+    "verdict": "Approved",
+    "critical": 0,
+    "important": 0,
+    "must_fix": "MF1-MF5 Closed"
+  },
+  "final_root_verification": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_最终根核验_Git记录.json",
+  "reviews": {
+    "kernel_spec": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_内核规格审查_round2.md",
+    "kernel_quality": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_内核质量审查.md",
+    "driver_spec": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_驱动规格审查_round2.md",
+    "driver_quality": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_驱动质量审查.md",
+    "analysis_spec": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_统计与入口规格审查_round3.md",
+    "analysis_quality": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_统计与入口质量审查.md",
+    "whole": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/S1_全工程最终审查.md"
+  },
+  "experiment_runs": 0,
+  "configuration_assets": {
+    "normative_tag": "s0-freezable-v1",
+    "matched_preregistration": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S0/S0_preregistration.json",
+    "R6_parameters_and_cost_table": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/adaptive_poolhbi/FINAL_CONFIG_R6.json",
+    "historical_R0_R11_only": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/adaptive_poolhbi/R0-R11_冻结配置.json",
+    "real_selected_theta": null,
+    "real_selected_h": null,
+    "cost_values_recalibrated": false
+  },
+  "build_environment": {
+    "os": "Windows 11 Home Chinese / 10.0.26200 / x64",
+    "cpu": "Intel Core i7-13650HX",
+    "physical_cores": 14,
+    "logical_processors": 20,
+    "compiler": "LLVM-MinGW 20260922 UCRT x86_64 / clang 23",
+    "compiler_path": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/adaptive_poolhbi/final_tools/llvm-mingw-20260922-ucrt-x86_64/bin/clang++.exe",
+    "flags": "-std=c++17 -O3 -DNDEBUG -Wall -Wextra -Wno-unknown-pragmas -Wno-misleading-indentation -Wno-unused-function -static -municode",
+    "mode_macros": {
+      "native": [],
+      "latency": [
+        "S0_EVENT_TRACE"
+      ],
+      "resource": [
+        "S0_EVENT_TRACE",
+        "INDEX_MEMORY",
+        "ADAPTIVE_ALLOC_TRACK"
+      ]
+    },
+    "engineering_root_verification_core": 3,
+    "mask": "0x8",
+    "formal_fresh_environment_accepted": false
   }
 }

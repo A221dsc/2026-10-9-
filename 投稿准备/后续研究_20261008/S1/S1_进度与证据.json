@@ -1,8 +1,8 @@
 {
   "schema": "S1.engineering_progress.v1",
-  "client_date": "2026-10-09",
+  "client_date": "2026-10-10",
   "scope": "S0冻结合约的工程实施",
-  "stage": "CHUNK3_MF4_MF5_RED_CAPTURED_FIXING",
+  "stage": "ENGINEERING_FROZEN_STOP_BEFORE_EXPERIMENTS",
   "plan": "S1_工程实施计划.md",
   "steps": [
     {
@@ -68,31 +68,29 @@
     {
       "chunk": 3,
       "name": "统计与入口",
-      "status": "GREEN_BASELINE_ROUND2_NOT_APPROVED",
+      "status": "GREEN_SPEC_AND_QUALITY_APPROVED",
       "green_before_review_fix": "artifacts/analysis/green_complete_03/manifest.json",
       "root_verification_before_review_fix": "artifacts/analysis/root_verify_complete_01/manifest.json",
       "review_red": "artifacts/analysis/red_entry_mf123_02/manifest.json",
       "red_support_commit": "948802c",
       "spec_review_round1": "S1_统计与入口规格审查.md",
-      "must_fix": [
-        "MF4: whole-batch independent children and execution identity",
-        "MF5: whole-batch serial timing and registered actual chronology"
-      ],
+      "must_fix": [],
       "required_ids": [
         "SX20",
         "SX21",
         "SX23"
       ],
-      "green_candidate": "artifacts/analysis/green_complete_mf123_identity_01/manifest.json",
-      "green_candidate_version": "37bfde7",
+      "green_candidate": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/green_complete_mf45_final_01/manifest.json",
+      "green_candidate_version": "b9f5bd9a8e8e8330fc645abaf4a5a1ffdf7d2c3d",
       "green_candidate_result": {
-        "tests": 65,
-        "processes": 32,
-        "exit_zero": 32,
-        "root_read_all_logs": true
+        "tests": 77,
+        "processes": 44,
+        "exit_zero": 44,
+        "root_read_all_logs": true,
+        "root_evidence_files_verified": 43193
       },
-      "remaining": "Limited MF4/MF5 RED -> GREEN -> independent round3 -> quality review",
-      "root_verification": "artifacts/analysis/root_git_analysis_verify_final_01/manifest.json",
+      "remaining": "No engineering blocker; actual dev/final assets not prepared or executed",
+      "root_verification": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_mf45_final_03/manifest.json",
       "spec_review_round2": "S1_统计与入口规格审查_round2.md",
       "prior_must_fix_status": "MF1-MF3 independently Closed",
       "batch_review_red": "artifacts/analysis/red_batch_mf45_01/manifest.json",
@@ -103,17 +101,61 @@
         "expected_exit_1": 8,
         "behavior": "AssertionError: ValueError not raised",
         "production_unchanged_from_git": "37bfde7"
-      }
+      },
+      "spec_review_round3": "S1_统计与入口规格审查_round3.md",
+      "must_fix_status": "MF1-MF5 independently Closed",
+      "root_failed_attempt": "artifacts/analysis/root_git_analysis_verify_mf45_final_01/manifest.json",
+      "root_failed_result": {
+        "parent_exit": 1,
+        "actual_processes": 44,
+        "success_exits": 43,
+        "timeout_exits": 1,
+        "completed_tests": 76,
+        "source_unchanged_flag": "false aggregates test success; source bytes independently unchanged"
+      },
+      "root_timeout_replay": "artifacts/analysis/root_timeout_replay_mf45_01/manifest.json",
+      "root_timeout_replay_result": {
+        "tests": 1,
+        "parent_exit": 0,
+        "process_exit": 0,
+        "seconds": 40.2660847
+      },
+      "quality_review": "S1_统计与入口质量审查.md",
+      "quality_verdict": "Approved",
+      "root_second_failed_attempt": "artifacts/analysis/root_git_analysis_verify_mf45_final_02/manifest.json",
+      "root_second_failed_result": {
+        "actual_processes": 44,
+        "success_exits": 36,
+        "timeout_exits": 8,
+        "completed_tests": 64,
+        "parent_exit": "UNOBSERVED_RETIRED_TOOL_SESSION",
+        "source_bytes_independently_unchanged": true,
+        "kept": true
+      },
+      "root_pcore_timeout_probe": "artifacts/analysis/root_pcore_timeout_probe_01/manifest.json",
+      "root_pcore_timeout_probe_result": {
+        "tests_completed": 0,
+        "process_exit": 124,
+        "parent_exit": 1,
+        "affinity_mask": "0x8",
+        "timeout_seconds": 55,
+        "kept": true
+      },
+      "green": "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/analysis/root_git_analysis_verify_mf45_final_03/manifest.json",
+      "whole_engineering_review": "S1_全工程最终审查.md"
     }
   ],
   "version_control": {
     "repository": "https://github.com/A221dsc/2026-10-9-",
-    "candidate_commit": "8b867c7",
+    "candidate_commit": "b9f5bd9a8e8e8330fc645abaf4a5a1ffdf7d2c3d",
     "branch": "s1-entry-hardening",
     "candidate_pushed": true,
-    "engineering_frozen": false,
-    "latest_pushed_candidate": "37bfde7",
-    "latest_confirmed_remote_head": "12276cc"
+    "engineering_frozen": true,
+    "latest_pushed_candidate": "b9f5bd9",
+    "latest_confirmed_remote_head": "b9f5bd9",
+    "latest_archived_candidate": "b9f5bd9a8e8e8330fc645abaf4a5a1ffdf7d2c3d",
+    "latest_candidate_pushed": true,
+    "freeze_tag": "s1-engineering-v1"
   },
   "calibration_runs": 0,
   "performance_runs": 0,
@@ -121,5 +163,6 @@
   "selected_theta": null,
   "selected_h": null,
   "S1_DEV_READY": false,
-  "S1_FINAL_READY": false
+  "S1_FINAL_READY": false,
+  "stop_boundary": "Engineering closure only; no real dev, AA or formal/diagnostic experiment matrices"
 }
