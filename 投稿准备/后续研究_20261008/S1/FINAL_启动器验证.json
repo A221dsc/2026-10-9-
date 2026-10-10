@@ -1,0 +1,41 @@
+{
+  "scope": "orchestration only; frozen native source, workload and statistics unchanged",
+  "RED": {
+    "command": [
+      "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "投稿准备/后续研究_20261008/S1/tests/test_final_launch.py"
+    ],
+    "started_ns": 1791605174289474800,
+    "ended_ns": 1791605174445186800,
+    "exit_code": 1,
+    "order_index": null,
+    "spawn_error": null
+  },
+  "RED_summary": "1 assertion failure and 2 missing-result errors before implementation",
+  "GREEN": {
+    "command": [
+      "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "投稿准备/后续研究_20261008/S1/tests",
+      "-p",
+      "test_*launch.py"
+    ],
+    "started_ns": 1791605275709906500,
+    "ended_ns": 1791605275929624800,
+    "exit_code": 0,
+    "order_index": null,
+    "spawn_error": null
+  },
+  "GREEN_tests": 7,
+  "formal_pairs": 700,
+  "formal_children": 2800,
+  "AA_children": 360,
+  "DEV_tag": "s1-dev-v1",
+  "native_code_changed": false,
+  "selection_recalibrated": false
+}
