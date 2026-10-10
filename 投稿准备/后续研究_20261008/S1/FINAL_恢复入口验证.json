@@ -1,0 +1,85 @@
+{
+  "scope": "orchestration recovery only; native source/config/workloads/statistics unchanged",
+  "resume_RED": {
+    "command": [
+      "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "投稿准备/后续研究_20261008/S1/tests/test_resume_final.py"
+    ],
+    "started_ns": 1791627436201513900,
+    "ended_ns": 1791627436538828400,
+    "exit_code": 1,
+    "order_index": null,
+    "spawn_error": null
+  },
+  "resume_RED_failures": 2,
+  "logged_RED_initial_temp_cleanup_failure_retained": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\logged_run_red_01",
+  "logged_RED": {
+    "command": [
+      "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "投稿准备/后续研究_20261008/S1/tests/test_logged_run.py"
+    ],
+    "started_ns": 1791627635506174800,
+    "ended_ns": 1791627635668779100,
+    "exit_code": 1,
+    "order_index": null,
+    "spawn_error": null
+  },
+  "logged_RED_failures": 2,
+  "GREEN": [
+    {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "投稿准备/后续研究_20261008/S1/tests",
+        "-p",
+        "test_*launch.py"
+      ],
+      "started_ns": 1791627638252194700,
+      "ended_ns": 1791627638474664300,
+      "exit_code": 0,
+      "order_index": null,
+      "spawn_error": null
+    },
+    {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "投稿准备/后续研究_20261008/S1/tests/test_resume_final.py"
+      ],
+      "started_ns": 1791627638476667800,
+      "ended_ns": 1791627638676134800,
+      "exit_code": 0,
+      "order_index": null,
+      "spawn_error": null
+    },
+    {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "投稿准备/后续研究_20261008/S1/tests/test_logged_run.py"
+      ],
+      "started_ns": 1791627638679134300,
+      "ended_ns": 1791627638960959400,
+      "exit_code": 0,
+      "order_index": null,
+      "spawn_error": null
+    }
+  ],
+  "GREEN_tests": 11,
+  "original_batch": "FINAL_20261010_01",
+  "observed_sealed_formal_pairs": 267,
+  "before_AA_pairs": 45,
+  "remaining_formal_pairs": 433,
+  "old_process_exit": "not recorded; cause undetermined",
+  "recovery_rule": "complete hash-matching chronological prefix; no performance-based selection",
+  "selection_unchanged": {
+    "theta": 16,
+    "h": 2048
+  }
+}
