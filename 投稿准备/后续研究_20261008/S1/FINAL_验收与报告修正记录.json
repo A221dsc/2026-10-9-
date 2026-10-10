@@ -1,0 +1,211 @@
+{
+  "schema": "S1.FINAL.presentation-verification.git.v1",
+  "status": "VERIFIED",
+  "result_git_tag": "s1-final-native-v1",
+  "parent_git_commit": "56fa9b6f861105bca6aa78ec9c6dc24cd9afadcd",
+  "production_complete_gate": {
+    "code_correctness_complete": true,
+    "gate_phase": "complete",
+    "gate_scope": "final",
+    "DEV_READY": true,
+    "FINAL_READY": true,
+    "selected_theta": 16,
+    "selected_h": 2048,
+    "dev_aa_log_floor": {
+      "build": 0.29860729388086954,
+      "online": 0.16338767461319476,
+      "total": 0.20506949036228145,
+      "interpretation": "finite_observed_envelope_not_confidence_bound"
+    },
+    "formal_aa_log_floor": {
+      "build": 0.23912363366440556,
+      "online": 0.05676075454972989,
+      "total": 0.07904397400633376,
+      "interpretation": "finite_observed_envelope_not_confidence_bound"
+    },
+    "missing_dev_assets": [],
+    "missing_final_assets": []
+  },
+  "actual_process_receipts": {
+    "counter_RED": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "投稿准备\\后续研究_20261008\\S1\\tests",
+        "-p",
+        "test_report_final.py",
+        "-v"
+      ],
+      "started_ns": 1791635808627815900,
+      "ended_ns": 1791635808865574600,
+      "child_pid": 139164,
+      "exit_code": 1,
+      "actual_exit_observed": true
+    },
+    "counter_GREEN": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "投稿准备\\后续研究_20261008\\S1\\tests",
+        "-p",
+        "test_report_final.py",
+        "-v"
+      ],
+      "started_ns": 1791635869906767900,
+      "ended_ns": 1791635870062641200,
+      "child_pid": 139168,
+      "exit_code": 0,
+      "actual_exit_observed": true
+    },
+    "start_path_RED": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "投稿准备\\后续研究_20261008\\S1\\tests",
+        "-p",
+        "test_report_final.py",
+        "-v"
+      ],
+      "started_ns": 1791635937046025400,
+      "ended_ns": 1791635937196888300,
+      "child_pid": 133344,
+      "exit_code": 1,
+      "actual_exit_observed": true
+    },
+    "start_path_GREEN": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "投稿准备\\后续研究_20261008\\S1\\tests",
+        "-p",
+        "test_report_final.py",
+        "-v"
+      ],
+      "started_ns": 1791635949949823000,
+      "ended_ns": 1791635950103595800,
+      "child_pid": 117104,
+      "exit_code": 0,
+      "actual_exit_observed": true
+    },
+    "final_regression_GREEN": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "投稿准备\\后续研究_20261008\\S1\\tests",
+        "-p",
+        "test_report_final.py",
+        "-v"
+      ],
+      "started_ns": 1791636452108655100,
+      "ended_ns": 1791636452262471000,
+      "child_pid": 119276,
+      "exit_code": 0,
+      "actual_exit_observed": true
+    },
+    "report_failure_02": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "投稿准备\\后续研究_20261008\\S1\\tools\\report_final.py",
+        "--run",
+        "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\final\\FINAL_20261010_01_resume_01"
+      ],
+      "started_ns": 1791635878431420000,
+      "ended_ns": 1791635884679040800,
+      "child_pid": 89344,
+      "exit_code": 1,
+      "actual_exit_observed": true
+    },
+    "report_success_03": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "投稿准备\\后续研究_20261008\\S1\\tools\\report_final.py",
+        "--run",
+        "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\final\\FINAL_20261010_01_resume_01"
+      ],
+      "started_ns": 1791635958195047500,
+      "ended_ns": 1791635960287269500,
+      "child_pid": 136048,
+      "exit_code": 0,
+      "actual_exit_observed": true
+    },
+    "report_final_success_04": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "投稿准备\\后续研究_20261008\\S1\\tools\\report_final.py",
+        "--run",
+        "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\final\\FINAL_20261010_01_resume_01"
+      ],
+      "started_ns": 1791636454156886500,
+      "ended_ns": 1791636456216296000,
+      "child_pid": 140172,
+      "exit_code": 0,
+      "actual_exit_observed": true
+    },
+    "native_complete": {
+      "command": [
+        "C:/Users/zhangjiacheng/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "-B",
+        "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/tools/resume_final.py",
+        "--original",
+        "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/final/FINAL_20261010_01",
+        "--output",
+        "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/final/FINAL_20261010_01_resume_01"
+      ],
+      "started_ns": 1791627769577925100,
+      "ended_ns": 1791635567093436000,
+      "child_pid": 140576,
+      "exit_code": 0,
+      "actual_exit_observed": true
+    }
+  },
+  "unlogged_first_report_tool_observation": {
+    "tool_chunk_id": "473230",
+    "actual_tool_exit_code": 1,
+    "error": "ValueError: deterministic counter mismatch across repeated native children",
+    "source": "observed exec tool return; no invented process receipt"
+  },
+  "report_root_causes": [
+    "report ignored S0 frozen address tie rule at contract line 75",
+    "report expected original start gate in recovery directory"
+  ],
+  "fix_scope": "presentation grouping/ranges and original start path only; algorithms, parameters, costs, workloads, binaries and frozen statistics unchanged",
+  "protected_tracked_paths_unchanged": true,
+  "regression_tests": 3,
+  "published_csv_rows": {
+    "raw_native_all.csv": 3160,
+    "paired_all.csv": 790,
+    "aa_all.csv": 360,
+    "group_summary.csv": 210,
+    "incremental_value_summary.csv": 6,
+    "mechanism_counters_per_run.csv": 2800,
+    "mechanism_counters_summary.csv": 560
+  },
+  "copies_equal_archive_bytes": true,
+  "counter_variant_groups": 12,
+  "all_performance_and_negative_results_retained": true,
+  "resource_latency_CPU_sampling_complete": false,
+  "figure_visual_check": "readable labels, intervals, log ratios and legend; no clipping observed"
+}

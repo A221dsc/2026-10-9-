@@ -1,0 +1,7 @@
+pair,reference,component,strong_fast,strong_slow,unresolved
+P03,同布局 LIST,online,2,4,1
+P03,同布局 LIST,total,2,3,2
+P06,Event_16,online,1,2,4
+P06,Event_16,total,1,1,5
+P07,Fixed_2048,online,2,2,3
+P07,Fixed_2048,total,2,0,5
