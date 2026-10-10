@@ -1,0 +1,49 @@
+{
+  "schema": "S1.DEV.artifact_verification.v1",
+  "status": "PASS",
+  "raw_rows": 1120,
+  "paired_rows": 280,
+  "independent_DEV_inputs_per_candidate": 30,
+  "independent_direct_product_score_check": true,
+  "selected_theta": 16,
+  "selected_h": 2048,
+  "copied_CSV_bytes_equal": [
+    "dev_scores.csv",
+    "dev_summary.csv",
+    "dev_by_case.csv",
+    "raw_native_all.csv",
+    "paired_all.csv"
+  ],
+  "DEV_complete_gate": {
+    "code_correctness_complete": true,
+    "gate_phase": "complete",
+    "gate_scope": "dev",
+    "DEV_READY": true,
+    "FINAL_READY": false,
+    "selected_theta": null,
+    "selected_h": null,
+    "dev_aa_log_floor": {
+      "build": 0.29860729388086954,
+      "online": 0.16338767461319476,
+      "total": 0.20506949036228145,
+      "interpretation": "finite_observed_envelope_not_confidence_bound"
+    },
+    "formal_aa_log_floor": null,
+    "missing_dev_assets": [],
+    "missing_final_assets": [
+      "dev_environment_receipt",
+      "selected_configs",
+      "formal_trace_inventory",
+      "formal_matrix_inventory",
+      "formal_aa_inventory",
+      "final_start_manifest"
+    ]
+  },
+  "report_attempt_03_exit": 0,
+  "benchmark_reruns": 0,
+  "outer_execution_exit": {
+    "exit_code": 0,
+    "source": "observed exec session 27919 final tool result at 2026-10-10 03:44:09 UTC"
+  },
+  "timestamp_ns": 1791604205905612100
+}

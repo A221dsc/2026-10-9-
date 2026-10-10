@@ -1,0 +1,26 @@
+{
+  "schema": "S1.DEV.result.git.v1",
+  "status": "DEV_COMPLETE",
+  "result_git_tag": "s1-dev-v1",
+  "execution_git_commit": "923c3124652a49c9ba77bea44ea2a41b85b8d10f",
+  "engineering_tag": "s1-engineering-v1",
+  "normative_tag": "s0-freezable-v1",
+  "run_directory": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\dev\\DEV_20261010_01",
+  "selected_theta": 16,
+  "selected_h": 2048,
+  "actual_DEV_children": 960,
+  "actual_AA_children": 160,
+  "program_failures": 0,
+  "DEV_COMPLETE": true,
+  "FINAL_READY": false,
+  "formal_children": 0,
+  "R6_modified": false,
+  "AA_floor": {
+    "build": 0.29860729388086954,
+    "online": 0.16338767461319476,
+    "total": 0.20506949036228145,
+    "interpretation": "finite_observed_envelope_not_confidence_bound"
+  },
+  "selection_path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\dev\\DEV_20261010_01\\dev_selection.json",
+  "complete_gate_path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\dev\\DEV_20261010_01\\DEV_COMPLETE_GATE.json"
+}
