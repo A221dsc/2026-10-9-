@@ -1,0 +1,118 @@
+{
+  "status": "PARTIAL_S1_BLOCKED_NOT_FINAL",
+  "git_tools_commit": "88872f88b743a5989dee3802c15dabb57b1dbd4e",
+  "mechanism_PASS": 18,
+  "resource_PASS": 490,
+  "latency_PASS": 23,
+  "latency_NOT_RUN": 467,
+  "CPU_NOT_RUN": 4,
+  "entry_FAIL": 1,
+  "regression_tests_PASS": 26,
+  "regression_receipt": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\diagnostic_regression_green_01\\process.json",
+    "sha256": "39079ed0568e6142d45c086f29b0f5a7a969b83c688f8c33dd60321d7623ed44"
+  },
+  "report_actual_exit": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02_execution\\process.json",
+    "sha256": "b15be89815e88119d7c4c80e6d561e9195089b2bc2b812fa7ed46a183ca8d998"
+  },
+  "S2_S3_started": false,
+  "raw_archives_local_only": true,
+  "published_copies": [
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_入口阻断与恢复记录.json",
+        "sha256": "a2bfa80c64ea8baa8e416651f480500f935b4632f5f12408ed850badeb1d9126"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_入口阻断与恢复记录.json",
+        "sha256": "a2bfa80c64ea8baa8e416651f480500f935b4632f5f12408ed850badeb1d9126"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_实际执行与失败尝试状态.csv",
+        "sha256": "bd1e52dfe9b8d550f5c60d2e3487f45534c97ea5a5c4c23097259344f929aa90"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_实际执行与失败尝试状态.csv",
+        "sha256": "bd1e52dfe9b8d550f5c60d2e3487f45534c97ea5a5c4c23097259344f929aa90"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_延迟已封存前缀_非完整矩阵.csv",
+        "sha256": "0299be7454439dc35aa09ba72e87657313fce410b7c063235488bb6286a23929"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_延迟已封存前缀_非完整矩阵.csv",
+        "sha256": "0299be7454439dc35aa09ba72e87657313fce410b7c063235488bb6286a23929"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_机制阶段汇总.csv",
+        "sha256": "1a4cfb2c41dc587cf5629236ead3998d192337c44a86d51c7e9714247e051f7d"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_机制阶段汇总.csv",
+        "sha256": "1a4cfb2c41dc587cf5629236ead3998d192337c44a86d51c7e9714247e051f7d"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_现有原始CSV归档索引.csv",
+        "sha256": "35ad8444bbf76e5c5fadb72742eede727315ac2dff688860681dd56597762516"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_现有原始CSV归档索引.csv",
+        "sha256": "35ad8444bbf76e5c5fadb72742eede727315ac2dff688860681dd56597762516"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_资源完整汇总.csv",
+        "sha256": "8c8b8529c966c15626a3dfd98ff79afe5bd521c23c9c126038c6a7960949ca13"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_资源完整汇总.csv",
+        "sha256": "8c8b8529c966c15626a3dfd98ff79afe5bd521c23c9c126038c6a7960949ca13"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_资源配对汇总.csv",
+        "sha256": "4cfda568414aa7a3372a0d58f07d04f713ab7df1880342e3cc78b66ba994807d"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_资源配对汇总.csv",
+        "sha256": "4cfda568414aa7a3372a0d58f07d04f713ab7df1880342e3cc78b66ba994807d"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1_阶段证据完成记录.json",
+        "sha256": "0ac5462fcd96478bd33f56b8296382ef55eade4fd30b0c97ad54bc58831a4f71"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_阶段证据完成记录.json",
+        "sha256": "0ac5462fcd96478bd33f56b8296382ef55eade4fd30b0c97ad54bc58831a4f71"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\PARTIAL_20261011_02\\S1同布局归因阶段证据报告_运行时阻断.md",
+        "sha256": "e1ea1465190f81b46dec4e39023a664acfb84a845ad9e94a562a36aaa12948c7"
+      },
+      "published": {
+        "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1同布局归因阶段证据报告_运行时阻断.md",
+        "sha256": "e1ea1465190f81b46dec4e39023a664acfb84a845ad9e94a562a36aaa12948c7"
+      }
+    }
+  ],
+  "frozen_tags": {
+    "s1-final-native-v1": "5405d8203e91733f0a884720c214fe658201b57f",
+    "s1-dev-v1": "c32e9903846540e16003c39c138bb97c00a6bf01"
+  },
+  "protected_diff_against_final_native_empty": true
+}

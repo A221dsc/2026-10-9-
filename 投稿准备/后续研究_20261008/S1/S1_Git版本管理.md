@@ -1,5 +1,7 @@
 # S1 Git 版本管理
 
+2026-10-11 补记：原生结果已在 `s1-final-native-v1` 发布，DEV 在 `s1-dev-v1`；诊断入口在 `s1-diagnostics-entry-v1`。断点恢复工具提交 `f3a1ee2`，阶段报告工具提交 `88872f8`，均不改冻结生产内核。机制及资源已完成，延迟仅有 23 条封存前缀；冻结 Python 不符导致恢复入口退出 1。阶段证据标签使用 `s1-diagnostics-blocked-runtime-v1`，不得解释为诊断完整完成。以下段落保留工程冻结时的历史状态。
+
 按用户要求，以 Git 提交和阶段标签管理工程版本，不新增手工源码或二进制SHA版本清单。
 
 - 仓库：[A221dsc/2026-10-9-](https://github.com/A221dsc/2026-10-9-)；工程分支 `s1-entry-hardening`。

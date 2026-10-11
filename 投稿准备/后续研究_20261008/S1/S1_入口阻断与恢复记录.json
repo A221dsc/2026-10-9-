@@ -1,0 +1,23 @@
+{
+  "status": "BLOCKED_FROZEN_RUNTIME_MISMATCH",
+  "observed_ns": 1791724005347512300,
+  "runtime_path": "C:/Users/zhangjiacheng/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "expected_sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+  "actual_sha256": "31073dad142bc7f3374e3122aa668270052c9ad37d0aaab803ae73f184c3a43b",
+  "compiler_unchanged": true,
+  "dataset_unchanged": true,
+  "failed_entry_process": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261011_02_execution\\process.json",
+    "sha256": "f34dc86995e29036795c4ba4f301d94054aa53056b0788842634401284054978"
+  },
+  "failed_entry_stderr": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261011_02_execution\\stderr.txt",
+    "sha256": "d385b628de1e94bdf6343e4bcfbbd0cfa0f884fb9765b6c02cde77feb9b5cdf4"
+  },
+  "new_formal_runs_in_failed_entry": 0,
+  "old_outer_exit": "UNOBSERVED",
+  "external_termination_cause": "UNKNOWN",
+  "S2_S3_started": false,
+  "resume_policy": "23 verified ordered sealed cells reused; only remaining 467 may run after original runtime restoration",
+  "git_commit": "f3a1ee2be28bce7433ee5208307ea44da6bc3dab"
+}
