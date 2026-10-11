@@ -46,6 +46,54 @@ def check_binding(binding):
     gate.require(gate.sha(binding['path']) == binding['sha256'], 'external file binding differs')
 
 
+def verified_prefix(root, mode):
+    """Reuse only an uninterrupted, fully sealed ordered prefix. No child replay."""
+    root = Path(root).resolve()
+    start = gate.load(root / 'START.json')
+    matrix = cells(mode)
+    gate.require(start['mode'] == mode and start['cells'] == [list(c) for c in matrix],
+                 'recovery matrix/mode differs')
+    check_binding(start['frozen_entry'])
+    check_binding(start['input_bindings'])
+    freeze = gate.load(start['frozen_entry']['path'])
+    for f in freeze['protected_files']:
+        check_binding(f)
+    check_binding(freeze['protocol'])
+    for f in freeze['binaries'].values():
+        check_binding(f)
+    inputs = {(f['case'], int(f['seed'])): f for f in gate.load(start['input_bindings']['path'])}
+    for f in inputs.values():
+        for name in ('cache', 'expected', 'meta'):
+            check_binding(f[name])
+    bindings = [json.loads(line) for line in (root / 'progress.jsonl').read_text(encoding='utf8').splitlines()]
+    gate.require(0 < len(bindings) < len(matrix), 'recovery requires incomplete nonempty prefix')
+    gate.require(len(list((root / 'runs').iterdir())) == len(bindings),
+                 'unsealed attempt exists; stop affected batch instead of retry')
+    records = []
+    for i, binding in enumerate(bindings):
+        check_binding(binding)
+        seal = gate.load(binding['path'])
+        case, seed, method = matrix[i]
+        gate.require(seal['status'] == 'PASS' and seal['mode'] == mode
+                     and seal['cell'] == [case, seed, method], 'gap/duplicate/reordered prefix')
+        for name in ('acceptance', 'archives', 'process', 'quiet'):
+            check_binding(seal[name])
+        gate.require(gate.load(seal['process']['path'])['exit_code'] == 0, 'prefix child failed')
+        d = gate.load(seal['acceptance']['path'])
+        r = d['raw']
+        gate.require(d['status'] == 'PASS' and d['measurement_mode'] == mode
+                     and r['binary_sha'] == freeze['binaries'][mode]['sha256']
+                     and r['config_sha'] == start['config_sha'][method]
+                     and r['cache_sha'] == inputs[case, seed]['cache']['sha256']
+                     and r['protocol_sha'] == freeze['protocol']['sha256']
+                     and r['source_bundle_sha'] == freeze['reviewed_source_bundle_sha'], 'prefix identity mismatch')
+        for receipt in gate.load(seal['archives']['path']).values():
+            check_binding(receipt)
+            gate.require(receipt['roundtrip_verified'], 'prefix archive not verified')
+        records.append(d)
+    return records, bindings
+
+
 def check_mode(doc, mode):
     gate.require(mode in ('resource', 'latency') and doc['measurement_mode'] == mode
                  and doc['engineering_only'] is False, 'formal diagnostic mode/engineering mismatch')
@@ -344,6 +392,7 @@ class Run:
         self.mode = mode
         self.quiet = Quiet()
         self.results = []
+        self.imported_seals = []
         self.phase = 'frozen entry'
         self.freeze, self.protocol, self.assets, self.trust = frozen_entry(self.root)
         self.env = self.protocol['environment']
@@ -440,10 +489,12 @@ class Run:
         for files in self.inputs.values():
             for f in files.values():
                 check_binding(f)
-        seals = [bind(p) for p in sorted((self.root / 'runs').glob('*/SEALED.json'))]
+        seals = self.imported_seals + [bind(p) for p in sorted((self.root / 'runs').glob('*/SEALED.json'))]
         gate.require(len(seals) == planned, 'sealed matrix count')
         dump(self.root / 'COMPLETE.json', {'status': 'PASS', 'mode': self.mode, 'planned': planned,
              'actual_completed': len(self.results), 'FAIL': 0, 'all_seals': seals,
+             'reused_sealed_prefix': len(self.imported_seals),
+             'new_runs': len(self.results) - len(self.imported_seals),
              'API_samples': sum(r['API_samples'] for r in self.results),
              'conversions': sum(len(r['conversion_events']) for r in self.results),
              'native_unchanged': True, 'ended_ns': time.time_ns(), 'git_commit': git('rev-parse', 'HEAD')})
@@ -483,6 +534,7 @@ def main():
     ap.add_argument('--mode', required=True, choices=('capacity', 'mechanism', 'resource', 'latency'))
     ap.add_argument('--output', required=True)
     ap.add_argument('--capacity', type=Path)
+    ap.add_argument('--resume-from', type=Path)
     args = ap.parse_args()
     run = None
     # Named OS mutex prevents simultaneous diagnostic batches, including detached launchers.
@@ -511,7 +563,26 @@ def main():
                  'planned': len(matrix), 'frozen_entry': bind(run.root / 'FROZEN_ENTRY.json'),
                  'input_bindings': bind(run.root / 'INPUT_BINDINGS.json'), 'native_reruns': 0,
                  'AA_native_not_repeated': True, 'config_sha': {m: run.configs[mode, m] for m in METHODS}})
-            for cell in matrix:
+            if args.resume_from:
+                gate.require(args.mode in ('resource', 'latency'), 'mechanism/capacity recovery not enabled')
+                run.phase = 'verify sealed interrupted prefix'
+                run.results, run.imported_seals = verified_prefix(args.resume_from, args.mode)
+                old = gate.load(args.resume_from / 'FROZEN_ENTRY.json')
+                gate.require(old['protocol']['sha256'] == run.freeze['protocol']['sha256']
+                             and old['reviewed_source_bundle_sha'] == run.freeze['reviewed_source_bundle_sha']
+                             and old['binaries'][mode]['sha256'] == run.freeze['binaries'][mode]['sha256'],
+                             'recovery changes frozen identity')
+                previous = gate.load(args.resume_from / 'START.json')
+                gate.require(previous['config_sha'] == {m: run.configs[mode, m] for m in METHODS},
+                             'recovery config differs')
+                dump(run.root / 'RECOVERY.json', {'source': str(args.resume_from.resolve()),
+                     'source_start': bind(args.resume_from / 'START.json'),
+                     'source_progress': bind(args.resume_from / 'progress.jsonl'),
+                     'reused_seals': run.imported_seals, 'new_runs_planned': len(matrix)-len(run.results),
+                     'old_outer_exit': 'UNOBSERVED_NOT_SYNTHESIZED', 'cause': 'external termination; cause unknown',
+                     'no_failed_child_retry': True, 'time_ns': time.time_ns()})
+                log(f'reused sealed prefix {len(run.results)}; execute remaining {len(matrix)-len(run.results)}')
+            for cell in matrix[len(run.results):]:
                 run.child(*cell, mode)
             run.finish(len(matrix))
     except Exception as e:
