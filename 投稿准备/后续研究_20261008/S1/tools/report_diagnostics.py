@@ -187,7 +187,8 @@ def figures(root, mechanism, pairs, latency):
             for j in range(4):
                 ax.text(j, i, f'{a[i][j]:.3f}', ha='center', va='center', fontsize=9)
         ax.set_title(metric + ': R6 / reference')
-    fig.colorbar(im, ax=axes, label='log2 paired median ratio; lower means fewer requested bytes')
+    colorbar = fig.colorbar(im, ax=axes)
+    colorbar.set_label('log2 median R6/reference', fontsize=10)
     fig.savefig(root / 'S1_资源配对.png', dpi=160)
     plt.close(fig)
     fig, ax = plt.subplots(figsize=(9, 4))
@@ -292,7 +293,7 @@ R6相对同布局LIST：7组online有2组明确更快、4组更慢、1组无法�
 
 原生A/A online范围约0.9448–1.0584、total约0.9240–1.0823，是有限观测噪声包络，不是置信区间。既有强效应按冻结42比较族与相关性约束判定。本轮诊断时钟不加入原生速度排名，也不重新筛选原生结果。
 
-原始证据：[{S1/'FINAL_同布局增量价值报告.md'}]({S1/'FINAL_同布局增量价值报告.md'})；`FINAL_group_summary.csv`、`FINAL_paired_all.csv`、`FINAL_raw_native_all.csv`；原生完成闸门 `{NATIVE/'FINAL_COMPLETE_GATE.json'}`。
+原始证据：[FINAL原生同布局报告]({(S1/'FINAL_同布局增量价值报告.md').as_posix()})；`FINAL_group_summary.csv`、`FINAL_paired_all.csv`、`FINAL_raw_native_all.csv`；原生完成闸门 `{NATIVE/'FINAL_COMPLETE_GATE.json'}`。
 
 ## 3 机制：普通回收有效，但没有新增信号加速证明
 
@@ -304,7 +305,7 @@ M01固定每桶2048条，永不空桶，因此cleanup覆盖状态为 **NOT_EXERC
 
 阶段可避免工作未被冻结快照接口记录，写NA；总工作、候选峰值、节点及转换数量来自各次同运行末尾原始计数。禁止从总值倒推出各阶段工作。
 
-![机制与资源]({root/'S1_机制资源漂移.png'})
+![机制与资源]({(root/'S1_机制资源漂移.png').as_posix()})
 
 证据：`S1_mechanism_phases.csv`保留全部90个方法/种子/阶段，M01所有记录索引在`S1_raw_archive_index.csv`；每个值可追至`ACCEPTANCE.json`及对应原始CSV.gz。
 
@@ -320,7 +321,9 @@ M01固定每桶2048条，永不空桶，因此cleanup覆盖状态为 **NOT_EXERC
 
 资源收益应以相对NoIdle/简单门控的实际配对结果表述，不能声称比纯LIST更省内存或把native计数代替空间证据。M01图中每条线的TREE与请求字节来自同一resource运行；多个方法是同输入的不同运行。
 
-![资源配对]({root/'S1_资源配对.png'})
+F05低工作场景的final及whole peak请求字节相对Event_16/Fixed_2048约为0.6006，即少约39.9%，10/10配对更低；相对LIST没有空间收益。F03普通回收相对NoIdle的final约少13.7%，whole peak约少13.5%，均10/10更低。负结果同样保留：F06/F07的R6比LIST多约66.5%持久请求字节；F04虽末尾接近LIST，whole peak相对LIST约高19.7%，不能只看final宣称转换没有资源代价。
+
+![资源配对]({(root/'S1_资源配对.png').as_posix()})
 
 证据：490行`S1_resource_summary.csv`、56行`S1_resource_paired.csv`，完整periodic512、phase/final与conversion快照在原始resource.csv.gz。
 
@@ -334,13 +337,17 @@ M01固定每桶2048条，永不空桶，因此cleanup覆盖状态为 **NOT_EXERC
 
 `S1_latency_summary.csv`逐输入分别报告erase、insert、range、全API、包含转换的API及conversion_body的count/p50/p95/p99/max。转换类型、API序号、epoch、slot、n、body_ns和api_latency_ns保留全部明细。body不等于API全时延；稀有转换可能不出现在全API p99，不能只凭p99断言暂停低。
 
+表中p50为0是计时读数落在时钟刻度内，不代表操作不耗时。本机QPC频率为10 MHz，名义刻度100 ns；现有原始样本的刻度审计单独保存。不能据此比较亚刻度耗时。F06/F07转换API最大值中位数约0.46–0.47 ms，明显高于各自全API p99的4.3/11.0 µs。F03最坏API为1.3658 ms；没有CPU采样归因，不能断定所有最坏暂停均由转换或管理器造成。
+
 这些API时间含诊断Clock、观察事件与参考校验缓存影响，resource又额外包含账户追踪；两者均不代替native在线时间，不把资源运行的转换时延加入latency分布。不承诺此单机测量给出了生产服务SLA或长期最大暂停上界。
 
-![逐API暂停]({root/'S1_逐API与转换暂停.png'})
+![逐API暂停]({(root/'S1_逐API与转换暂停.png').as_posix()})
 
 ## 6 CPU诊断与证据限制
 
 四个登记场景均尝试R6、seed91001采样，状态为{dict(count)}。每次保留工具实际命令与返回码。若WPR启动不可用/权限不足，仅报告不可用；若ETL已捕获但缺乏经核验符号归因与导出流程，报告CAPTURED_UNANALYZED。CPU百分比保持NA，不能用观察臂时间差、墙钟差或转换Clock总和冒充CPU占比。
+
+本次F01/F03/F06/F07实际均在WPR启动阶段被拒绝，错误码0xc5585011，输出为“Failed to enable the policy to profile system performance”。因此没有ETL或有效CPU样本，未执行额外native性能运行，也未更改系统性能分析策略。该返回信息不足以进一步断言具体权限或策略根因；四次尝试已完成，CPU归因证据仍缺失。
 
 CPU原始证据：`{a.cpu.resolve()/'COMPLETE.json'}`及四个场景子目录。已发布P02只能说明共享布局下观察、缓冲与结构时钟的合计净开销。
 
@@ -354,9 +361,9 @@ CPU原始证据：`{a.cpu.resolve()/'COMPLETE.json'}`及四个场景子目录。
 
 ## 8 S2/S3缩减建议（尚未启动）
 
-S2只保留一个独立时间键来源、三类负载（端点稀疏、内部撤销、稀疏→乱序→稀疏）、四个方法（LIST、Event_16、R6、TLX）；运行长度用1/2/4窗口周转真实共同前缀，优先报告累计total与资源回收，不全面复制旧矩阵。外部时间数据加生成操作仍明确称合成访问。
+S2候选上限：一个独立时间键来源，N固定262,144，三类已登记负载（端点稀疏、内部撤销、稀疏→乱序→稀疏），四个方法（M_LIST、Event_16、R6、TLX），10个新的配对输入种子；对应30条最长轨迹、120个方法/输入组合。最长4窗口周转，1/2/4周转必须来自真实共同前缀。原生配对轮转、重复次数与资源分测的执行数量另经预注册确定，不能把120组合数当成实际进程数。保留原R6和已选门槛，不重调参数；公开来源的许可、时间精度及至少1,310,720条有效记录需先确认，不在此凭空指定数据来源。优先报告累计total与资源回收，不全面复制旧矩阵。外部时间数据加生成操作仍明确称合成访问。
 
-S3先获得可靠CPU采样归因，再考虑诊断确认的实现开销优化；候选是range全目录观察缓冲初始化。任何改进另命名版本、另冻结与重新比较，不能覆写R6或套用旧结论。并发、ML、新预测模型、GPU及第二轮大矩阵暂缓。S2/S3只提出范围，没有自动执行。
+S3当前不具备CPU归因入口，先解决采样能力或做一个独立且预注册的观察缓冲微基准。若定位到主要开销，仅研究range全目录观察缓冲初始化这一项实现改进，另命名R7；最小对照M_LIST、M_OBSERVE_LIST、R6、R7，优先F03/F07及一个稀疏负对照。设计、参数与验证输入须另冻结，不能覆写R6或套用旧结论。没有稳定收益就保留负结果，不叠加新规则。并发、ML、新预测模型、GPU及第二轮大矩阵暂缓。S2/S3只提出范围，没有自动执行。
 '''
     (root / 'S1同布局归因与研究定位裁决报告.md').write_text(md, encoding='utf8')
     dump(root / 'S1_诊断完成记录.json', {'status': 'S1_DIAGNOSTICS_COMPLETE',
