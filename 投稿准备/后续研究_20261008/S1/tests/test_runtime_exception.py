@@ -12,6 +12,11 @@ PREFIX = d.S1 / 'artifacts/diagnostics/LATENCY_20261011_01'
 
 
 class RuntimeExceptionChecks(unittest.TestCase):
+    def test_committed_authorization_accepts_relative_and_absolute_paths(self):
+        expected = d.tag_bytes('s1-runtime-exception-entry-v1', APPROVAL)
+        relative = APPROVAL.relative_to(d.WORKSPACE)
+        self.assertEqual(d.tag_bytes('s1-runtime-exception-entry-v1', relative), expected)
+
     def verifier(self):
         self.assertTrue(hasattr(d, 'verify_runtime_exception'), 'approved runtime exception gate missing')
         return d.verify_runtime_exception

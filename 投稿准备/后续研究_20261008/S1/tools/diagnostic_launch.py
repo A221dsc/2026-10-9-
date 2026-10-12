@@ -160,7 +160,7 @@ def git(*args):
 
 
 def tag_bytes(tag, path):
-    return subprocess.check_output(['git', 'show', f'{tag}:{Path(path).relative_to(WORKSPACE).as_posix()}'],
+    return subprocess.check_output(['git', 'show', f'{tag}:{Path(path).resolve().relative_to(WORKSPACE).as_posix()}'],
                                    cwd=WORKSPACE)
 
 
