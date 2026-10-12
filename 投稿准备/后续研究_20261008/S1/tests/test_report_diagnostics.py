@@ -4,9 +4,22 @@ import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from report_diagnostics import paired_resources, mechanism_rows
+import report_diagnostics as report
 
 
 class ReportChecks(unittest.TestCase):
+    def test_environment_segments_cannot_hide_old_prefix_or_unknown_source(self):
+        self.assertTrue(hasattr(report, 'latency_environment_rows'), 'runtime segment reporting missing')
+        old, new = Path('old').resolve(), Path('new').resolve()
+        records = [{'raw': {'case_id': 'F01', 'seed': '91001', 'method': 'R6', 'binary_sha': 'same_cpp'},
+                    'evidence_path': str(p / 'runs/cell/ACCEPTANCE.json')} for p in (old, new)]
+        rows = report.latency_environment_rows(records, old, new, 'old_python', 'new_python')
+        self.assertEqual([r['python_sha256'] for r in rows], ['old_python', 'new_python'])
+        self.assertEqual([r['runtime_segment'] for r in rows], ['original_prefix', 'approved_private_runtime'])
+        records[0]['evidence_path'] = str(Path('unknown').resolve() / 'ACCEPTANCE.json')
+        with self.assertRaises(ValueError):
+            report.latency_environment_rows(records, old, new, 'old_python', 'new_python')
+
     def test_resource_pairing_uses_same_seed_and_preserves_all_ten(self):
         rows = []
         values = {'R6': 125, 'M_LIST': 100, 'M_EVENT_16': 200,

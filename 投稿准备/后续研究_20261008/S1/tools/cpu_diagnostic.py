@@ -29,9 +29,15 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--resource', type=Path, required=True)
     p.add_argument('--latency', type=Path, required=True)
+    p.add_argument('--runtime-exception', type=Path)
     a = p.parse_args()
     root = a.output.resolve()
     root.mkdir(parents=True, exist_ok=False)
+    if a.runtime_exception is not None:
+        from diagnostic_launch import verify_runtime_exception
+        authorization = verify_runtime_exception(a.runtime_exception, 'cpu', sys.executable)
+        dump(root / 'RUNTIME_EXCEPTION.json', {'authorization': bind(a.runtime_exception),
+             'actual_executable': bind(sys.executable), 'candidate_runtime': authorization['candidate_runtime']})
     for mode, directory in [('resource', a.resource), ('latency', a.latency)]:
         complete = gate.load(directory / 'COMPLETE.json')
         gate.require(complete['status'] == 'PASS' and complete['actual_completed'] == 490
@@ -79,6 +85,9 @@ def main():
         dump(directory / 'RESULT.json', status)
         results.append(status)
         print(case, status['status'], flush=True)
+    if a.runtime_exception is not None:
+        check_binding(gate.load(root / 'RUNTIME_EXCEPTION.json')['authorization'])
+        verify_runtime_exception(a.runtime_exception, 'cpu', sys.executable)
     dump(root / 'COMPLETE.json', {'status': 'DONE', 'registered_attempts': 4, 'actual_attempts': len(results),
          'results': results, 'CPU_shares_fabricated': False, 'timing_results_not_reselected': True})
 

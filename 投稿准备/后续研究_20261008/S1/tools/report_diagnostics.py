@@ -59,7 +59,10 @@ def resource_rows(records):
         rows.append({'case_id': r['case_id'], 'seed': int(r['seed']), 'method': r['method'],
           'mode': 'resource', 'persistent_final': int(final['persistent_requested_bytes']),
           'whole_peak': d['summary']['whole_peak_requested_bytes'],
+          'whole_current_final': int(final['whole_current']),
           **{f'{a}_final': final[a + '_current'] for a in ('pool', 'buckets', 'tree', 'manager')},
+          **{f'{a}_{field}': r[a + '_' + field] for a in ('pool', 'buckets', 'tree', 'manager')
+             for field in ('peak', 'allocations', 'frees')},
           **{k: r[k] for k in ('total_avoidable_work', 'promotions', 'scheduled_demotions',
                'cleanup_demotions', 'total_demotions', 'peak_tree_buckets', 'final_tree_buckets', 'cand_max', 'nodes_allocated')},
           'conversion_events': len(d['conversion_events']), 'API_samples': d['API_samples'],
@@ -76,6 +79,23 @@ def latency_rows(records):
             rows.append({'case_id': r['case_id'], 'seed': int(r['seed']), 'method': r['method'],
                          'mode': 'latency', 'API_type': kind, **stats,
                          'conversion_events': len(d['conversion_events']), 'evidence': d['evidence_path']})
+    return rows
+
+
+def latency_environment_rows(records, old_root, new_root, old_sha, new_sha):
+    old_root, new_root = Path(old_root).resolve(), Path(new_root).resolve()
+    rows = []
+    for record in records:
+        evidence = Path(record['evidence_path']).resolve()
+        if evidence.is_relative_to(old_root):
+            segment, digest = 'original_prefix', old_sha
+        else:
+            gate.require(evidence.is_relative_to(new_root), 'latency source outside documented runtime segments')
+            segment, digest = 'approved_private_runtime', new_sha
+        r = record['raw']
+        rows.append({'case_id': r['case_id'], 'seed': r['seed'], 'method': r['method'],
+            'runtime_segment': segment, 'python_sha256': digest, 'CPP_binary_sha256': r['binary_sha'],
+            'evidence': str(evidence)})
     return rows
 
 
@@ -205,6 +225,21 @@ def main():
     gate.require(cpu['actual_attempts'] == 4 and cpu['CPU_shares_fabricated'] is False, 'CPU attempts missing')
     rr, lr, mr = resource_rows(resource), latency_rows(latency), mechanism_rows(mechanism)
     pairs = paired_resources(rr)
+    environment_note = '未使用新的运行环境例外。'
+    runtime_binding = gate.load(a.latency / 'FROZEN_ENTRY.json').get('runtime_exception')
+    if runtime_binding:
+        check_binding(runtime_binding['authorization'])
+        exception = gate.load(runtime_binding['authorization']['path'])
+        segments = latency_environment_rows(latency, exception['resume_from'], a.latency,
+                  exception['original_python_sha256'], exception['candidate_python_sha256'])
+        gate.require(sum(r['runtime_segment'] == 'original_prefix' for r in segments) == 23
+                     and sum(r['runtime_segment'] == 'approved_private_runtime' for r in segments) == 467,
+                     'runtime segment counts differ from approved recovery')
+        write_csv(root / 'S1_latency_runtime_segments.csv', segments)
+        environment_note = ('本轮按用户于2026-10-12批准的有限环境例外，使用项目内隔离Python 3.12.14执行剩余467条延迟与四个CPU场景。'
+           '原23条封存前缀保留原运行时，原S0文件及C++二进制、参数、输入保持原样；并非完全同一运行环境。'
+           'S1_latency_runtime_segments.csv逐输入标明分段。F01包含环境分段，其中seed91004的Original/M_LIST与其余方法跨段，'
+           '不将其作为同环境严格延迟胜负证据。F02–F07均在新隔离运行时执行。旧native与resource不重跑、不混合排名。')
     for name, rows in [('S1_resource_summary.csv', rr), ('S1_latency_summary.csv', lr),
                        ('S1_resource_paired.csv', pairs), ('S1_mechanism_phases.csv', mr), ('S1_raw_archive_index.csv', ma + ra + la)]:
         write_csv(root / name, rows)
@@ -228,7 +263,9 @@ def main():
         pause_table.append(f'| {case} | {med("p50"):.3f} | {med("p95"):.3f} | {med("p99"):.3f} | {med("max"):.3f} | {mx:.3f} | {conv} |')
     md = f'''# S1同布局归因与研究定位裁决报告
 
-本轮完成冻结协议剩余诊断；不重跑 DEV/FINAL native，不重新选择门槛，不修改 R6、成本表、S0 或已发布结果。时间结论只引用 `{FINAL_TAG}` 的原生结果；本轮资源和 latency 都是独立批次。
+本轮完成剩余诊断；不重跑 DEV/FINAL native，不重新选择门槛，不修改 R6、成本表、原S0文件或已发布结果。时间结论只引用 `{FINAL_TAG}` 的原生结果；本轮资源和 latency 都是独立批次。
+
+{environment_note}
 
 ## 1 执行与验收
 
@@ -242,6 +279,8 @@ def main():
 | DEV/FINAL原生新增计时 | 0 | 0 | 冻结结果只读 | 旧3160个正式及A/A子进程保留 |
 
 新入口先保存7项 RED 失败（入口缺失），随后7项入口单测和7项实际CSV损坏验收测试 GREEN。两种冻结诊断二进制完成6个小规模内部回放，共288 API。首次 GREEN 尝试有2个沙箱临时目录错误和1个浮点精确断言失败，完整保留，后续改用工作区测试目录及数值容差；这些不算正式实验失败或效果样本。
+
+旧latency启动器及监督进程退出未观测，原因未知；恢复入口曾因共享Python身份变化实际退出1，新增正式运行0次，保留全部收据。授权后只复用连续封存23条，不重放任何已验收格子。例外入口先RED（4项工具缺失）再GREEN，新增环境分段报告测试先RED再GREEN；诊断相关31项回归均PASS。原版候选运行时审查记录保持未批准的历史状态，新的独立批准sidecar记录真实人类授权。
 
 容量试跑每次F03产生约512–514 MB CSV，压缩约12 MB；两正式模式估算未压缩约220 GB，归档约5.4 GB。gzip保存全量记录，校验完整解压 SHA256 后才移除重复未压缩副本。每次执行记录真实命令、退出码、配置、输入和二进制身份、quiet及placement。无按结果择优重跑。
 
@@ -325,6 +364,9 @@ S3先获得可靠CPU采样归因，再考虑诊断确认的实现开销优化；
          'CPU_attempts': 4, 'CPU_statuses': dict(count), 'native_reruns': 0,
          'resource_API_samples': sum(d['API_samples'] for d in resource),
          'latency_API_samples': sum(d['API_samples'] for d in latency),
+         'runtime_exception': runtime_binding,
+         'latency_reused_prefix': 23 if runtime_binding else 0,
+         'latency_new_runs': 467 if runtime_binding else 490,
          'native_tag': FINAL_TAG, 'batch_receipts': [bind(p / 'COMPLETE.json') for p in (a.mechanism, a.resource, a.latency, a.cpu)],
          'capacity': bind(a.mechanism.parent / 'CAPACITY_20261011_01/CAPACITY.json'),
          'all_raw_archives_verified_again_by_compressed_sha': True,

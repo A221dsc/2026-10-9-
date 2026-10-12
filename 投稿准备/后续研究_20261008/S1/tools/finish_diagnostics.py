@@ -24,6 +24,8 @@ def main():
     p = argparse.ArgumentParser()
     for name in ('resource', 'mechanism', 'capacity', 'latency', 'cpu', 'report', 'output'):
         p.add_argument('--' + name, type=Path, required=True)
+    p.add_argument('--resume-from', type=Path)
+    p.add_argument('--runtime-exception', type=Path)
     a = p.parse_args()
     root = a.output.resolve()
     root.mkdir(parents=True, exist_ok=False)
@@ -54,11 +56,18 @@ def main():
             dump(root / (name + '_observed_exit.json'), {'command': command, 'exit_code': proc.returncode,
                  'actual_exit_observed': True, 'started_ns': started, 'ended_ns': time.time_ns()})
             gate.require(proc.returncode == 0, stage + ' actual process failed; no automatic retry')
-        run('latency', sys.executable, 'diagnostic_launch.py', ['--mode', 'latency', '--output', a.latency,
-                                                             '--capacity', a.capacity])
+        latency_args = ['--mode', 'latency', '--output', a.latency, '--capacity', a.capacity]
+        if a.resume_from is not None:
+            latency_args += ['--resume-from', a.resume_from]
+        if a.runtime_exception is not None:
+            latency_args += ['--runtime-exception', a.runtime_exception]
+        run('latency', sys.executable, 'diagnostic_launch.py', latency_args)
         check_completion(gate.load(Path(str(a.latency) + '_execution') / 'process.json'),
                          gate.load(a.latency / 'COMPLETE.json'), 'latency', 490)
-        run('cpu', sys.executable, 'cpu_diagnostic.py', ['--output', a.cpu, '--resource', a.resource, '--latency', a.latency])
+        cpu_args = ['--output', a.cpu, '--resource', a.resource, '--latency', a.latency]
+        if a.runtime_exception is not None:
+            cpu_args += ['--runtime-exception', a.runtime_exception]
+        run('cpu', sys.executable, 'cpu_diagnostic.py', cpu_args)
         cpu = gate.load(a.cpu / 'COMPLETE.json')
         gate.require(cpu['actual_attempts'] == 4 and all(r['status'] != 'FAIL' for r in cpu['results']), 'CPU actual child failure')
         plotting_python = Path('C:/Users/zhangjiacheng/AppData/Local/Programs/Python/Python313/python.exe')

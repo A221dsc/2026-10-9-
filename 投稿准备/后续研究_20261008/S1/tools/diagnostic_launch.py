@@ -164,7 +164,39 @@ def tag_bytes(tag, path):
                                    cwd=WORKSPACE)
 
 
-def frozen_entry(root):
+def verify_runtime_exception(path, mode, executable, resume_from=None):
+    """Validate the human-approved exception without changing the original S0."""
+    doc = gate.load(path)
+    gate.require(doc['status'] == 'APPROVED_LIMITED_RUNTIME_EXCEPTION'
+                 and doc['human_authorization'] == '批准有限环境例外，继续完成诊断'
+                 and doc['scope_modes'] == ['latency', 'cpu'] and mode in ('latency', 'cpu')
+                 and doc['native_reruns'] == 0 and doc['S2_S3_authorized'] is False
+                 and doc['S0_R6_inputs_parameters_native_results_unchanged'] is True
+                 and doc['report_environment_segmentation_required'] is True,
+                 'runtime exception unapproved or outside authorized scope')
+    gate.require(Path(executable).resolve() == Path(doc['candidate_python_path']).resolve(),
+                 'runtime exception executable path differs')
+    if mode == 'latency':
+        gate.require(resume_from is not None and Path(resume_from).resolve() == Path(doc['resume_from']).resolve(),
+                     'runtime exception requires the approved interrupted prefix')
+    gate.require(doc['prefix_cells'] == 23 and doc['remaining_latency_cells'] == 467
+                 and doc['CPU_cases'] == ['F01', 'F03', 'F06', 'F07'], 'exception matrix widened')
+    for name in ('original_protocol', 'candidate_runtime', 'candidate_review', 'resume_start', 'resume_progress'):
+        check_binding(doc[name])
+    original = gate.load(doc['original_protocol']['path'])
+    gate.require(doc['original_python_sha256'] == original['environment']['pair_python_sha256'],
+                 'original runtime identity relabeled')
+    candidate = gate.load(doc['candidate_runtime']['path'])
+    gate.require(candidate['candidate_python_sha256'] == doc['candidate_python_sha256']
+                 and gate.sha(executable) == doc['candidate_python_sha256'], 'private runtime identity differs')
+    for f in candidate['files']:
+        gate.require(Path(f['path']).resolve().is_relative_to(Path(executable).resolve().parent),
+                     'runtime dependency outside private directory')
+        check_binding(f)
+    return doc
+
+
+def frozen_entry(root, mode=None, runtime_exception=None, resume_from=None):
     gate.require(not git('status', '--porcelain'), 'commit independent tools before actual diagnostics')
     tags = {FINAL_TAG: git('rev-parse', FINAL_TAG + '^{commit}'),
             DEV_TAG: git('rev-parse', DEV_TAG + '^{commit}')}
@@ -199,8 +231,14 @@ def frozen_entry(root):
         gate.require(path.read_bytes() == tag_bytes(FINAL_TAG, path), 'published native result changed')
     protocol = gate.load(gate.PROTOCOL)
     env = protocol['environment']
-    for path, digest in [(sys.executable, env['pair_python_sha256']),
-                         (env['compiler'], env['compiler_sha256']),
+    exception = None
+    if runtime_exception is None:
+        gate.require(gate.sha(sys.executable) == env['pair_python_sha256'], 'runtime/compiler/dataset differs')
+    else:
+        exception = verify_runtime_exception(runtime_exception, mode, sys.executable, resume_from)
+        gate.require(Path(runtime_exception).read_bytes() == tag_bytes('HEAD', runtime_exception),
+                     'commit the exact runtime authorization before formal diagnostics')
+    for path, digest in [(env['compiler'], env['compiler_sha256']),
                          (protocol['dataset']['path'], protocol['dataset']['sha256'])]:
         gate.require(gate.sha(path) == digest, 'runtime/compiler/dataset differs')
     protected = [gate.PROTOCOL, REVIEW, NATIVE / 'completion.json', NATIVE / 'FINAL_COMPLETE_GATE.json',
@@ -216,6 +254,11 @@ def frozen_entry(root):
            'dev_selection': bind(DEV / 'dev_selection.json'), 'selected_theta': 16, 'selected_h': 2048,
            'protected_files': [bind(p) for p in protected], 'native_read_only': True,
            'protocol': bind(gate.PROTOCOL), 'environment': env, 'actual_platform': platform.platform()}
+    if exception is not None:
+        doc['runtime_exception'] = {'authorization': bind(runtime_exception),
+             'candidate_runtime': exception['candidate_runtime'], 'actual_executable': bind(sys.executable),
+             'original_executable_sha256': env['pair_python_sha256'],
+             'segmentation': {'old_prefix_cells': 23, 'new_cells': 467}}
     dump(root / 'FROZEN_ENTRY.json', doc)
     return doc, protocol, assets, trust
 
@@ -386,7 +429,7 @@ def validate_run(directory, binding, mode, method, config_sha, binary_sha, engin
 
 
 class Run:
-    def __init__(self, root, mode):
+    def __init__(self, root, mode, runtime_exception=None, resume_from=None):
         self.root = Path(root).resolve()
         self.root.mkdir(parents=True, exist_ok=False)
         self.mode = mode
@@ -394,7 +437,9 @@ class Run:
         self.results = []
         self.imported_seals = []
         self.phase = 'frozen entry'
-        self.freeze, self.protocol, self.assets, self.trust = frozen_entry(self.root)
+        self.runtime_exception = runtime_exception
+        self.resume_from = resume_from
+        self.freeze, self.protocol, self.assets, self.trust = frozen_entry(self.root, mode, runtime_exception, resume_from)
         self.env = self.protocol['environment']
         self.pin = self.env['pin_tool']
         self.configs = {}
@@ -484,6 +529,9 @@ class Run:
 
     def finish(self, planned):
         gate.require(len(self.results) == planned, 'missing/duplicate matrix cell')
+        if self.runtime_exception is not None:
+            check_binding(self.freeze['runtime_exception']['authorization'])
+            verify_runtime_exception(self.runtime_exception, self.mode, sys.executable, self.resume_from)
         for f in self.freeze['protected_files']:
             check_binding(f)
         for files in self.inputs.values():
@@ -495,6 +543,7 @@ class Run:
              'actual_completed': len(self.results), 'FAIL': 0, 'all_seals': seals,
              'reused_sealed_prefix': len(self.imported_seals),
              'new_runs': len(self.results) - len(self.imported_seals),
+             'runtime_exception': self.freeze.get('runtime_exception'),
              'API_samples': sum(r['API_samples'] for r in self.results),
              'conversions': sum(len(r['conversion_events']) for r in self.results),
              'native_unchanged': True, 'ended_ns': time.time_ns(), 'git_commit': git('rev-parse', 'HEAD')})
@@ -535,6 +584,7 @@ def main():
     ap.add_argument('--output', required=True)
     ap.add_argument('--capacity', type=Path)
     ap.add_argument('--resume-from', type=Path)
+    ap.add_argument('--runtime-exception', type=Path)
     args = ap.parse_args()
     run = None
     # Named OS mutex prevents simultaneous diagnostic batches, including detached launchers.
@@ -544,7 +594,7 @@ def main():
     handle = kernel.CreateMutexW(None, False, 'Local\\PoolHBI_S1_Diagnostics')
     gate.require(handle and kernel.GetLastError() != 183, 'another diagnostic launcher owns serial slot')
     try:
-        run = Run(args.output, args.mode)
+        run = Run(args.output, args.mode, args.runtime_exception, args.resume_from)
         if args.mode == 'capacity':
             run.capacity()
         else:

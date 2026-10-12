@@ -1,0 +1,46 @@
+{
+  "status": "APPROVED_LIMITED_RUNTIME_EXCEPTION",
+  "human_authorization": "批准有限环境例外，继续完成诊断",
+  "authorization_source": "human reply to request_user_input_async in this chat on 2026-10-12",
+  "recorded_ns": 1791795184329856000,
+  "original_protocol": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S0\\S0_preregistration.json",
+    "sha256": "bdb24556642d4137ab485befac9758b0abb04d933ebe5a3493b03d981cd9118a"
+  },
+  "original_python_sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+  "candidate_runtime": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\candidate_runtime.json",
+    "sha256": "f66e7ca5757570c037c2e0af1e53a6636b4bb3c83d90ad1ac953832bf6540c0c"
+  },
+  "candidate_review": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\REVIEW.json",
+    "sha256": "7f70a4f0a322b33b510ff61d4a4fb8e7b5d49051976fd6a6f5ce74d19f98056b"
+  },
+  "candidate_python_path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\python\\python.exe",
+  "candidate_python_sha256": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c",
+  "scope_modes": [
+    "latency",
+    "cpu"
+  ],
+  "resume_from": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261011_01",
+  "resume_start": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261011_01\\START.json",
+    "sha256": "07dd2c05c53f807631998d0514e58ddfbf231284d15919097adfbe382b916ab3"
+  },
+  "resume_progress": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261011_01\\progress.jsonl",
+    "sha256": "be7b5a9006d4ce629dd5dbf9481a3c9f683f8b58e8affd209ae640cb0b4cb7b5"
+  },
+  "prefix_cells": 23,
+  "remaining_latency_cells": 467,
+  "CPU_cases": [
+    "F01",
+    "F03",
+    "F06",
+    "F07"
+  ],
+  "native_reruns": 0,
+  "S2_S3_authorized": false,
+  "S0_R6_inputs_parameters_native_results_unchanged": true,
+  "report_environment_segmentation_required": true
+}
