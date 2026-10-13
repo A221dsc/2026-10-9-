@@ -1,0 +1,78 @@
+{
+  "schema": "S2.root.gate.approval.v1",
+  "approved_for_formal": true,
+  "author": "root",
+  "scope": "User authorized S2 only; frozen production kernels unchanged",
+  "kind": "build_actual_exits",
+  "formal_runs_at_approval": 0,
+  "files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\build_manifest.json",
+      "sha256": "4c94b65975f3818aa267110ffcf63c2965de5c063aa2e3e3f5feef2600c50baf"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\driver_native.dependencies.txt",
+      "sha256": "aa4c544804d0e790bf024064ad413bcd001ed81ed69e051a1d0a4597dba8ff11"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\driver_native_compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\driver_resource.dependencies.txt",
+      "sha256": "990cace1f0d33ad55b0a8bcb3cd020b99c7effb800f76aa2401dfa0cc74ed11c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\driver_resource_compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_driver_native.exe",
+      "sha256": "43588163c194bdf915cb012a5352c45e469585260478b6a5213bcf44f471a77e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_driver_resource.exe",
+      "sha256": "634788a065d8fcb67b413b35f1f34157e26d38a3310d3a7db4ad8a1b43f6259b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_test_native.exe",
+      "sha256": "6deb6f564804064795c40276e1eb7a1050986a23149589c7c4f507005fc8211b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_test_resource.exe",
+      "sha256": "ba9ab59be991170b6e16b6404616a64a900a3825f11b9e88d8e6f317e5a1ff9a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\test_native.dependencies.txt",
+      "sha256": "ef9eaf7983db9bb7e7a524679a429cd7fbcd8199d2e2cfcfe5c08ba52e2b1278"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\test_native_compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\test_native_test.log",
+      "sha256": "1c66a36527177475ad51a0c2ee6624217cc535a24ba27e912c1bc43924cf6a49"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\test_resource.dependencies.txt",
+      "sha256": "4dac40ea5eaeb3777e35b36a669c9b4c4599a2acc446891a46133d7dcf2040bb"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\test_resource_compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\test_resource_test.log",
+      "sha256": "1c66a36527177475ad51a0c2ee6624217cc535a24ba27e912c1bc43924cf6a49"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\tlx_core_compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\tlx_die_core.o",
+      "sha256": "1ef981ff89dc65168ad6fef190d51a01015f8c3f2f5758af3366c8185ac152ac"
+    }
+  ]
+}

@@ -1,0 +1,1730 @@
+{
+  "schema": "S2.root.gate.approval.v1",
+  "approved_for_formal": true,
+  "author": "root",
+  "scope": "User authorized S2 only; frozen production kernels unchanged",
+  "kind": "cli_tests",
+  "formal_runs_at_approval": 0,
+  "files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\bad_source_sha.stderr.txt",
+      "sha256": "c27a038c4bf38623e04fd88d3f0cb3407a0f8bde7f6308bd54df4cd0ea19377b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\bad_source_sha.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\commands.json",
+      "sha256": "f03573090c2b56d8d5452a1e74e9d6689d860d60acc35e3f865329f93e801318"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\immutable_prepare.stderr.txt",
+      "sha256": "b0a1e3a1d8a0710647ba4f2a0420db74798d2579c3bdb3511da2ae7350b07cfa"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\immutable_prepare.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_prepare.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_prepare.stdout.txt",
+      "sha256": "f0c797582dff3b27188789e08ae0df5d61d65119738bff28a988fd4e95bbadbb"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_EVENT_16.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_LIST.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_R6.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_TLX.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_prepare.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_prepare.stdout.txt",
+      "sha256": "e8fec8237f1e8fce155562f5a9fa716f038ae760d92b7e593085d1debd75ec7a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_EVENT_16.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_LIST.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_R6.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_TLX.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_EVENT_16.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_LIST.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_R6.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_TLX.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_prepare.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_prepare.stdout.txt",
+      "sha256": "f604f3626fdf08d338af713490ecc2055d4efec74db75071d2fee669bf8833ad"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_EVENT_16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_EVENT_16.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_LIST.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_LIST.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_R6.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_R6.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_TLX.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_TLX.stdout.txt",
+      "sha256": "60f9d546d7a99838f9ee84c2340d5e3f297355c13198c5de88346050d9576c8f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_bad_seed.stderr.txt",
+      "sha256": "2a2aebe280d3a97555a0e0ebd06767568a93eab490a27819085841a69d71d1a5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_bad_seed.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_describe.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_describe.stdout.txt",
+      "sha256": "a6f9b1c2a86a43e71fd3f6bc5884c3c0b4477d8b25b5d91fa5a5a9cf4c27c23f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_protected.stderr.txt",
+      "sha256": "29c8bb20664c1ac483fbab9828deaaef57b1082e5ba5fc9248fc1af723538de1"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_protected.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_selftest_pinned.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\native_selftest_pinned.stdout.txt",
+      "sha256": "db46ce143262510e6b1184c5b21c7d560be40e7a88b81eca4267d7c447661e10"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_bad_seed.stderr.txt",
+      "sha256": "2a2aebe280d3a97555a0e0ebd06767568a93eab490a27819085841a69d71d1a5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_bad_seed.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_describe.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_describe.stdout.txt",
+      "sha256": "fc93271ecdd2f3d17c22621e541d4eeb52a4c6b53c7300828cc477ad01430250"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_protected.stderr.txt",
+      "sha256": "29c8bb20664c1ac483fbab9828deaaef57b1082e5ba5fc9248fc1af723538de1"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_protected.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_selftest_pinned.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\resource_selftest_pinned.stdout.txt",
+      "sha256": "db46ce143262510e6b1184c5b21c7d560be40e7a88b81eca4267d7c447661e10"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_EVENT_16\\phases.csv",
+      "sha256": "e2241ca8f1f94ee8f76efb71502c050e0e4e0e06264d85b968d43c6b4d6bb138"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_EVENT_16\\raw.csv",
+      "sha256": "f3a34c04976a511b70aaa365e7f374bb169ef7d361609d030a9afcab5fd707a4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_EVENT_16\\receipt.json",
+      "sha256": "45249f4bb56bf1f99793f4c8e8c4514431b144339670d58ce64eeb81e86e129f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_LIST\\phases.csv",
+      "sha256": "ceabae948b23c3e5d1b50936530e8b227a3dec503541a3274319145b9fd5e4f4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_LIST\\raw.csv",
+      "sha256": "cd0208ce32f618effa449f9cdabbf14ec426ee3a71050ad285b06289f1d1abce"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_M_LIST\\receipt.json",
+      "sha256": "15d58993c05f43e3cfe5eb7411792f7b32e2772ba0ad455838cbc083cd2af077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_R6\\phases.csv",
+      "sha256": "3366c5696e8ee7e864675848844b299512714b7dc00073b58e10e1292303d433"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_R6\\raw.csv",
+      "sha256": "8de1f058bfb95afc46076f18142004884f9037ea3ab30ece709124d88d6f0247"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_R6\\receipt.json",
+      "sha256": "6132816185726c16105016dd5651a3c97bfb40becead3fcfb6ad9acaf2e0ca3e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_TLX\\phases.csv",
+      "sha256": "cb850dab45648f7978923b0516aaa597cd9fb576ea45cf9338d2e628d083f7e6"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_TLX\\raw.csv",
+      "sha256": "fe4184d55c7a9d05bd49d806863c16488cdc44ca4e67ebd52bebf2d5775a7453"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h1_TLX\\receipt.json",
+      "sha256": "d0d427723d0219ad60ad398a876fea61d64e98fbc939ada4b7bdb90c7b8e25c4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_EVENT_16\\phases.csv",
+      "sha256": "a8802770f49dbd8f2cae3b59242345ba760ce1bb201d6b6614477fd58874696f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_EVENT_16\\raw.csv",
+      "sha256": "9d8feed90e5e2131600ad2692f2bba7929191949946fb8ba7c2832f1cf03f719"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_EVENT_16\\receipt.json",
+      "sha256": "91d007017646cac2177360e93d7854b21fc6cb7a3d9ced9ff9cd864879e7ea32"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_LIST\\phases.csv",
+      "sha256": "0ef44091d6a0a099e157162524c35079cac62fc9e58eea678cf34ddda335f399"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_LIST\\raw.csv",
+      "sha256": "7d24c94d11ccd4ed6dae8f910e96ddccbdb2d591ed5726eb3beca61de085dcd6"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_M_LIST\\receipt.json",
+      "sha256": "645d85532165d5194c2b6f5c53e16ac53025688877c0a8f97fadf7243d19b360"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_R6\\phases.csv",
+      "sha256": "d89867c31463eb9d8c24cdb58348cb982bd93cde76ddc1afa5d34869955490dd"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_R6\\raw.csv",
+      "sha256": "091248c712e0c10e37d617af86c0446177c4a29de6e78115daa943dce3e8f9f7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_R6\\receipt.json",
+      "sha256": "c4dce1096aa2ce21e896444e8854dbbe46bcb62e2240cf683b6c143ec1080fe7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_TLX\\phases.csv",
+      "sha256": "2dcfa41a382912c4b5695d25a1c862d99131adad3356e4e0dbc881cd3dbd7eb7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_TLX\\raw.csv",
+      "sha256": "fbc0e61e07bee1ae3d0481a8e7bf8d63b81b57f00d3efeb21f04c29203722b74"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h2_TLX\\receipt.json",
+      "sha256": "e02996d4de747d84f0d7f8de08e188b9d3a1b235fc592e2aae45ec38c42f88b9"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_EVENT_16\\phases.csv",
+      "sha256": "fd0c2866a81e6c5368cd1ac92dc2242da826c3f32892540220b505234458c2e3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_EVENT_16\\raw.csv",
+      "sha256": "fa5e667f757a5b51ad00330f244c600e2afabafad725701530a537cd0f846969"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_EVENT_16\\receipt.json",
+      "sha256": "f2e14e0c204fb2605bd4341e07449c8520ab49c0008e360bc123e9fd1f4db1d2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_LIST\\phases.csv",
+      "sha256": "a0ce96547b115db91e60db42a2764eaa0f42f422246e7390e9d863acb5ab22d5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_LIST\\raw.csv",
+      "sha256": "7eb470fa74e9e00232775dab46f0a48b9bfdf67f453e85a0257868802a604abb"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_M_LIST\\receipt.json",
+      "sha256": "2e63574fdc25fc25a5186ebbd0d0930cbb995f7473fa9a84536d29869ae7f694"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_R6\\phases.csv",
+      "sha256": "10d45c590a8980f5e2b02e83b94cf9a6c8a06084ca2ae478cdc4f6d8c08bdcbf"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_R6\\raw.csv",
+      "sha256": "82653b7453e8ce085693050bc8d29c18aaeaa5a1cea11e5230c81c7cf7332197"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_R6\\receipt.json",
+      "sha256": "ec808c1ede6a6de5a3f7457cd9332f375083d2c9809f09c2a34fe133eafd88c2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_TLX\\phases.csv",
+      "sha256": "11b68be75299d23fc1f3a8cc1651458f787b9fc9797efc6744cd4a76049958bf"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_TLX\\raw.csv",
+      "sha256": "751f5fce8113917b6fce2a3bce8021d105bb34f7e6e1137978236773d6a0265c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_native_h4_TLX\\receipt.json",
+      "sha256": "a19addea9e1a24f60daae669aaf5e60e7017f1ddff2f3a3c6284c6883b70bad3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_EVENT_16\\phases.csv",
+      "sha256": "1e81f69f00733864f8db3e8d187d2878e1851673746102be0ba49157b91c128f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_EVENT_16\\raw.csv",
+      "sha256": "43516a8d32d0b5ff1023a9ab11c07d8f479450b6c0ec90139f2a8414b4a8a26e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_EVENT_16\\receipt.json",
+      "sha256": "2142793bf6026e9d15cb2b0bde19870a73cf2011a4a9dea21d74e118b4eb3ddf"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_EVENT_16\\snapshots.csv",
+      "sha256": "3abb52792592443d15db212ac0770048dbefb1acd395d2bd4ee18cf7ff871488"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_LIST\\phases.csv",
+      "sha256": "8cf41c51447d91aa9c5fecc9f86922b433210408f3cf69ed57d48beadd038262"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_LIST\\raw.csv",
+      "sha256": "a4a556f1c4489c4dca6fd775a178b29ff6e052a80d4640e32ce718553c1eca9c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_LIST\\receipt.json",
+      "sha256": "03607e9d537e6feac442219350183ec56506e862dbb679ef95fc0e581c1f6550"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_M_LIST\\snapshots.csv",
+      "sha256": "3abb52792592443d15db212ac0770048dbefb1acd395d2bd4ee18cf7ff871488"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_R6\\phases.csv",
+      "sha256": "41049056b0266d66512e6469365639d9b1422efaeb8a5ca72c9780b4571b4a2d"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_R6\\raw.csv",
+      "sha256": "436f330da3fe643d7d430a2bc185661f3ca496db194507eea5670891347eb47a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_R6\\receipt.json",
+      "sha256": "cf95b242c51a26b969d0898da32ee588fcaa3000f49d65d2c2ecd84579957412"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_R6\\snapshots.csv",
+      "sha256": "3abb52792592443d15db212ac0770048dbefb1acd395d2bd4ee18cf7ff871488"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_TLX\\phases.csv",
+      "sha256": "7f78b553991b62d343bdeda51dc2cf1d6e23c9c57cf16fc670ab7246b168d16e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_TLX\\raw.csv",
+      "sha256": "e53f4cdb07e32506a6c770e6dcea94964ab8e226590274176c62695cdf2cdca7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_TLX\\receipt.json",
+      "sha256": "cb076469a25e71cfca8f52fe29b0e9e51bb51a8969be88480480adb1e4ba80ab"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L01_resource_h4_TLX\\snapshots.csv",
+      "sha256": "b13ec566fb3c3b40947f46c350336ce6b88799c627ae93d4a522c15834815329"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_EVENT_16\\phases.csv",
+      "sha256": "c6e92ff3785fe6fc6891c33c32abe59b049f575ee9261399783775517169ceea"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_EVENT_16\\raw.csv",
+      "sha256": "1572099ff3272630db5ae79365dc0d349e5e72b6ac660f395537c16c4997ed46"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_EVENT_16\\receipt.json",
+      "sha256": "b500c83545e8c3aa72b9987ced88c31516a41e8de36327acdb53f792c6ec83a3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_LIST\\phases.csv",
+      "sha256": "95f70b5db03a63919043de0c0277988473fc74c9998ca2228abbca2e49ce0468"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_LIST\\raw.csv",
+      "sha256": "0b0bc27fda2cf2feb4cdcf613fd1e8e6794eb8d543bfea23611d020227fb2b56"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_M_LIST\\receipt.json",
+      "sha256": "314eb87a5c45d58631f684d51488f2d2128343bae5f7aba34479b4b4701852f0"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_R6\\phases.csv",
+      "sha256": "6974bb7577c3a2d16790994a50f68aa3cf05d6ddbd552f6ecf80e35b318593a2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_R6\\raw.csv",
+      "sha256": "3564fedb8362e40c2b8084a7c31a7822581ad02d58267c69289fe053fa6a07cb"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_R6\\receipt.json",
+      "sha256": "3c46b5535f9f9bb95681a30b1109534ceb057c9bc3064dcc827382f23875c6b9"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_TLX\\phases.csv",
+      "sha256": "179e2e80a7b949b57bde84c425b2105ebe969f2a6816ee552c081ab940f8d4ad"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_TLX\\raw.csv",
+      "sha256": "a1fbda76fae1adb60095d9e6fc9e3a3dbad44b897c63a4e9351901395b8cd900"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h1_TLX\\receipt.json",
+      "sha256": "808dda14ae8aa18ee9994ab0d1c77f22c2a2005a570e011ce9444aba6a2903b4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_EVENT_16\\phases.csv",
+      "sha256": "747e12d65e5fa93683182ea7c3c87c2262f0fe7ca1e9792197b0f0c12e7ac32e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_EVENT_16\\raw.csv",
+      "sha256": "2c06d1ef60a6f429304662157e45a4d6c4c7ac2d8d7c8460df36eac698d908b1"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_EVENT_16\\receipt.json",
+      "sha256": "6c0a80a5f721433069fb9fea006749a40d40d240fd385e674153100825f72def"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_LIST\\phases.csv",
+      "sha256": "c0b0f0a69054c1bdaf29f760cee85bb0dbec4821f4229cba57e4dd509f4060da"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_LIST\\raw.csv",
+      "sha256": "6f09e9f7ce2b294277eb0a961f931fa8ce5e54ba3ec4936a65a4240e2af49092"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_M_LIST\\receipt.json",
+      "sha256": "c16f40832f3c3ce913a73c26279f207d60426998c411f2980f82d84ce12572fc"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_R6\\phases.csv",
+      "sha256": "1527c1e7a6014305ddfe27b4ab93c2116eb0f25641854c13546bf8be68983942"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_R6\\raw.csv",
+      "sha256": "f86e556844ef3e0e6ec41ead78c757888b30bfa7fc3b6409403871aaf986a5fc"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_R6\\receipt.json",
+      "sha256": "b2d6750d9d17e5c2cd3673e2763a109e7560aea5c5cd78c4ec6d6fcd05291dc9"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_TLX\\phases.csv",
+      "sha256": "79d2b4b637f06d1c107510903fe42c1b23bdbb856430cc5b1c9a1e3ac3c5e84f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_TLX\\raw.csv",
+      "sha256": "c3ddf2bf95b9bb8178bab5d30149e08657daca5369f5ea88f63be21ba69c7fdd"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h2_TLX\\receipt.json",
+      "sha256": "e7668c516dc0c513366184b24354f5739568464c9c370bcf01c8d0ab1c759991"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_EVENT_16\\phases.csv",
+      "sha256": "96149e4b1b2ef3ec0b25aa39262f13fec2a3b7c939ea6407441a6713a84cd3c7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_EVENT_16\\raw.csv",
+      "sha256": "d8a69ae5b3b605a945fe15eaf3ab44fcbb481ed17445d91c3d951beee71e83a7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_EVENT_16\\receipt.json",
+      "sha256": "ecc826f1719f2572bbdf8b46ccb5e4f4156ba21dee9c0f508210a9095ab03a93"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_LIST\\phases.csv",
+      "sha256": "8997763c5ca71281e3824ba6f2c368975c3975c67c23a63e3ef7a93c12850ec4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_LIST\\raw.csv",
+      "sha256": "a403b9c466f1e2828db139e5b741ebc0540b0372bdf5b331edce3d46243ad2d6"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_M_LIST\\receipt.json",
+      "sha256": "2fb36d0a520f14f7ac12fa368ecd3d80f01eaa4594c75a5dfb647c60fffe4708"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_R6\\phases.csv",
+      "sha256": "67bc7b5b567d6f1c3fba4b67ffdbd170d0d936e95478b020606d31ffaad367f7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_R6\\raw.csv",
+      "sha256": "7faa00bcaf01dd49af2e32eb4b4e67594f760f7c8c1063a4df4d67cf203264b1"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_R6\\receipt.json",
+      "sha256": "ea28036d64c50f801e0ca82704bd3fe7eec666757544e3635f0971e288b0e2be"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_TLX\\phases.csv",
+      "sha256": "4a5fba46d640ea4cf72e167cad1caf0e2d960e5c8a955446cd85e04316f120a7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_TLX\\raw.csv",
+      "sha256": "60dd1b1f15b56497df6038cdf8bdc6f51bbe0b0adbf3ecd4638d62974c4eca71"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_native_h4_TLX\\receipt.json",
+      "sha256": "6b1abd352a7a604f6606a96bb8f3bbc11d8abdea9d1acc0738ced7aa010dacf5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_EVENT_16\\phases.csv",
+      "sha256": "65a99620eb62c9f590560fb914d64772755be428d5f297609311e89dc6b175e9"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_EVENT_16\\raw.csv",
+      "sha256": "05d6760cc87f555170c4a05499a1e6c969daea535902cdb9f8be14dbe36b5f07"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_EVENT_16\\receipt.json",
+      "sha256": "a144032d96a65619f1b43b63e8b876d2ad789092c01643f6a9ef9caf564c7805"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_EVENT_16\\snapshots.csv",
+      "sha256": "3abb52792592443d15db212ac0770048dbefb1acd395d2bd4ee18cf7ff871488"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_LIST\\phases.csv",
+      "sha256": "21a542259f35e3055c7ccb8abec00e1e12302d1a12b76e1fd1daf6ea1a8bcb03"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_LIST\\raw.csv",
+      "sha256": "f8dc55579b0b70da868ab26848a2e6202c4bd0f3a215945f31f03fdf097bb964"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_LIST\\receipt.json",
+      "sha256": "88f8dd5d44674fa17b34263892a12244e81f77a466f6af4a12f4d1efebfc35a0"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_M_LIST\\snapshots.csv",
+      "sha256": "3abb52792592443d15db212ac0770048dbefb1acd395d2bd4ee18cf7ff871488"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_R6\\phases.csv",
+      "sha256": "975ecf22442e24080f79db41a00f17cfc95c5b9b934766381aa010944230b71b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_R6\\raw.csv",
+      "sha256": "b35a78aee9443077c767e72742f1dd3b23d4b4098049e213f550c05f733058c5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_R6\\receipt.json",
+      "sha256": "799f6224658cc44d1d635fcc4ebe4fc4c9a58177e7fecaec393759aae68b4d5c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_R6\\snapshots.csv",
+      "sha256": "3abb52792592443d15db212ac0770048dbefb1acd395d2bd4ee18cf7ff871488"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_TLX\\phases.csv",
+      "sha256": "2ae69c8acbbed40fd989e8081bbd38a87b9c44d0521373a017057e4ca0a19ce1"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_TLX\\raw.csv",
+      "sha256": "3ceb36259edf511fda6d9816c1fe681cd3084cb0ccd221817680382bc1dba73f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_TLX\\receipt.json",
+      "sha256": "65911eae3e1b9c365188d8afcec8e49c6c17ba3c1b7c3381f544050f6a77354e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L02_resource_h4_TLX\\snapshots.csv",
+      "sha256": "ae8a267ce0605edd4bd9e50a9a36db88c74c224083eeb5369fb5070ca117ea65"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_EVENT_16\\phases.csv",
+      "sha256": "b41639340a46353f964fa40800e15d813b5de0f7c9cacd1b9ee86db456105c5f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_EVENT_16\\raw.csv",
+      "sha256": "4d60c3606f7a7d52626eb90189e89aae3ac6213e80be6318e38348b69c18e212"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_EVENT_16\\receipt.json",
+      "sha256": "b36aa23c3fafbf63e77eaddfb08e80c770294479d5feeb6eb2b254e014c1c65e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_LIST\\phases.csv",
+      "sha256": "f4227384bf3902621b441b5d87343d42aaf5741f06cf14e3d775350196b457ac"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_LIST\\raw.csv",
+      "sha256": "61fdcc0734fb495a3d4090ee83b88ad7acc0d3cbef4d8ae1a9bc44f953120862"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_M_LIST\\receipt.json",
+      "sha256": "7bdf27211f018804e532ac6dbb9220e25f90e4076e149358c04daef10895af16"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_R6\\phases.csv",
+      "sha256": "cc6b2772ee17208ebba04b813dafd7715d0e24aa11be12ab2939f55c25bbea18"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_R6\\raw.csv",
+      "sha256": "98b77fd5137155df8ab00b0d6ae35c631f06c3651ae2fec90dbe149e98c0bf02"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_R6\\receipt.json",
+      "sha256": "92d30c361154a83077929b08d45eee974694660fea26323be40cc29bd7f383af"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_TLX\\phases.csv",
+      "sha256": "b75d840ae4f3300e9fdbc25e71faa1e20f598656c6e72749afa900bae5839c6b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_TLX\\raw.csv",
+      "sha256": "08825bcac090bb24c85cd1be34f12bd929dfe107d542407b30c54768f3a7977c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h1_TLX\\receipt.json",
+      "sha256": "8c9da3499405ed28b99caedb4ded667a4c803752421d7580607d88d104e3a331"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_EVENT_16\\phases.csv",
+      "sha256": "cdaaa1dfb57736c2ded1aa8b5891a7a913cf9ecbe65300d7f81a9699030b5da6"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_EVENT_16\\raw.csv",
+      "sha256": "73d9b7cfba368d06e359d030d42cc23f93c85a5a5ec77fea460f78d2e8afc714"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_EVENT_16\\receipt.json",
+      "sha256": "892ae0de054915477960a4ef7f1c372573e6f4ab80ab830aff5517b0ecdd4d3a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_LIST\\phases.csv",
+      "sha256": "f7b41078438fb832e73f3895cdee5431cbd2bb7f0ae0d81af4d159296beffcc6"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_LIST\\raw.csv",
+      "sha256": "596f277bf50e3ace9771fde1083e8f77a55ca0aff6a763a45de15df540dc87c3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_M_LIST\\receipt.json",
+      "sha256": "15cc014eeeb1d49118b0c0d810115c8558ccfb4211025427fe2a01df14eea395"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_R6\\phases.csv",
+      "sha256": "b58249d40c01ca035719e5ca97ebdbcf7ea47d6b5d4267f2d0a4ea50c0cca8ca"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_R6\\raw.csv",
+      "sha256": "c7b344a2cd9b038a309379bf616f16f2040e0fd3f5b52c20dffef8b862181dd3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_R6\\receipt.json",
+      "sha256": "73be353abe99837627f61f25cf8f31c489dfec83e475448885eaa581e8c7bdc4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_TLX\\phases.csv",
+      "sha256": "469fb1f4d6ec417e984bf7edc503f7ccfd4b1db81623a787ffabbdbfbddd1d36"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_TLX\\raw.csv",
+      "sha256": "dec5b75bd95caabe531d42a54f4d0235830687b6a977cad48f705cc97756c2d2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h2_TLX\\receipt.json",
+      "sha256": "c444768c9c734102bea9bf111a004432635e091764d51773109bf84840608aec"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_EVENT_16\\phases.csv",
+      "sha256": "8abdbb0855608110e522cd62d5b7d579db88b2c95f2e361adbde32e58f8db116"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_EVENT_16\\raw.csv",
+      "sha256": "8fc9547c11638f62ce07990a156f3cb0e83070f97e6fee5899079dd645a979dc"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_EVENT_16\\receipt.json",
+      "sha256": "73756e3e81c4414584c3a7298692d9523602e9a0b2b7420f43208315e8bc5d97"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_LIST\\phases.csv",
+      "sha256": "15d5def6397862b85648b3d93f1971f57bd1fcb3719a66c9a588967aa1cf65eb"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_LIST\\raw.csv",
+      "sha256": "ae8f6193a1e8ef4345853253185939dcb9b6666d87dd1bbcccca8a88a917dd5b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_M_LIST\\receipt.json",
+      "sha256": "3be3584a61ffa09f9463a9b3d3923e104ea71a7e02268a0011e6be55445c0084"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_R6\\phases.csv",
+      "sha256": "b35812914defbe512682f3e59348869fe94a58acdb519d4d06a8860b6d80c5e9"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_R6\\raw.csv",
+      "sha256": "dff3b5120c4ac2a27481bb59b3c74563711b1714f87535b5eebcf19f1e21836e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_R6\\receipt.json",
+      "sha256": "0512fcfcf1ffd2683e7df945c266ae8889fdd0614516382867e40974eceda68f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_TLX\\phases.csv",
+      "sha256": "75f0ae8e50a1bdfb7338c74aab3fb83ca5b0879563f4f69d8474759fe309a149"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_TLX\\raw.csv",
+      "sha256": "b98acb9f24d0cb5f551f18bb5ca15a23c057b29e1fea67e8c7ae8feee71b2ee2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_native_h4_TLX\\receipt.json",
+      "sha256": "644aacf5c808d101753e185f9abdb5e342525bc9f35d0fa5baf2da1df9c1ec00"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_EVENT_16\\phases.csv",
+      "sha256": "04d35a693f9a00b9f6fa8d09170acfd634cba725d15e6d25e24a12166ced74c2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_EVENT_16\\raw.csv",
+      "sha256": "0db8faada714649b142262ec884166f5186c4b3e425dde15ee5fcb50f1882a7f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_EVENT_16\\receipt.json",
+      "sha256": "42687e24b1d3fbba9c2e342aeeb48fbf48317465e5c945177f0f8e752a0222e2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_EVENT_16\\snapshots.csv",
+      "sha256": "b6af78bd31556662ad95d34fba7626931b6af6f3c59f053a8137fef28aa9fdda"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_LIST\\phases.csv",
+      "sha256": "4154ee6189be247e5d0aee3de8ffc91f9e20d3004058e9a2957461fd8ffaa614"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_LIST\\raw.csv",
+      "sha256": "16c972a12c207ef0f6fc976b4c54e4e7cd7726159b79c68d788be7e199c72d55"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_LIST\\receipt.json",
+      "sha256": "8497f921f05bf0dd8be331f078183a0f09fab1d1bbf6002c2a9eacda01c9ce05"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_M_LIST\\snapshots.csv",
+      "sha256": "c947ba14224b83cb8249858184574f3e45e93046619a19e9331812e137cd71af"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_R6\\phases.csv",
+      "sha256": "65c8729333c09c46394bf5ce66f23a701c5cedf87724610b24a428a58d4929f5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_R6\\raw.csv",
+      "sha256": "631c382754ebc229dccbb2d4b26b2b63bb9e5a452f40acf1b044bbb09ad812f7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_R6\\receipt.json",
+      "sha256": "4df794662d743e0d3e27d55a5925e2609888e272775746972686fb7fbe5d375b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_R6\\snapshots.csv",
+      "sha256": "2e5839df82174f28fbc561a29cb0488b1a8808b86d100180cc1986e5575da3a5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_TLX\\phases.csv",
+      "sha256": "68c78c9a5884b0d667d678c26909b8490f6c492c907a112ab9e4aa963e1c5c96"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_TLX\\raw.csv",
+      "sha256": "db5f0406a51b3eaec6b7a0229121da54b273c8b628996702c65773cd161729c2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_TLX\\receipt.json",
+      "sha256": "415c7de7df83e0380082aa31614b8ecf0a2bd62817730d489f8b5c4697a4ed2b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\L03_resource_h4_TLX\\snapshots.csv",
+      "sha256": "07f15c3d068bfaf99691ee8551da2136ded9d0be8113690a1a2074cac8792549"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L01\\h1\\cache.bin",
+      "sha256": "d3b0bf8a23871ca6e602362d54940e8e104c3aeebdbcc28fb76781743f02f037"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L01\\h1\\cache.meta.json",
+      "sha256": "45695e4ef467e5e9576145e5025e48585901be603e27f08fcc59d89b701e0c56"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L01\\h2\\cache.bin",
+      "sha256": "972334dd1d9f2528bc696ee091fee1a0148e0b57b8d7b18990cfca7ebae6c7c8"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L01\\h2\\cache.meta.json",
+      "sha256": "b887087eae1ef9258d1eaf5794e569b87b33a6f6a5b126b9c7882d6b16c630a6"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L01\\h4\\cache.bin",
+      "sha256": "a8ef51e1e2f2f74864dd34acf3d0dc401be710efa1ea95b4cb97da09c886c466"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L01\\h4\\cache.meta.json",
+      "sha256": "b03245b1819f9f612d63b8f503252205d5a69ca55fea21f45960abd3045457a3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L02\\h1\\cache.bin",
+      "sha256": "ff42867b4834edefde7183e1e8f0491940705f2c4a3795d960ff1a1e04f77a11"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L02\\h1\\cache.meta.json",
+      "sha256": "6adcd8c679915f7e36adb5329dd1aa3e4a705b7ca664b1b8788c03f661785de4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L02\\h2\\cache.bin",
+      "sha256": "b43231f4fc95d0ebd0e36c55dd441a34e9da5cd4ab4cf6f4476290f09850aacb"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L02\\h2\\cache.meta.json",
+      "sha256": "7cbc2d503e9ecad17e7e9d2d5c5fc276b0a40a690fe3bee723ff1b254117001a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L02\\h4\\cache.bin",
+      "sha256": "003de054ec61b5e72b214ceaab498599f0c163b7bb0819ac22fe4fe394e4e426"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L02\\h4\\cache.meta.json",
+      "sha256": "fbb65ed0733d9e9723fb7a869c4d6de1f0df8e2315f74d779610185847b16157"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L03\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L03\\h1\\cache.meta.json",
+      "sha256": "9f26df7c3dde2b4f18f0883acbf22be877746e66b0a84a5cab0dde53b4265547"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L03\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L03\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L03\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\cache_L03\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\acceptance.json",
+      "sha256": "caf3d0d7317888c5941eb1795e10d01ba263f86d7a39a3f567f1843fe8432166"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\commands.json",
+      "sha256": "e309b328e673b0fae834e3493ca81068c18d066a06f1135c79e8e2058807335e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field.stderr.txt",
+      "sha256": "9aef64f51e43f8880bbe759cd2c236427828cfbdf137a9fcee0748af13770773"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json.stderr.txt",
+      "sha256": "77e876b232e81bba49e3bd989f202a36791e02cc6641561312ce9819ea774f7e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4.stderr.txt",
+      "sha256": "77e05c97d5ed5fbdb9e089c63e07ba43fbb2cbda0547bc82ef0e27cf9e2076ea"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta.stderr.txt",
+      "sha256": "392d02f420de0023d27ee0af12417d6b4f67ab3d7d74684d00d5fdb3eaf8f74b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix.stderr.txt",
+      "sha256": "e2dce44a42b4992ff1f8888734e5bf3d0b2b2e3c74383e80c1323f9ae7f9a29f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name.stderr.txt",
+      "sha256": "984d8db808b6cda4b39cd422071445f4d467eae4c7eb2086c57174261a50f96e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\prepare_valid.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\prepare_valid.stdout.txt",
+      "sha256": "f604f3626fdf08d338af713490ecc2055d4efec74db75071d2fee669bf8833ad"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field.stderr.txt",
+      "sha256": "ec53d9eddf72318493bf81db94b3d47d367c3f043f72cf3817420ab6805ddeac"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid_admission.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid_admission.stdout.txt",
+      "sha256": "f0e748270f27d0c619a623ba3512f568ca6b297df7a48e97a8c0160ad88ec381"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain.stderr.txt",
+      "sha256": "e7e6e7c2f4ba17ef6e804df3ff11c90f7d80e507d92b30a415c23af262e29ad2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta.stderr.txt",
+      "sha256": "9e0050f5df8f54a5115b06205ae7b20ac6a8601756ed3e967243db522edeef5c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha.stderr.txt",
+      "sha256": "5cf1cda6bcae1be43fd6dc883928632164bd51d7f1e459396085fc676381f33d"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile.stderr.txt",
+      "sha256": "8626ea7b49337cb62f6fad61a543010454933fcc2f32ca298ba258c757b360da"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema.stderr.txt",
+      "sha256": "e00a444b5cd867bf4a1f388407e27caae5877140aad402d5d926225d0f023c95"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle.stderr.txt",
+      "sha256": "9e0050f5df8f54a5115b06205ae7b20ac6a8601756ed3e967243db522edeef5c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha.stderr.txt",
+      "sha256": "4cd3f162cfaad51af5ad3416d10d2eaf63703f72951cdc0f0f5b06fdb8edccaa"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type.stderr.txt",
+      "sha256": "d9224875e74008f5a88faca8764335fd3acf987e2fbb1b55e462d6c89db629a2"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid_admission_output\\phases.csv",
+      "sha256": "f5702dcc5464bc5b19a9d7bcbe998a48087bebae419ed6e28455fa567d04dfde"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid_admission_output\\raw.csv",
+      "sha256": "72bbd38a714fcd706ed774f8de681280bd5a9137ad4141fb882c373d8a1f4324"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid_admission_output\\receipt.json",
+      "sha256": "c55af381db23ca91bdb804407789f98bc2e862a7adf6d5d1721d90aa2adaa38e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field\\h1\\cache.meta.json",
+      "sha256": "e2889f2a1933e33f711c559787d32e1946a1da1d753c44a427e523caef06fd15"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\duplicate_field\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json\\h1\\cache.meta.json",
+      "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\malformed_json\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4\\h1\\cache.meta.json",
+      "sha256": "9f26df7c3dde2b4f18f0883acbf22be877746e66b0a84a5cab0dde53b4265547"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_h4\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\missing_meta\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix\\h1\\cache.bin",
+      "sha256": "4a268afe3ad681f3a11f6772a289174cdb9f8b2f884749d5bbdfae8339331b19"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix\\h1\\cache.meta.json",
+      "sha256": "a40e24e6f8b3ae3a7b5208f01984d19e6850eb3ddac3a6b49f55827060d7f99f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\non_prefix\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name\\h1\\cache.bin",
+      "sha256": "9d799a615422d2aedcd1c3c192b2b62747b30de17be8b2187d2a83bdc9aed87a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name\\h1\\cache.meta.json",
+      "sha256": "a19a3c34be2fbc23dca45d547d793223ebd1748ab23adcb21aad6c7dcc0e31ce"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\phase_name\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field\\h1\\cache.meta.json",
+      "sha256": "c853c84a1b8ebcd406da6e8fc9bff531fd4660e70f5dacf65362c85b1247f931"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\unknown_field\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid\\h1\\cache.meta.json",
+      "sha256": "9f26df7c3dde2b4f18f0883acbf22be877746e66b0a84a5cab0dde53b4265547"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\valid\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain\\h1\\cache.meta.json",
+      "sha256": "336d98d90ebc8c7b3613cc5e281c2bcb2bcc71c5b94c73a52bd7385da4ad2f69"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_domain\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta\\h1\\cache.meta.json",
+      "sha256": "9f26df7c3dde2b4f18f0883acbf22be877746e66b0a84a5cab0dde53b4265547"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_h4_meta\\h4\\cache.meta.json",
+      "sha256": "fa843dc0a35a291d89551602fcd724398f9f3789ea89c0f5b89328319472f52f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha\\h1\\cache.meta.json",
+      "sha256": "c6bde71d0f275d098a2b8f2bc73ab79baa3db8f3fcf1f4f9e5e86e8e52d04b44"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_longest_sha\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile\\h1\\cache.meta.json",
+      "sha256": "0bf609d27538203b87f0805f05a6a7d16d3807ea1805f58a248f413b4a27936a"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_profile\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema\\h1\\cache.meta.json",
+      "sha256": "de80470416505a850ec59bcb32eae0d2fdfa0dc74e26aea1df0e64373fd1be6c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_schema\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle\\h1\\cache.meta.json",
+      "sha256": "e00f2ab823f32a7c7bec74b25a5295be66d18b158e9df5d65fa0c4cd8d4985d3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_bundle\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha\\h1\\cache.meta.json",
+      "sha256": "fa4467d8a8cd2cffc38a8befa5f2b55e165ef68b048aff934ccd3467e1099a0b"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_source_sha\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type\\h1\\cache.bin",
+      "sha256": "1efc24e86590257c7bf9ca00bbcd03a2a2d149a4885d8cbad4da9afe843b6ffe"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type\\h1\\cache.meta.json",
+      "sha256": "ea0b1ecef1c0010d734789dab3f8a7b2d6914b96e0fda90c3af2a5e164343aa5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type\\h2\\cache.bin",
+      "sha256": "ab0597bd4b544c80df8275df79fbc3d7ac9f62c697eb698b2dc899eabd837c30"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type\\h2\\cache.meta.json",
+      "sha256": "43155c51991fec349613abeb4e7e43cecd2c533c1af79c001699be0c767ce077"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type\\h4\\cache.bin",
+      "sha256": "df2b8ef0bc64c9888169a9e3e3880b2905a610ed0968094588188ee6da5dda4f"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\wrong_type\\h4\\cache.meta.json",
+      "sha256": "31f32a02ff8c31ec9c3b8ed6e79ddd01b7930f4b0012bc9123fe6a9bf7e5f238"
+    }
+  ]
+}

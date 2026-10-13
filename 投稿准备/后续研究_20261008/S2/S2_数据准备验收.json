@@ -1,0 +1,44 @@
+{
+  "schema": "S2.data.acceptance.v1",
+  "status": "DATA_READY",
+  "formal_runs": 0,
+  "valid_records": 1891714,
+  "physical_lines": 1891715,
+  "known_exclusion": [
+    {
+      "ordinal": 1891715,
+      "length_bytes": 8,
+      "reason": "missing_timestamp_bracket_at_truncated_final_line"
+    }
+  ],
+  "projection": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\data\\NASA_JUL95_20261013_01\\timestamps.bin",
+    "sha256": "8914c691dc39f0f425ade34d34789e2b1985a9434fe31d1300bccb79a641c81c"
+  },
+  "manifest": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\data\\NASA_JUL95_20261013_01\\manifest.json",
+    "sha256": "53f60f71209a763866c2f309e5a7d142824d998ed24a2344002937eaa46a58a9"
+  },
+  "prepared_data_tests": 15,
+  "execution_recorder_tests": 7,
+  "matrix_acceptance_tests": 18,
+  "combined_python_regression_tests": 40,
+  "combined_receipt": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\diagnostics\\ENTRY_PYTHON_20261013_02\\GREEN_01.execution.json",
+    "sha256": "54d1b7f5cd5969d57c951c77d25ae4dfb35842d664ffaa0b913291209d056a92"
+  },
+  "specification_review": "Approved",
+  "data_quality_review": "Approved after append-only recorder fix",
+  "matrix_quality_review": "Approved after actual exit type and TREE lifecycle fixes",
+  "preliminary_strict_failure_preserved": true,
+  "missing_calendar_days": [
+    29,
+    30,
+    31
+  ],
+  "domain_span_seconds": 2678400,
+  "stride": 1891716,
+  "cpu_diagnostics_started": false,
+  "native_timing_started": false,
+  "recorded_utc": "2026-10-13T05:07:01.104913+00:00"
+}

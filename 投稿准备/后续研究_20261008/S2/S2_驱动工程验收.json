@@ -1,0 +1,43 @@
+{
+  "schema": "S2.driver.engineering.acceptance.v1",
+  "status": "DRIVER_ENGINEERING_GREEN_PENDING_LAUNCH_GATE",
+  "spec_review": "Approved_round2",
+  "quality_review": "Approved",
+  "candidate_build": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\build_manifest.json",
+    "sha256": "4c94b65975f3818aa267110ffcf63c2965de5c063aa2e3e3f5feef2600c50baf"
+  },
+  "source_bundle_sha": "6f2fbf85f6143b9516a1a4e7fe5318eaa1eafce5969ab8ec0efdbb022ac11c32",
+  "native": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_driver_native.exe",
+    "sha256": "43588163c194bdf915cb012a5352c45e469585260478b6a5213bcf44f471a77e"
+  },
+  "resource": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_driver_resource.exe",
+    "sha256": "634788a065d8fcb67b413b35f1f34157e26d38a3310d3a7db4ad8a1b43f6259b"
+  },
+  "CLI": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\CLI_20261013_03\\commands.json",
+    "sha256": "f03573090c2b56d8d5452a1e74e9d6689d860d60acc35e3f865329f93e801318"
+  },
+  "adversarial_gate": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\REVIEW_GATE_GREEN_01\\acceptance.json",
+    "sha256": "caf3d0d7317888c5941eb1795e10d01ba263f86d7a39a3f567f1843fe8432166"
+  },
+  "macro_llvm_audit": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\AUDIT_20261013_02\\audit.json",
+    "sha256": "698e8c5533097b2019921c2a5fb87fc3da453d718432411949305ec67d82a811"
+  },
+  "compile_exits_zero": 5,
+  "cpp_suite_exits_zero": 2,
+  "CLI_commands_expected": 61,
+  "malformed_inputs_rejected": 15,
+  "formal_runs": 0,
+  "capacity_completed": false,
+  "launcher_ready": false,
+  "old_blockers_closed": [
+    "L03 middle.c=0",
+    "strict JSON/current-meta/longest-meta/prefix pre/post binding"
+  ],
+  "recorded_utc": "2026-10-13T05:17:20.151461+00:00"
+}

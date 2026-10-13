@@ -1,0 +1,22 @@
+{
+  "schema": "S2.independent.review.v1",
+  "decision": "Blocked",
+  "reviewer": "s2_driver_audit",
+  "scope": "Task3 launch entry and recovery",
+  "files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\s2_launch.py",
+      "sha256": "f6ed3a131efae78edf51d3c62f7c3497a51e55b3e49c284a66688404436bc110"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests\\test_s2_launch.py",
+      "sha256": "a5c87818bda01c24222043c1cddf43abcc7b7c4e623fbfa5e5b7cded7c68f3b8"
+    }
+  ],
+  "blockers": [
+    "Recovery trusted unbound embedded seal rows rather than reaccepting actual process/raw/accepted records.",
+    "Internal capacity COMPLETE fast path could accept mini when top-level scale relabeled full."
+  ],
+  "formal_runs_at_review": 0,
+  "previous_engineering_evidence_unchanged": true
+}

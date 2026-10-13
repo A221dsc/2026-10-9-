@@ -1,0 +1,14 @@
+{
+  "schema": "S2.driver.spec.review.round1",
+  "decision": "NOT_APPROVED",
+  "candidate": "build_v6",
+  "formal_runs": 0,
+  "blockers": [
+    "L03 middle cancel_period mismatch: protocol0/cache256",
+    "missing cache.meta+h4/sourcebundle/prefix identity admission"
+  ],
+  "core_algorithm_changes": false,
+  "new_red_required": true,
+  "old_candidates_preserved": true,
+  "reviewer": "s2_driver_audit"
+}

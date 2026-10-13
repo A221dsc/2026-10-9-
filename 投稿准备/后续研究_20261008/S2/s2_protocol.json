@@ -1,0 +1,299 @@
+{
+  "schema": "S2.preregistration.v1",
+  "registered_date": "2026-10-13",
+  "state": "PREREGISTERED_BEFORE_FORMAL_TIMING",
+  "parent_tag": "s1-diagnostics-complete-v1",
+  "parent_commit": "a5c9676298ad6c5ed82b061f5bfa0fed8c82c173",
+  "protected": {
+    "paths": [
+      "投稿准备/后续研究_20261008/S0",
+      "投稿准备/后续研究_20261008/S1",
+      "投稿准备/adaptive_poolhbi/final",
+      "投稿准备/adaptive_poolhbi/FINAL_CONFIG_R6.json"
+    ],
+    "native_reruns_allowed": false,
+    "parameter_changes_allowed": false
+  },
+  "source": {
+    "id": "NASA_HTTP_JUL95",
+    "url": "https://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz",
+    "source_page": "https://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html",
+    "archive_sha256": "199109ed0f273e095da6ccd5fc9dc4cd8bb58daa06d62135e62090fea9d27488",
+    "projection_sha256": "8914c691dc39f0f425ade34d34789e2b1985a9434fe31d1300bccb79a641c81c",
+    "records": 1891714,
+    "physical_lines": 1891715,
+    "excluded": [
+      {
+        "ordinal": 1891715,
+        "bytes": 8,
+        "reason": "truncated_final_line_without_timestamp"
+      }
+    ],
+    "tick_seconds": 1,
+    "timezone": "-0400",
+    "origin": "1995-07-01T00:00:00-04:00",
+    "domain_span": 2678400,
+    "stride": 1891716,
+    "missing_days": [
+      29,
+      30,
+      31
+    ],
+    "business_query_log": false
+  },
+  "methods": [
+    "M_LIST",
+    "M_EVENT_16",
+    "R6",
+    "TLX"
+  ],
+  "frozen_params": {
+    "epoch_size": 512,
+    "min_tree_size": 128,
+    "payback": 2,
+    "tree_budget": 32,
+    "down_idle_epochs": 4,
+    "cooldown_epochs": 8,
+    "max_convert_records": 0,
+    "scan_ns_per_work": 1.1427456845204484,
+    "conversion_ns_per_record": 31.412726323575615,
+    "tree_cost_formula": "30+5*log2(128*2^class+1)",
+    "class_formula": "min(max(ceil_log2(n)-7,0),9)",
+    "event_threshold": 16
+  },
+  "N": 262144,
+  "U_max": 1048576,
+  "horizons": [
+    262144,
+    524288,
+    1048576
+  ],
+  "final_seeds": [
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010
+  ],
+  "aa_seed": 101001,
+  "engineering_seeds": [
+    102001,
+    102002
+  ],
+  "loads": [
+    {
+      "id": "L01",
+      "name": "ordered_sparse",
+      "phase_lengths": [
+        1048576
+      ],
+      "q": [
+        256
+      ],
+      "c": [
+        0
+      ],
+      "shuffle": [
+        false
+      ],
+      "random_every_delete": [
+        false
+      ]
+    },
+    {
+      "id": "L02",
+      "name": "ordered_sparse_cancel",
+      "phase_lengths": [
+        1048576
+      ],
+      "q": [
+        256
+      ],
+      "c": [
+        256
+      ],
+      "shuffle": [
+        false
+      ],
+      "random_every_delete": [
+        false
+      ]
+    },
+    {
+      "id": "L03",
+      "name": "sparse_shuffle_sparse",
+      "phase_lengths": [
+        349525,
+        349525,
+        349526
+      ],
+      "q": [
+        256,
+        8,
+        256
+      ],
+      "c": [
+        256,
+        0,
+        256
+      ],
+      "shuffle": [
+        false,
+        true,
+        false
+      ],
+      "random_every_delete": [
+        false,
+        true,
+        false
+      ]
+    }
+  ],
+  "generation": {
+    "longest_once": true,
+    "prefixes": true,
+    "start_reserved_for": "N+Umax",
+    "delete_population": "current_live",
+    "live_rank_sampling": "uniform",
+    "live_count_after_update": 262144,
+    "phase_cadence": "relative_to_original_phase_begin",
+    "query_seconds": 60,
+    "watermark": "max_time_seen",
+    "identity": "original_physical_line_ordinal",
+    "rng": "mt19937_64",
+    "replacement_model": "erase_then_insert_no_index_rebuild"
+  },
+  "pairs": [
+    [
+      "M_LIST",
+      "R6"
+    ],
+    [
+      "M_EVENT_16",
+      "R6"
+    ],
+    [
+      "TLX",
+      "R6"
+    ]
+  ],
+  "native": {
+    "cells": 270,
+    "rounds": 2,
+    "order": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "A"
+      ]
+    ],
+    "children_per_cell": 4,
+    "formal_children": 1080,
+    "components": [
+      "build",
+      "online",
+      "total",
+      "destroy"
+    ],
+    "per_api_clocks": false
+  },
+  "aa": {
+    "methods": [
+      "M_LIST",
+      "R6",
+      "TLX"
+    ],
+    "loads": [
+      "L01",
+      "L02",
+      "L03"
+    ],
+    "horizon": 1048576,
+    "blocks_per_position": 5,
+    "positions": [
+      "before",
+      "after"
+    ],
+    "blocks_total": 90,
+    "children": 360
+  },
+  "resource": {
+    "longest_only": true,
+    "runs": 120,
+    "checkpoints": [
+      262144,
+      349525,
+      524288,
+      699050,
+      1048576
+    ],
+    "snapshot_phase_end": true,
+    "whole_current_peak": true,
+    "four_accounts": [
+      "pool",
+      "buckets",
+      "tree",
+      "manager"
+    ],
+    "tlx_four_accounts": "NA",
+    "owner_zero_after_destroy": true,
+    "separate_from_native": true,
+    "no_joint_trajectory": true
+  },
+  "stats": {
+    "unit": "one_seed_paired_block_geometric_ratio",
+    "ratio": "R6/reference",
+    "alpha_family": 0.05,
+    "confirmatory_family": 54,
+    "interval": "two_sided_bonferroni_student_t_log_mean",
+    "df": 9,
+    "iqr_is_confidence_interval": false,
+    "noise": "max_abs_log_ratio_all_90_AA_blocks_per_component",
+    "min_effect_log": "log(1.05)",
+    "strong_faster": "all_10_log_ratios_and_upper_CI_below_minus_max(noise,log1.05)",
+    "strong_slower": "all_10_log_ratios_and_lower_CI_above_max(noise,log1.05)",
+    "exploratory": [
+      "build",
+      "phase_time",
+      "resource"
+    ]
+  },
+  "placement": {
+    "logical_cpu": 3,
+    "group": 0,
+    "process_mask": "0x8",
+    "quiet_max_busy": 0.1,
+    "quiet_initial_seconds": 2,
+    "quiet_subsequent_seconds": 0.2,
+    "quiet_retry_seconds": 2,
+    "quiet_timeout_seconds": 300
+  },
+  "failures": {
+    "correctness_or_identity": "STOP_AFFECTED_BATCH",
+    "negative_performance": "CONTINUE",
+    "selective_retries": false,
+    "preserve_all_attempts": true,
+    "resume": "sealed_contiguous_prefix_only"
+  },
+  "scope": {
+    "s3": false,
+    "cpu_new_matrix": false,
+    "latency_new_matrix": false,
+    "machine_learning": false,
+    "cost_recalibration": false
+  },
+  "engineering_gate": {
+    "red_then_green": true,
+    "independent_reviews": true,
+    "capacity_before_formal": true,
+    "git_freeze_before_formal": true
+  }
+}

@@ -1,0 +1,3938 @@
+{
+  "schema": "S2.execution.matrix.v1",
+  "formal_runs_already_executed": 0,
+  "native": [
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 262144,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 524288,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "M_EVENT_16",
+      "candidate": "R6",
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "R6",
+      "mode": "native"
+    }
+  ],
+  "AA_before": [
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "before",
+      "block": 5,
+      "mode": "native"
+    }
+  ],
+  "AA_after": [
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "M_LIST",
+      "candidate": "M_LIST",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "R6",
+      "candidate": "R6",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L01",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L02",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 1,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 2,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 3,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 4,
+      "mode": "native"
+    },
+    {
+      "case_id": "L03",
+      "seed": 101001,
+      "U": 1048576,
+      "reference": "TLX",
+      "candidate": "TLX",
+      "position": "after",
+      "block": 5,
+      "mode": "native"
+    }
+  ],
+  "resource": [
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L01",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L02",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100001,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100002,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100003,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100004,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100005,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100006,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100007,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100008,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100009,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "M_LIST",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "M_EVENT_16",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "R6",
+      "mode": "resource"
+    },
+    {
+      "case_id": "L03",
+      "seed": 100010,
+      "U": 1048576,
+      "method": "TLX",
+      "mode": "resource"
+    }
+  ],
+  "pair_child_order": [
+    [
+      "AB",
+      "A"
+    ],
+    [
+      "AB",
+      "B"
+    ],
+    [
+      "BA",
+      "B"
+    ],
+    [
+      "BA",
+      "A"
+    ]
+  ],
+  "counts": {
+    "formal_native_cells": 270,
+    "formal_native_children": 1080,
+    "AA_blocks": 90,
+    "AA_children": 360,
+    "resource_children": 120,
+    "planned_total_children": 1560
+  }
+}

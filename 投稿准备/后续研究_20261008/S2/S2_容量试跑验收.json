@@ -1,0 +1,13 @@
+{
+  "schema": "S2.capacity.acceptance.v1",
+  "status": "PASS",
+  "capacity_binding": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\capacity\\CAPACITY_20261013_01\\CAPACITY_COMPLETE.json",
+    "sha256": "249b9f0374190d3f25421cc88b99316b14a02add1e1ea59992dea2a3bc60649d"
+  },
+  "actual_runs": 8,
+  "formal_runs": 0,
+  "performance_samples": 0,
+  "parameters_changed": false,
+  "scope": "full four-turnover engineering only"
+}

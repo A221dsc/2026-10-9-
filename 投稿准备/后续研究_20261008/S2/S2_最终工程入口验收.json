@@ -1,0 +1,58 @@
+{
+  "schema": "S2.root.entry.v1",
+  "status": "ENGINEERING_GREEN_AND_REVIEWS_APPROVED",
+  "python_tests": 86,
+  "cpp_suites": 2,
+  "formal_runs": 0,
+  "reviews": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_预注册审查记录.json",
+      "sha256": "76c59e5a9ec69ccbc14555d60fba4f10385fe9c8631afbd8f65f8ee3408da979"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_驱动规格审查_round2.json",
+      "sha256": "05110c52b4a2da00424cbfed6ed40ad4550f9043453ce12487fabc175d851955"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_驱动质量审查.json",
+      "sha256": "ee7e7655bab5199e4f06adb35d34118276aeed9750fe179c18271c930d1020b3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_启动器规格审查_round3.json",
+      "sha256": "53308911e7088ec73f375386fe0f9139b284252fe5ce31430827ede6579c3897"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_启动器质量审查.json",
+      "sha256": "1032468b5d47b042a8eeaa27eeeacb53d934eeff33d62151616cf8391a8d05a3"
+    }
+  ],
+  "gate_evidence": [
+    {
+      "kind": "build_actual_exits",
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_GATE_build_actual_exits.json",
+      "sha256": "6bf847e58499e13e35fc7d7c5f368785ee315e7bc92120fb541b69b38afaea5c"
+    },
+    {
+      "kind": "macro_ir_audit",
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_GATE_macro_ir_audit.json",
+      "sha256": "c488327dc9fc1188997b2bac675d7fce5a4ba5b445fd4d75175c44e4788ad518"
+    },
+    {
+      "kind": "cli_tests",
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_GATE_cli_tests.json",
+      "sha256": "7d661968a171fff3f3aba5da048debc7508fb6faba236d4395b6fdb9b10450b8"
+    },
+    {
+      "kind": "independent_closure",
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\S2_GATE_independent_closure.json",
+      "sha256": "e33e5f5d381eff8031a7a7f1d057fb9041106aa2137c1a8b48bf274fde5cbba7"
+    }
+  ],
+  "capacity": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\capacity\\CAPACITY_20261013_01\\CAPACITY_COMPLETE.json",
+    "sha256": "249b9f0374190d3f25421cc88b99316b14a02add1e1ea59992dea2a3bc60649d"
+  },
+  "protected_parent": "s1-diagnostics-complete-v1",
+  "r6_changed": false,
+  "proceed_to_git_freeze_then_actual_preflight": true
+}

@@ -77,3 +77,24 @@ __pycache__/
 !/投稿准备/后续研究_20261008/S1/release/binaries/s1_latency.exe
 !/投稿准备/后续研究_20261008/S1/release/binaries/s1_resource.exe
 
+
+# S2 external-source experiment: code, protocols and summaries only.
+!/投稿准备/后续研究_20261008/S2/
+/投稿准备/后续研究_20261008/S2/*
+!/投稿准备/后续研究_20261008/S2/*.md
+!/投稿准备/后续研究_20261008/S2/*.json
+!/投稿准备/后续研究_20261008/S2/*.csv
+!/投稿准备/后续研究_20261008/S2/*.png
+!/投稿准备/后续研究_20261008/S2/*.svg
+!/投稿准备/后续研究_20261008/S2/src/
+!/投稿准备/后续研究_20261008/S2/tests/
+!/投稿准备/后续研究_20261008/S2/tools/
+
+# S2 reviewed binary snapshots (same bytes as build_v7)
+!/投稿准备/后续研究_20261008/S2/release/
+/投稿准备/后续研究_20261008/S2/release/*
+!/投稿准备/后续研究_20261008/S2/release/README.md
+!/投稿准备/后续研究_20261008/S2/release/binaries/
+/投稿准备/后续研究_20261008/S2/release/binaries/*
+!/投稿准备/后续研究_20261008/S2/release/binaries/s2_native.exe
+!/投稿准备/后续研究_20261008/S2/release/binaries/s2_resource.exe
