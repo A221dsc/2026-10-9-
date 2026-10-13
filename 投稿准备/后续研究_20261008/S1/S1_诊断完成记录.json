@@ -1,0 +1,101 @@
+{
+  "status": "S1_DIAGNOSTICS_COMPLETE",
+  "mechanism_runs": 18,
+  "resource_runs": 490,
+  "latency_runs": 490,
+  "CPU_attempts": 4,
+  "CPU_statuses": {
+    "UNAVAILABLE": 4
+  },
+  "native_reruns": 0,
+  "resource_API_samples": 168113400,
+  "latency_API_samples": 168113400,
+  "runtime_exception": {
+    "authorization": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\S1_运行环境例外批准_20261012.json",
+      "sha256": "181d292a42b83fad0d2389bd1bcfc440724f4dd107c75a8a490d4b4b0f7a0dc6"
+    },
+    "candidate_runtime": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\candidate_runtime.json",
+      "sha256": "f66e7ca5757570c037c2e0af1e53a6636b4bb3c83d90ad1ac953832bf6540c0c"
+    },
+    "actual_executable": {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\python\\python.exe",
+      "sha256": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c"
+    },
+    "original_executable_sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+    "segmentation": {
+      "old_prefix_cells": 23,
+      "new_cells": 467
+    }
+  },
+  "latency_reused_prefix": 23,
+  "latency_new_runs": 467,
+  "native_tag": "s1-final-native-v1",
+  "batch_receipts": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\MECHANISM_20261011_01\\COMPLETE.json",
+      "sha256": "6767779641adb1fc11c82ce93e943ffd24770fa108f99fbac003bff78c2b3056"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RESOURCE_20261011_01\\COMPLETE.json",
+      "sha256": "b347cbb86407f72de1f2d2241d42472319bb2a1f2bbee82dc631a94da1a09d64"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261012_02\\COMPLETE.json",
+      "sha256": "e002f02ea238c7b2f4b49440de8005aa444a6c8f8801de60f7580ed3b0279753"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\CPU_20261012_02\\COMPLETE.json",
+      "sha256": "793aa8443c68ad0e0f4e741626da0ab9fc1692140668aa897ae4bbca9f52c387"
+    }
+  ],
+  "capacity": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\CAPACITY_20261011_01\\CAPACITY.json",
+    "sha256": "d653826686d64cd37190a4d9dbb09e602c78878f4c6e2e3a977ab85ac9991d19"
+  },
+  "all_raw_archives_verified_again_by_compressed_sha": true,
+  "report_files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_latency_runtime_segments.csv",
+      "sha256": "b3b2aaba166ff7a4d66bbadd1848006f108516cda560a205ea905b91b1d2e6be"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_latency_summary.csv",
+      "sha256": "ccb9af7678a7b0a69380d8a7b78deebf99ddf8c85dd6e98aff0d9cd1d481bf74"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_mechanism_phases.csv",
+      "sha256": "1a4cfb2c41dc587cf5629236ead3998d192337c44a86d51c7e9714247e051f7d"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_raw_archive_index.csv",
+      "sha256": "4130d8d664b14d8268d5e3e3caec746872344ce18deca47c81e9e40a33682c7e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_resource_paired.csv",
+      "sha256": "4cfda568414aa7a3372a0d58f07d04f713ab7df1880342e3cc78b66ba994807d"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_resource_summary.csv",
+      "sha256": "0bc334d2a099186b124e259959e87cf3002f3febb69e4c3a87b2e5b4d46dca52"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_机制资源漂移.png",
+      "sha256": "bb45858f3db1d5bf0120ac0f918341e19930d75b6213ed0b91ca5dc82b9192ac"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_资源配对.png",
+      "sha256": "06ff4043dc52ae37b3c86808b6d61bcad0fb213b52e480c91dc4bded676f5724"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1_逐API与转换暂停.png",
+      "sha256": "59f4753b7a9ccfa2a3842cc471bf8174b0552d5ed5a7e0f744cde64bfb045f0e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\S1_REPORT_20261012_03\\S1同布局归因与研究定位裁决报告.md",
+      "sha256": "b37a4257c93c6de539a808d1d105462b4a2c88287db6a8e7df2957aa90dfbdf1"
+    }
+  ],
+  "ended_ns": 1791810182723803900
+}

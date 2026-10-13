@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "cleanup_resource_events": 7,
+  "cleanup_latency_events": 7,
+  "formal_runs_added": 0,
+  "runtime_exception_dependencies_unchanged": true,
+  "frozen_protected_files_unchanged": true,
+  "execution_receipts": 41,
+  "files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\FINAL_AUDIT_20261012_01\\clock_quantization.json",
+      "sha256": "89af6118221236700f9909f292158a6475d92bfa3518aec7eacdebcd273cbe42"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\FINAL_AUDIT_20261012_01\\R6_cleanup_API_audit.csv",
+      "sha256": "d567dcd9e8ba0bed85aadf2a311e89dcb7874c9b7843298c9fec982c0d36de86"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\FINAL_AUDIT_20261012_01\\S1_诊断实际执行状态.csv",
+      "sha256": "be5f187d162e9c96537e9d8d7345c1f9d6c4795d5c6d510f7a9293c5c2c77f11"
+    }
+  ],
+  "ended_ns": 1791809868570889100
+}

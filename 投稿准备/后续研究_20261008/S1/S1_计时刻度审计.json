@@ -1,0 +1,16 @@
+{
+  "QPC_frequency": 10000000,
+  "QPC_tick_ns": 100.0,
+  "sample_count": 20000,
+  "positive_min_ns": 100,
+  "zero_count": 11391,
+  "all_sample_ns_multiples_of_100": true,
+  "evidence": {
+    "path": "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\LATENCY_20261011_01\\runs\\F01_91001_R6\\output\\latency.csv.gz",
+    "sha256": "6f09f2d80df751a4b91f395326d93bea548fffcd0b4e643f66d8aea18e67aa41",
+    "raw_sha256": "ec36b916027eb29cbdfdc7b32e74059890a1cfa6b3005f54fe163a232019ba19",
+    "raw_bytes": 338638338,
+    "archive_bytes": 7618081,
+    "roundtrip_verified": true
+  }
+}
