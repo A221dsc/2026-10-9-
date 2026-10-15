@@ -1,0 +1,162 @@
+{
+  "schema": "S2.independent.archive.audit.v1",
+  "status": "PASS",
+  "batch_id": "S2_FINAL_NASA_20261013_01",
+  "started_ns": 1791886761925804900,
+  "completed_ns": 1791887197001632200,
+  "audit_read_only_for_frozen_and_raw": true,
+  "benchmarks_executed": 0,
+  "freeze_tag": "s2-engineering-v1",
+  "source_commit": "7804a9ed2b58f6ddda28b00baaca8348afce4402",
+  "old_tracked_files_diff_from_tag": [],
+  "frozen_verifier": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\s2_launch.py",
+    "sha256": "fe458fb8811c1b3f2bba120111a4b213cd938c0476db7ff6462fa41512456182"
+  },
+  "frozen_matrix": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\s2_matrix.py",
+    "sha256": "43425abdec521d656a8ee51155c50b66f85250edc1f90d695a50a89baa7084d7"
+  },
+  "frozen_functions": [
+    "verify_lock(formal=False)",
+    "load_prefix(all 480 planned units)"
+  ],
+  "complete": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\launch\\S2_FINAL_NASA_20261013_01\\COMPLETE.json",
+    "sha256": "78251f917336b4c6c76933f0656c68f9b2db8f2edfe973ee07fe9e7866d7e52e"
+  },
+  "manifest_files": 13942,
+  "actual_archive_files": 13944,
+  "manifest_paths_unique": true,
+  "manifest_all_hashes_pass": true,
+  "manifest_unlisted_expected_completion_receipts": [
+    "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\launch\\S2_FINAL_NASA_20261013_01\\COMPLETE.json",
+    "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\launch\\S2_FINAL_NASA_20261013_01\\attempts\\001\\COMPLETE.json"
+  ],
+  "snapshot_binding_count": 516,
+  "snapshot_unchanged": true,
+  "counts": {
+    "aa_before": 180,
+    "formal_native": 1080,
+    "aa_after": 180,
+    "resource": 120,
+    "children": 1560,
+    "prepare": 33,
+    "sealed_units": 480,
+    "runtime_dependencies": 781,
+    "phases": 2240,
+    "resource_snapshots": 440,
+    "resource_owner_zero": 120,
+    "native_seed_sets": 27,
+    "resource_seed_sets": 12,
+    "true_prefix_groups": 33
+  },
+  "actual_exit_codes": {
+    "supervisor": 0,
+    "children": {
+      "0": 1560
+    },
+    "prepare": {
+      "0": 33
+    }
+  },
+  "all_10_seeds_present": true,
+  "seed_values": [
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010
+  ],
+  "AA_seed": 101001,
+  "per_mode_binary_counts": {
+    "native:43588163c194bdf915cb012a5352c45e469585260478b6a5213bcf44f471a77e": 1440,
+    "resource:634788a065d8fcb67b413b35f1f34157e26d38a3310d3a7db4ad8a1b43f6259b": 120
+  },
+  "binaries": {
+    "native": {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_driver_native.exe",
+      "sha256": "43588163c194bdf915cb012a5352c45e469585260478b6a5213bcf44f471a77e"
+    },
+    "resource": {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\engineering\\build_v7\\s2_driver_resource.exe",
+      "sha256": "634788a065d8fcb67b413b35f1f34157e26d38a3310d3a7db4ad8a1b43f6259b"
+    }
+  },
+  "verification": {
+    "exact_formal_plan": true,
+    "actual_commands_and_START_process_binding": true,
+    "raw_receipt_accepted_seal_identity": true,
+    "cache_metadata_actual_hash_binding": true,
+    "true_binary_prefix": true,
+    "CPU_start_end_P3_group0_mask8": true,
+    "phase_sums": true,
+    "resource_owner_zero": true,
+    "snapshots_checkpoint_and_peak_invariants": true,
+    "TREE_lifecycle_budget_candidate_invariants": true,
+    "review_gate_bindings": true,
+    "complete_seals_before_after_unchanged": true
+  },
+  "raw_NA_counts": {
+    "owner_current_after_destroy": 1440,
+    "owner_live_after_destroy": 1440,
+    "owner_peak": 1440,
+    "pool_current": 1470,
+    "pool_peak": 1470,
+    "buckets_current": 1470,
+    "buckets_peak": 1470,
+    "tree_current": 1470,
+    "tree_peak": 1470,
+    "manager_current": 1470,
+    "manager_peak": 1470,
+    "promotions": 330,
+    "scheduled_demotions": 330,
+    "cleanup_demotions": 330,
+    "total_demotions": 330,
+    "peak_tree_buckets": 330,
+    "final_tree_buckets": 330,
+    "candidate_max": 330,
+    "nodes_allocated": 330
+  },
+  "metric_limits": [
+    "Native clocks measure aggregate build/online/total/destroy; no per-API latency percentiles, CPU-cycle or hardware-counter measurements are present.",
+    "Native whole-owner/account memory fields are NA by design; resource runs must not enter native performance rankings.",
+    "TLX adaptive counters and pool/buckets/tree/manager subaccounts are NA by design; TLX whole-owner peak and destroy-zero are available in resource mode.",
+    "Resource snapshots are registered discrete checkpoints, not a joint time-resolved memory/performance trajectory.",
+    "Cache prefix audit compares actual initial-state bytes and every serialized operation byte; it does not regenerate random workloads or rerun algorithm/query execution.",
+    "This receipt certifies archived execution and integrity, not statistical efficacy or broad workload generalization.",
+    "CPU affinity is observed at start/end of each run, not continuously sampled.",
+    "NASA source is a timestamp-derived benchmark workload, not a business query log; registered missing days remain 29-31."
+  ],
+  "supervisor": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\supervisor\\S2_FINAL_NASA_20261013_01\\process.json",
+    "sha256": "b12ff2db373b089bd7e7c249cb017116ca1383cb39efc49eda1c692cf2fc73cb"
+  },
+  "audit_script": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\AUDIT_20261013_01\\audit_completed_archive.py",
+    "sha256": "add27418197e8b239815230d2fee0f15385a703e4626d266218a77c04706a47b"
+  },
+  "audit_artifact": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\AUDIT_20261013_01\\audit.json",
+    "sha256": "19dcb7f38e600bbc0109544f49552c3fe2066d24315168c8c515d967e71c9311"
+  },
+  "evidence": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\AUDIT_20261013_01\\archive_snapshot_before.json",
+      "sha256": "cd62e4903d188dd79906d09a8fd04daca1125050d487508750a2bdb7365f6f75"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\AUDIT_20261013_01\\archive_snapshot_after.json",
+      "sha256": "cd62e4903d188dd79906d09a8fd04daca1125050d487508750a2bdb7365f6f75"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\AUDIT_20261013_01\\true_prefix_checks.json",
+      "sha256": "7985cea2f7a4d50861d44de4765fdddc58296d44e24563ebb4d7681a4938c245"
+    }
+  ]
+}

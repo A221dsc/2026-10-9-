@@ -1,0 +1,71 @@
+{
+  "status": "COMPLETE",
+  "python": "C:\\Users\\zhangjiacheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "matplotlib": "3.10.3",
+  "numpy": "2.5.4",
+  "plot_packages": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\PLOT_ENV_20261013_01\\packages",
+  "source": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\native_summary.csv",
+      "sha256": "b108175ecfaa633b225f8679640fedbf952418dc4fb81aa09414ce4602a7e685"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\aa_floor.json",
+      "sha256": "fea8876e7819507f657df95a6639bb597c7db8d03a1581b7594dde430e016824"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_snapshots.csv",
+      "sha256": "338a912236d65dab9c79df0606f70030ffe026a47e732e196c9002618903d4f5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_paired.csv",
+      "sha256": "ed8e583a17aa532ca1a11b82910792a64898514c6fc9cb4b96b94175458b1521"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_summary.csv",
+      "sha256": "24ad3f5bc744236d93a87fcf996dd742ea54b935a33e9382c5d369bcb5238e68"
+    }
+  ],
+  "script": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\plot_s2.py",
+    "sha256": "070617a4c338baf9b5f1ae6545baadb2991c6ffbe9ac060469ddc854687aee86"
+  },
+  "selected_resource_seed": 100001,
+  "selection_rule": "lowest registered seed; all ten seeds preserved in CSV",
+  "no_benchmark_execution": true,
+  "files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_内存汇总.png",
+      "sha256": "97033be6c710c32d8834c34a5b9fff38b239c52b45d8d12a32fc2dca81d08e0e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_内存汇总.svg",
+      "sha256": "8d94e29c8c97c5d561d93b232c5ed031675b70dc4786ffedd32d24e60c48eb38"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_漂移资源检查点.png",
+      "sha256": "2c47d2070554bfc256880d8795bbafd7aac9d7bdcb71dfa9ddac45cd3ec87f1c"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_漂移资源检查点.svg",
+      "sha256": "8326d613ebedc17a8118bfc2f6f68ef21d1ccfb4f24787638e42c52ed9c0d568"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_累计成本.png",
+      "sha256": "faca311b61fc581ebcfe827a09b0e24ded65acdb6ccee2b114a3023c08da2970"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_累计成本.svg",
+      "sha256": "80743921029c408ae9bb012592865eb38405baea07826f9718b037c038d1aa8e"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_转换与峰值空间.png",
+      "sha256": "99eb4bf133e5bd50cd6d606ae8757311b7022b5c125cba2479dacc58c5382bc4"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_FIGURES_20261014_02\\S2_转换与峰值空间.svg",
+      "sha256": "bf446d8f5fc54672dca6327326cea35b6ad9e573ad30aa15056f1f34851c7058"
+    }
+  ]
+}

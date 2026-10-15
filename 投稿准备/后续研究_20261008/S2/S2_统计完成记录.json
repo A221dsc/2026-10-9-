@@ -1,0 +1,108 @@
+{
+  "schema": "S2.report.complete.v1",
+  "status": "COMPLETE",
+  "input_complete": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\launch\\S2_FINAL_NASA_20261013_01\\COMPLETE.json",
+    "sha256": "78251f917336b4c6c76933f0656c68f9b2db8f2edfe973ee07fe9e7866d7e52e"
+  },
+  "tool": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\report_s2.py",
+    "sha256": "d9fe988de9de48aa143a6a9b629095ed93444736aed02ae35a08a2c24bc7fbd5"
+  },
+  "math_dependency": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S1\\tools\\analysis.py",
+    "sha256": "79221f9befa4fe10690ce73117c4cd7c1231530bcd014ec5517bb604327b057b"
+  },
+  "protocol": {
+    "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\s2_protocol.json",
+    "sha256": "6a68de0ff20a438937251ca2a0aab1830824d0bdd2ef642985730c73d55ee181"
+  },
+  "counts": {
+    "native_raw.csv": 1080,
+    "paired_ratios.csv": 810,
+    "native_summary.csv": 81,
+    "aa_raw.csv": 360,
+    "aa_blocks.csv": 90,
+    "resource_raw.csv": 120,
+    "resource_paired.csv": 90,
+    "resource_summary.csv": 12,
+    "resource_snapshots.csv": 440,
+    "native_phases.csv": 1440,
+    "aa_phases.csv": 600,
+    "resource_phases.csv": 200
+  },
+  "primary_comparisons": 54,
+  "critical_t": 4.836176438767419,
+  "classification_counts": {
+    "unresolved": 26,
+    "strong_slow": 14,
+    "strong_fast": 14
+  },
+  "requested_byte_accounting": true,
+  "account_peaks_additive": false,
+  "resource_native_joint_trajectory": false,
+  "CPU_or_latency_measured": false,
+  "all_original_rows_preserved": true,
+  "files": [
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\aa_blocks.csv",
+      "sha256": "733749086393dcb75755937ed29e22436dc64bd08ea9142e340b83196de1aab3"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\aa_floor.json",
+      "sha256": "fea8876e7819507f657df95a6639bb597c7db8d03a1581b7594dde430e016824"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\aa_phases.csv",
+      "sha256": "ab1d60f6cb8f1e9a6bb74317bd9984f125009af463602fc291d2347dca41ceaf"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\aa_raw.csv",
+      "sha256": "8fe3348b918f598d2c9066e27f33ff2b7bfd24c16e2c3359b64736e99e69db23"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\input_bindings.json",
+      "sha256": "a0c831c6f5accf75925852ac8d3e90ec68167621424bab4d357180bdd86612d7"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\native_phases.csv",
+      "sha256": "bbf0461e713603259a23d3fcfa07bf74d58161382e5ef22d31c36eef3440eba9"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\native_raw.csv",
+      "sha256": "d7a37f6ec212cbab0d369638ceaaed7da8bdeb5344d284c084b30bd05a939d44"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\native_summary.csv",
+      "sha256": "b108175ecfaa633b225f8679640fedbf952418dc4fb81aa09414ce4602a7e685"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\paired_ratios.csv",
+      "sha256": "d61a8a4d9454f892445676c5abfc060789003ac3ceefead5562358ba79ff60fc"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_paired.csv",
+      "sha256": "ed8e583a17aa532ca1a11b82910792a64898514c6fc9cb4b96b94175458b1521"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_phases.csv",
+      "sha256": "374a121f0147ada65409c768fe10a62cc198d3548d1cb64fa620000890bf12b1"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_raw.csv",
+      "sha256": "f81e3cbb4d07ecd95791d7eaca75942876a67890d822d74f2b3f5a8900081d42"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_snapshots.csv",
+      "sha256": "338a912236d65dab9c79df0606f70030ffe026a47e732e196c9002618903d4f5"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\resource_summary.csv",
+      "sha256": "24ad3f5bc744236d93a87fcf996dd742ea54b935a33e9382c5d369bcb5238e68"
+    },
+    {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01\\START.json",
+      "sha256": "799c35c3778f139aab484b8a78dbb2a0ef93ba5f72ef604dbb690b04e8b2df96"
+    }
+  ]
+}

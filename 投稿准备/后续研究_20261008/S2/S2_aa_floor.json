@@ -1,0 +1,23 @@
+{
+  "blocks": 90,
+  "before_blocks": 45,
+  "after_blocks": 45,
+  "interpretation": "finite_observed_envelope_not_confidence_bound",
+  "components": {
+    "build": {
+      "E": 0.3439441764077351,
+      "D": 0.3439441764077351,
+      "minimum_effect_log": 0.04879016416943204
+    },
+    "online": {
+      "E": 0.17882489413333683,
+      "D": 0.17882489413333683,
+      "minimum_effect_log": 0.04879016416943204
+    },
+    "total": {
+      "E": 0.18021161781532938,
+      "D": 0.18021161781532938,
+      "minimum_effect_log": 0.04879016416943204
+    }
+  }
+}

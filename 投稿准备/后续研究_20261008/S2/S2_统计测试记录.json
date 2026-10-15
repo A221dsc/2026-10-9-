@@ -1,0 +1,276 @@
+{
+  "schema": "S2.analysis.test.history.v1",
+  "history": {
+    "RED": {
+      "receipt": {
+        "command": [
+          "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/diagnostics/RUNTIME_REVIEW_20261012_01/python/python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests",
+          "-p",
+          "test_report_s2.py",
+          "-v"
+        ],
+        "actual_exit_observed": true,
+        "exit_code": 1,
+        "started_ns": 1791886603174982300,
+        "ended_ns": 1791886603831326500,
+        "test_sha256": "1c71cc31044a35776eccb28029cd8348b44939f1bd79f64043c43258cf61bf97"
+      },
+      "binding": {
+        "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\RED.json",
+        "bytes": 731,
+        "sha256": "5bc5aefa1090bc25160efb75db39d49a79e1af9d4370dbf199ccd8f0fb911ad1"
+      },
+      "stdout": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\RED.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "text": ""
+      },
+      "stderr": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\RED.stderr.txt",
+          "bytes": 1271,
+          "sha256": "dab70bba7ff5af3cb789e15c635f243c6d6be5651fc4116c9738c1b07ec337ef"
+        },
+        "text": "test_report_s2 (unittest.loader._FailedTest.test_report_s2) ... ERROR\n\n======================================================================\nERROR: test_report_s2 (unittest.loader._FailedTest.test_report_s2)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_report_s2\nTraceback (most recent call last):\n  File \"C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\python\\Lib\\unittest\\loader.py\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\python\\Lib\\unittest\\loader.py\", line 339, in _get_module_from_name\n    __import__(name)\n  File \"C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests\\test_report_s2.py\", line 13, in <module>\n    import report_s2 as report\nModuleNotFoundError: No module named 'report_s2'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+      }
+    },
+    "RESOURCE_RED": {
+      "receipt": {
+        "command": [
+          "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/diagnostics/RUNTIME_REVIEW_20261012_01/python/python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests",
+          "-p",
+          "test_report_s2.py",
+          "-v"
+        ],
+        "actual_exit_observed": true,
+        "exit_code": 1,
+        "started_ns": 1791886821895106600,
+        "ended_ns": 1791886822359446500
+      },
+      "binding": {
+        "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\RESOURCE_RED.json",
+        "bytes": 645,
+        "sha256": "0918a451d86bc5e3a13fd15062065f3a6cb270b4073c1eb8781f05dc9e20486c"
+      },
+      "stdout": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\RESOURCE_RED.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "text": ""
+      },
+      "stderr": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\RESOURCE_RED.stderr.txt",
+          "bytes": 2156,
+          "sha256": "a10bd903b26a12b787d779af5ce5daa7a0ae6537c5becf2ff054bc33c1aa8138"
+        },
+        "text": "test_aa_pools_before_after_and_preserves_extreme (test_report_s2.S2ReportTests.test_aa_pools_before_after_and_preserves_extreme) ... ok\ntest_complete_counts_and_54_family (test_report_s2.S2ReportTests.test_complete_counts_and_54_family) ... ok\ntest_corrected_interval_numerical_integration (test_report_s2.S2ReportTests.test_corrected_interval_numerical_integration) ... ok\ntest_missing_duplicate_wrong_seed_mode_rejected (test_report_s2.S2ReportTests.test_missing_duplicate_wrong_seed_mode_rejected) ... ok\ntest_output_no_overwrite (test_report_s2.S2ReportTests.test_output_no_overwrite) ... ok\ntest_pair_direction_includes_BA_B_over_A (test_report_s2.S2ReportTests.test_pair_direction_includes_BA_B_over_A) ... ok\ntest_resource_na_and_persistent_current_not_peak_sum (test_report_s2.S2ReportTests.test_resource_na_and_persistent_current_not_peak_sum) ... ok\ntest_resource_pairs_keep_seed_pairing_and_zero_na (test_report_s2.S2ReportTests.test_resource_pairs_keep_seed_pairing_and_zero_na) ... ERROR\ntest_symmetric_strict_boundary_and_all_ten_requirement (test_report_s2.S2ReportTests.test_symmetric_strict_boundary_and_all_ten_requirement) ... ok\ntest_wrong_seed_set_summary_rejected (test_report_s2.S2ReportTests.test_wrong_seed_set_summary_rejected) ... ok\n\n======================================================================\nERROR: test_resource_pairs_keep_seed_pairing_and_zero_na (test_report_s2.S2ReportTests.test_resource_pairs_keep_seed_pairing_and_zero_na)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests\\test_report_s2.py\", line 110, in test_resource_pairs_keep_seed_pairing_and_zero_na\n    for metric in report.RESOURCE_PAIR_METRICS:row[metric]='NA' if method=='TLX' else (2 if method=='R6' else 5)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'report_s2' has no attribute 'RESOURCE_PAIR_METRICS'\n\n----------------------------------------------------------------------\nRan 10 tests in 0.224s\n\nFAILED (errors=1)\n"
+      }
+    },
+    "GREEN_ATTEMPT1": {
+      "receipt": {
+        "command": [
+          "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/diagnostics/RUNTIME_REVIEW_20261012_01/python/python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests",
+          "-p",
+          "test_report_s2.py",
+          "-v"
+        ],
+        "actual_exit_observed": true,
+        "exit_code": 0,
+        "started_ns": 1791886771821426600,
+        "ended_ns": 1791886772226030800,
+        "test_sha256": "1c71cc31044a35776eccb28029cd8348b44939f1bd79f64043c43258cf61bf97",
+        "tool_sha256": "61741ef5cd1e99be70f318549ff71cc66752797c9bc194a7cbf8d99b29b2e189"
+      },
+      "binding": {
+        "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\GREEN_ATTEMPT1.json",
+        "bytes": 817,
+        "sha256": "e0102dbbc1b2508d9e5d8e13b569f01203301e4dd1235eebba3f0cee1b2cdb19"
+      },
+      "stdout": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\GREEN_ATTEMPT1.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "text": ""
+      },
+      "stderr": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\GREEN_ATTEMPT1.stderr.txt",
+          "bytes": 1232,
+          "sha256": "6ab03971fc0e9f3df1096c7eace7243880b627e20759c154229b59cd9fdeaa22"
+        },
+        "text": "test_aa_pools_before_after_and_preserves_extreme (test_report_s2.S2ReportTests.test_aa_pools_before_after_and_preserves_extreme) ... ok\ntest_complete_counts_and_54_family (test_report_s2.S2ReportTests.test_complete_counts_and_54_family) ... ok\ntest_corrected_interval_numerical_integration (test_report_s2.S2ReportTests.test_corrected_interval_numerical_integration) ... ok\ntest_missing_duplicate_wrong_seed_mode_rejected (test_report_s2.S2ReportTests.test_missing_duplicate_wrong_seed_mode_rejected) ... ok\ntest_output_no_overwrite (test_report_s2.S2ReportTests.test_output_no_overwrite) ... ok\ntest_pair_direction_includes_BA_B_over_A (test_report_s2.S2ReportTests.test_pair_direction_includes_BA_B_over_A) ... ok\ntest_resource_na_and_persistent_current_not_peak_sum (test_report_s2.S2ReportTests.test_resource_na_and_persistent_current_not_peak_sum) ... ok\ntest_symmetric_strict_boundary_and_all_ten_requirement (test_report_s2.S2ReportTests.test_symmetric_strict_boundary_and_all_ten_requirement) ... ok\ntest_wrong_seed_set_summary_rejected (test_report_s2.S2ReportTests.test_wrong_seed_set_summary_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.202s\n\nOK\n"
+      }
+    },
+    "GREEN": {
+      "receipt": {
+        "command": [
+          "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/diagnostics/RUNTIME_REVIEW_20261012_01/python/python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests",
+          "-p",
+          "test_report_s2.py",
+          "-v"
+        ],
+        "actual_exit_observed": true,
+        "exit_code": 0,
+        "started_ns": 1791886852389624400,
+        "ended_ns": 1791886852807612100,
+        "test_sha256": "11ffa4a4e60fe0ba57181cab5171b3e7486f665a64072360734c1bcfea8094f7",
+        "tool_sha256": "d9fe988de9de48aa143a6a9b629095ed93444736aed02ae35a08a2c24bc7fbd5"
+      },
+      "binding": {
+        "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\GREEN.json",
+        "bytes": 817,
+        "sha256": "2886715c4fa59661620292214e07d87408c3babf36822ac64fba3af712eb75d5"
+      },
+      "stdout": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\GREEN.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "text": ""
+      },
+      "stderr": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\GREEN.stderr.txt",
+          "bytes": 1372,
+          "sha256": "e2bf76b74314e886d7aef64f9c2fd711ce81c53160bfd9e89dd6f66f8314cc98"
+        },
+        "text": "test_aa_pools_before_after_and_preserves_extreme (test_report_s2.S2ReportTests.test_aa_pools_before_after_and_preserves_extreme) ... ok\ntest_complete_counts_and_54_family (test_report_s2.S2ReportTests.test_complete_counts_and_54_family) ... ok\ntest_corrected_interval_numerical_integration (test_report_s2.S2ReportTests.test_corrected_interval_numerical_integration) ... ok\ntest_missing_duplicate_wrong_seed_mode_rejected (test_report_s2.S2ReportTests.test_missing_duplicate_wrong_seed_mode_rejected) ... ok\ntest_output_no_overwrite (test_report_s2.S2ReportTests.test_output_no_overwrite) ... ok\ntest_pair_direction_includes_BA_B_over_A (test_report_s2.S2ReportTests.test_pair_direction_includes_BA_B_over_A) ... ok\ntest_resource_na_and_persistent_current_not_peak_sum (test_report_s2.S2ReportTests.test_resource_na_and_persistent_current_not_peak_sum) ... ok\ntest_resource_pairs_keep_seed_pairing_and_zero_na (test_report_s2.S2ReportTests.test_resource_pairs_keep_seed_pairing_and_zero_na) ... ok\ntest_symmetric_strict_boundary_and_all_ten_requirement (test_report_s2.S2ReportTests.test_symmetric_strict_boundary_and_all_ten_requirement) ... ok\ntest_wrong_seed_set_summary_rejected (test_report_s2.S2ReportTests.test_wrong_seed_set_summary_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.204s\n\nOK\n"
+      }
+    },
+    "ANALYSIS": {
+      "receipt": {
+        "command": [
+          "C:/Users/zhangjiacheng/Desktop/zjc/小论文/投稿准备/后续研究_20261008/S1/artifacts/diagnostics/RUNTIME_REVIEW_20261012_01/python/python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\report_s2.py",
+          "--complete",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\launch\\S2_FINAL_NASA_20261013_01\\COMPLETE.json",
+          "--output",
+          "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\S2_REPORT_20261013_01"
+        ],
+        "actual_exit_observed": true,
+        "exit_code": 0,
+        "started_ns": 1791886876625573700,
+        "ended_ns": 1791886905880994400
+      },
+      "binding": {
+        "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\ANALYSIS.json",
+        "bytes": 1010,
+        "sha256": "a5c20e11b1009cd98c9c5cb8a300e83aab1646cc34c9ebe6f594cead94844378"
+      },
+      "stdout": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\ANALYSIS.stdout.txt",
+          "bytes": 546,
+          "sha256": "bf150285ca3e43af83f1135bcefb3ca74999557cbf710755739982e384482715"
+        },
+        "text": "accepted original units 90 / 480\naccepted original units 180 / 480\naccepted original units 270 / 480\naccepted original units 360 / 480\naccepted original units 450 / 480\nCOMPLETE {'native_raw.csv': 1080, 'paired_ratios.csv': 810, 'native_summary.csv': 81, 'aa_raw.csv': 360, 'aa_blocks.csv': 90, 'resource_raw.csv': 120, 'resource_paired.csv': 90, 'resource_summary.csv': 12, 'resource_snapshots.csv': 440, 'native_phases.csv': 1440, 'aa_phases.csv': 600, 'resource_phases.csv': 200} {'unresolved': 26, 'strong_slow': 14, 'strong_fast': 14}\n"
+      },
+      "stderr": {
+        "binding": {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\TDD_20261013_01\\ANALYSIS.stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "text": ""
+      }
+    }
+  },
+  "fresh_test": {
+    "receipt": {
+      "command": [
+        "C:\\Users\\zhangjiacheng\\Desktop\\zjc\\小论文\\投稿准备\\后续研究_20261008\\S1\\artifacts\\diagnostics\\RUNTIME_REVIEW_20261012_01\\python\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests",
+        "-p",
+        "test_report_s2.py",
+        "-v"
+      ],
+      "started_ns": 1791943680272736500,
+      "ended_ns": 1791943680858950200,
+      "actual_exit_observed": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "environment_override": {
+        "TEMP": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\VERIFY_20261014_01\\tmp",
+        "TMP": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\VERIFY_20261014_01\\tmp",
+        "PYTHONUTF8": "1"
+      },
+      "benchmarks_executed": 0,
+      "files": [
+        {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tools\\report_s2.py",
+          "sha256": "d9fe988de9de48aa143a6a9b629095ed93444736aed02ae35a08a2c24bc7fbd5"
+        },
+        {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\tests\\test_report_s2.py",
+          "sha256": "11ffa4a4e60fe0ba57181cab5171b3e7486f665a64072360734c1bcfea8094f7"
+        },
+        {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\VERIFY_20261014_01\\stdout.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\VERIFY_20261014_01\\stderr.txt",
+          "sha256": "6a9296bde4b6244bb210967f612c759c2b31de4cae195b6a16f103aa5e121ba7"
+        }
+      ]
+    },
+    "binding": {
+      "path": "C:\\Users\\zhangjiacheng\\.codex\\worktrees\\adaptive-poolhbi-s2\\小论文\\投稿准备\\后续研究_20261008\\S2\\artifacts\\report\\VERIFY_20261014_01\\test_result.json",
+      "bytes": 2157,
+      "sha256": "542aed99af113304a1bd37fa7a81f264ebeccfe194b6cc326f1c128c5fe95adc"
+    },
+    "stderr": "test_aa_pools_before_after_and_preserves_extreme (test_report_s2.S2ReportTests.test_aa_pools_before_after_and_preserves_extreme) ... ok\ntest_complete_counts_and_54_family (test_report_s2.S2ReportTests.test_complete_counts_and_54_family) ... ok\ntest_corrected_interval_numerical_integration (test_report_s2.S2ReportTests.test_corrected_interval_numerical_integration) ... ok\ntest_missing_duplicate_wrong_seed_mode_rejected (test_report_s2.S2ReportTests.test_missing_duplicate_wrong_seed_mode_rejected) ... ok\ntest_output_no_overwrite (test_report_s2.S2ReportTests.test_output_no_overwrite) ... ok\ntest_pair_direction_includes_BA_B_over_A (test_report_s2.S2ReportTests.test_pair_direction_includes_BA_B_over_A) ... ok\ntest_resource_na_and_persistent_current_not_peak_sum (test_report_s2.S2ReportTests.test_resource_na_and_persistent_current_not_peak_sum) ... ok\ntest_resource_pairs_keep_seed_pairing_and_zero_na (test_report_s2.S2ReportTests.test_resource_pairs_keep_seed_pairing_and_zero_na) ... ok\ntest_symmetric_strict_boundary_and_all_ten_requirement (test_report_s2.S2ReportTests.test_symmetric_strict_boundary_and_all_ten_requirement) ... ok\ntest_wrong_seed_set_summary_rejected (test_report_s2.S2ReportTests.test_wrong_seed_set_summary_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.293s\n\nOK\n"
+  },
+  "benchmarks_executed": 0
+}
